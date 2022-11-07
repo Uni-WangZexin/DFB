@@ -5,6 +5,9 @@ import time
 import datapreprocess
 import numpy as np
 path = 'NAB/realTweets'
+train = np.array([]).reshape(-1,1)
+test = np.array([]).reshape(-1,1)
+test_label = np.array([]).reshape(-1,1)
 
 with open('../NAB/labels/combined_windows.json', encoding='utf-8') as a:
     label_json = json.load(a)
@@ -37,15 +40,19 @@ for file_name in os.listdir(path):
     df_3 = df[n2:]
     df_1.to_csv('./NAB/realTweets-standard/{}/{}_train.csv'.format(str(i),str(i)),index=False,mode='w')
     df_2.to_csv('./NAB/realTweets-standard/{}/{}_validation.csv'.format(str(i),str(i)),index=False,mode = 'w')
-    df_3.to_csv('./NAB/realTweets-standard/{}/{}_test.csv'.format(str(i),str(i)),index=False,mode = 'w')
+    df_3.to_csv('./NAB/realTweets-standard/{}/{}_test.csv'.format(str(i),str(i)),index=False,mode = 'w') 
     i+=1
 
     #Transfomer Anomaly data
-    value = np.asarray(df['value']).reshape(-1,1) 
+    """ value = np.asarray(df['value']).reshape(-1,1) 
     label = np.asarray(df['label']).reshape(-1,1)
-    n = int(len(value)*0.5)
-    os.mkdir('../Anomaly-Transformer-new/dataset/NAB/{}'.format(str(i)))
-    np.save('../Anomaly-Transformer-new/dataset/NAB/{}/{}_train.npy'.format(str(i),str(i)),value[:n])
-    np.save('../Anomaly-Transformer-new/dataset/NAB/{}/{}_test.npy'.format(str(i),str(i)),value[n:])
-    np.save('../Anomaly-Transformer-new/dataset/NAB/{}/{}_test_label.npy'.format(str(i),str(i)),label[n:])
+    n = int(len(value)*0.5) 
+    train = np.append(train, value[:n],axis = 0)
+    test = np.append(test, value[n:],axis = 0)
+    test_label = np.append(test_label, label[n:],axis = 0)
+if not os.path.exists('../Anomaly-Transformer-new/dataset/NAB'):
+    os.mkdir('../Anomaly-Transformer-new/dataset/NAB')
+np.save('../Anomaly-Transformer-new/dataset/NAB/NAB_train.npy',train)
+np.save('../Anomaly-Transformer-new/dataset/NAB/NAB_test.npy',test)
+np.save('../Anomaly-Transformer-new/dataset/NAB/NAB_test_label.npy',test_label) """
  

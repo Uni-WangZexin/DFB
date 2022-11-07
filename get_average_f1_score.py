@@ -1,18 +1,15 @@
 import numpy as np
-f = open('./result.txt')
+import os
+f = open('./30train20valid50test.txt')
 score=np.array([])
+name=np.array([])
 tag = 0
+filelist = os.listdir('../AnoTranfer-data/real-world/test')
+print(filelist)
 for line in f:
-    if tag==0:
-        if line.strip() =='NAB':
-            tag=1
-        continue
-    if line.strip()=='':
-        tag=0
-        continue
-    print(line)
     l = line.strip().split(' ')
+    name = np.append(name, l[1])
     score = np.append(score, float(l[6]))
 print(score)
 print(np.mean(score))
-    
+print(np.sort(name))

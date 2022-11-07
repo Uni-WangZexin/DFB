@@ -11,7 +11,7 @@ import numpy as np
 import torch
 import traceback
 
-from test_tube import HyperOptArgumentParser, Experiment
+#from test_tube import HyperOptArgumentParser, Experiment
 #from pytorch_lightning.models.trainer import Trainer
 from pytorch_lightning import Trainer
 from pytorch_lightning.callbacks import EarlyStopping, ModelCheckpoint

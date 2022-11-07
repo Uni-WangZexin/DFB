@@ -6,7 +6,7 @@ import os
     os.system("rm  ./ckpt/{}.ckpt".format(str(i)))
     #print("python single_cpu_trainer.py --data_ """
 
-for i in range(187,210):
+for i in range(200,210):
     #os.system("python single_cpu_trainer.py --data_name {} > {}.out".format(str(i),str(i)))
     os.system("python single_cpu_trainer.py --data_name {} --data_dir './AnoTransfer-data/real-world-data-standard'".format(str(i)))
     os.system("rm  ./ckpt/{}.ckpt".format(str(i)))

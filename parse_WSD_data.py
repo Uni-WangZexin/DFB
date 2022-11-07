@@ -2,6 +2,9 @@ import pandas as pd
 import os
 import datapreprocess
 import numpy as np
+train = np.array([]).reshape(-1,1)
+test = np.array([]).reshape(-1,1)
+test_label = np.array([]).reshape(-1,1)
 if __name__ == '__main__':
     for i in range(0,210):#38
         #os.mkdir('./AnoTransfer-data/real-world-data-standard/{}'.format(str(i)))
@@ -45,11 +48,23 @@ if __name__ == '__main__':
 
 
         #Transformer Anomaly data
-        value = np.asarray(df2['value']).reshape(-1,1) 
+        """ value = np.asarray(df2['value']).reshape(-1,1) 
         label = np.asarray(df2['label']).reshape(-1,1) 
         n = int(len(value)*0.5)
         if not os.path.exists('../Anomaly-Transformer-new/dataset/WSD/{}'.format(str(i))):
             os.mkdir('../Anomaly-Transformer-new/dataset/WSD/{}'.format(str(i)))
         np.save('../Anomaly-Transformer-new/dataset/WSD/{}/{}_train.npy'.format(str(i),str(i)),value[:n])
         np.save('../Anomaly-Transformer-new/dataset/WSD/{}/{}_test.npy'.format(str(i),str(i)),value[n:])
-        np.save('../Anomaly-Transformer-new/dataset/WSD/{}/{}_test_label.npy'.format(str(i),str(i)),label[n:])
+        np.save('../Anomaly-Transformer-new/dataset/WSD/{}/{}_test_label.npy'.format(str(i),str(i)),label[n:]) """
+        
+"""         value = np.asarray(df2['value']).reshape(-1,1) 
+        label = np.asarray(df2['label']).reshape(-1,1)
+        n = int(len(value)*0.5) 
+        train = np.append(train, value[:n],axis = 0)
+        test = np.append(test, value[n:],axis = 0)
+        test_label = np.append(test_label, label[n:],axis = 0)
+    if not os.path.exists('../Anomaly-Transformer-new/dataset/WSD'):
+        os.mkdir('../Anomaly-Transformer-new/dataset/WSD')
+    np.save('../Anomaly-Transformer-new/dataset/WSD/WSD_train.npy',train)
+    np.save('../Anomaly-Transformer-new/dataset/WSD/WSD_test.npy',test)
+    np.save('../Anomaly-Transformer-new/dataset/WSD/WSD_test_label.npy',test_label) """

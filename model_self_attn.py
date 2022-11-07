@@ -8,7 +8,7 @@ from xml.etree.ElementTree import TreeBuilder
 import torch.nn as nn
 import torch
 import torch.nn.functional as F
-from test_tube import HyperOptArgumentParser
+#from test_tube import HyperOptArgumentParser
 from torch import optim
 from torch.utils.data import DataLoader
 from torch.utils.data.distributed import DistributedSampler
