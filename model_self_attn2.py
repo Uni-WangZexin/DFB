@@ -275,7 +275,6 @@ class AR2(nn.Module):
         x = torch.squeeze(x, 2)
         x = self.linear2(x)
         return x
-
 class MLP1(nn.Module):
     def __init__(self,dim):
 
@@ -307,7 +306,6 @@ class MLP2(nn.Module):
     def forward(self, x):
         re = self.mlp(x)
         return re
-
 class DSANet(LightningModule):
 
     def __init__(self, hparams):
@@ -384,9 +382,9 @@ class DSANet(LightningModule):
             w_kernel=self.w_kernel, d_k=self.d_k, d_v=self.d_v, d_model=self.d_model,
             d_inner=self.d_inner, n_layers=self.n_layers, n_head=self.n_head, mode='target', drop_prob=self.drop_prob)
         
-        self.ar = AR2(window1=self.window+1,window2=1+2*self.n_positive+self.n_negative+self.n_random)
-        dim = 0
-        if(self.hp.exp_mode==0):
+        self.ar = AR2(window1=self.window+1,window2=1+2*self.n_positive+self.n_random)
+        dim = 7
+        """ if(self.hp.exp_mode==0):
             dim=11
         elif(self.hp.exp_mode==1):
             dim=7
@@ -407,7 +405,7 @@ class DSANet(LightningModule):
         elif(self.hp.exp_mode==9):
             dim=7
         elif(self.hp.exp_mode==10):
-            dim=1
+            dim=1 """
         self.W_output1 = nn.Linear(dim, 1)
         self.dropout = nn.Dropout(p=self.drop_prob)
         self.active_func = nn.Tanh()
@@ -417,22 +415,9 @@ class DSANet(LightningModule):
 
         self.conv2 = nn.Conv2d(1, self.n_kernels, (self.window, self.w_kernel))
         self.conv1 = nn.Conv2d(1, self.n_kernels, (self.local, self.w_kernel))
-        self.pooling1 = nn.AdaptiveMaxPool2d((1, 1+2*self.n_positive+self.n_negative+self.n_random))
+        self.pooling1 = nn.AdaptiveMaxPool2d((1, 1+2*self.n_positive+self.n_random))
 
         self.embedding1 = nn.Linear(2*self.n_kernels, self.d_model)
-
-        self.mlp1 = MLP1(self.d_model)
-        self.mlp2 = MLP1(self.d_model)
-        self.mlp3 = MLP1(self.d_model)
-        self.mlp4 = MLP1(self.d_model)
-        self.mlp5 = MLP1(self.d_model)
-        self.mlp6 = MLP1(self.d_model)
-
-        self.mlp11 = MLP2(self.n_head)
-        self.mlp22 = MLP2(self.n_head)
-        self.mlp33 = MLP2(self.n_head)
-        self.mlp44 = MLP2(self.n_head)
-        self.mlp55 = MLP2(self.n_head)
 
         """ self.out_linear11 = nn.Linear(self.d_model, 128)
         self.out_linear12 = nn.Linear(self.d_model, 128)
@@ -464,6 +449,18 @@ class DSANet(LightningModule):
         self.out_linear23 = nn.Linear(self.n_head, 1)
         self.out_linear24 = nn.Linear(self.n_head, 1)
         self.out_linear25 = nn.Linear(self.n_head, 1) """
+        self.mlp1 = MLP1(self.d_model)
+        self.mlp2 = MLP1(self.d_model)
+        self.mlp3 = MLP1(self.d_model)
+        self.mlp4 = MLP1(self.d_model)
+        self.mlp5 = MLP1(self.d_model)
+        self.mlp6 = MLP1(self.d_model)
+
+        self.mlp11 = MLP2(self.n_head)
+        self.mlp22 = MLP2(self.n_head)
+        self.mlp33 = MLP2(self.n_head)
+        self.mlp44 = MLP2(self.n_head)
+        self.mlp55 = MLP2(self.n_head)
 
 
     # ---------------------
@@ -488,12 +485,12 @@ class DSANet(LightningModule):
         x_horizon = torch.unsqueeze(x_horizon, 2)
         x_horizon_positive = x_horizon[:,1:1+2*self.n_positive,:]
         x_horizon_random = x_horizon[:,1+2*self.n_positive:1+2*self.n_positive+self.n_random,:]
-        x_horizon_negatvie = x_horizon[:,1+2*self.n_positive+self.n_random:1+2*self.n_positive+self.n_random+self.n_negative,:]
+        #x_horizon_negatvie = x_horizon[:,1+2*self.n_positive+self.n_random:1+2*self.n_positive+self.n_random+self.n_negative,:]
 
 
 
 
-        x_window = x_window.view(-1, self.w_kernel, self.window, 1+2*self.n_positive+self.n_random+self.n_negative)
+        x_window = x_window.view(-1, self.w_kernel, self.window, 1+2*self.n_positive+self.n_random)
         x1 = F.relu(self.conv1(x_window))
         x1 = self.pooling1(x1)
         x1 = nn.Dropout(p=self.drop_prob)(x1)
@@ -512,26 +509,21 @@ class DSANet(LightningModule):
         x_target = x_target.unsqueeze(1)
         x_positive = x[:,1:1+2*self.n_positive,:]
         x_random = x[:,1+2*self.n_positive:1+2*self.n_positive+self.n_random,:]
-        x_negative = x[:,1+2*self.n_positive+self.n_random:1+2*self.n_positive+self.n_random+self.n_negative,:]
+        #x_negative = x[:,1+2*self.n_positive+self.n_random:1+2*self.n_positive+self.n_random+self.n_negative,:]
 
-        if(self.n_positive!=0):
-            attn1_out, attn1, *_ = self.attn1(torch.cat((x_positive,x_target),1),D=2*self.n_positive+1)
-            attn1_horizon = torch.bmm(attn1,x_horizon_positive)
-        if(self.n_negative!=0):
-            attn2_out, attn2, *_ = self.attn2(torch.cat((x_negative,x_target),1),D=self.n_negative+1)
-            attn2_horizon = torch.bmm(attn2,x_horizon_negatvie)
-        if(self.n_random!=0):
-            attn3_out, attn3, *_ = self.attn3(torch.cat((x_random,x_target),1),D=self.n_random+1)
-            attn3_horizon = torch.bmm(attn3,x_horizon_random)
+
+        attn1_out, attn1, *_ = self.attn1(torch.cat((x_positive,x_target),1),D=2*self.n_positive+1)
+        attn1_horizon = torch.bmm(attn1,x_horizon_positive)
+
+        attn3_out, attn3, *_ = self.attn3(torch.cat((x_random,x_target),1),D=self.n_random+1)
+        attn3_horizon = torch.bmm(attn3,x_horizon_random)
         #batch*1*d_model batch*n_head*D=>batch*n_head*1
 
         #batch*w*1 
-            if(self.n_positive!=0):
-                attn4_out, attn4, *_ = self.attn4(torch.cat((x_random,attn1_out),1),D=self.n_random+1)
-                attn4_horizon = torch.bmm(attn4,x_horizon_random)
-            if(self.n_negative!=0):
-                attn5_out, attn5, *_ = self.attn5(torch.cat((x_random,attn2_out),1),D=self.n_random+1)
-                attn5_horizon = torch.bmm(attn5,x_horizon_random)
+
+        attn4_out, attn4, *_ = self.attn4(torch.cat((x_random,attn1_out),1),D=self.n_random+1)
+        attn4_horizon = torch.bmm(attn4,x_horizon_random)
+
 
         """ attn1_out = self.active_func( self.out_linear5(self.out_linear4(self.out_linear3(self.out_linear1(attn1_out)))))
         attn2_out = self.active_func(self.out_linear5(self.out_linear4(self.out_linear3(self.out_linear1(attn2_out)))))
@@ -545,36 +537,27 @@ class DSANet(LightningModule):
         attn3_horizon = self.active_func(self.out_linear2(attn3_horizon.transpose(1,2)))
         attn4_horizon = self.active_func(self.out_linear2(attn4_horizon.transpose(1,2)))
         attn5_horizon = self.active_func(self.out_linear2(attn5_horizon.transpose(1,2))) """
-        if(self.n_positive!=0):
-            #attn1_out =  self.out_linear51(self.out_linear41(self.out_linear31(self.out_linear11(attn1_out))))
-            attn1_out = self.mlp1(attn1_out)
-            attn1_horizon = self.mlp11(attn1_horizon.transpose(1,2))
-            #attn1_horizon = self.out_linear21(attn1_horizon.transpose(1,2))
-        if(self.n_negative!=0):
-            #attn2_out = self.out_linear52(self.out_linear42(self.out_linear32(self.out_linear12(attn2_out))))
-            #attn2_horizon = self.out_linear22(attn2_horizon.transpose(1,2))
-            attn2_out = self.mlp2(attn2_out)
-            attn2_horizon = self.mlp22(attn2_horizon.transpose(1,2))
-        if(self.n_random!=0):
-            #attn3_out = self.out_linear53(self.out_linear43(self.out_linear33(self.out_linear13(attn3_out))))
-            #attn3_horizon = self.out_linear23(attn3_horizon.transpose(1,2))
-            attn3_out = self.mlp3(attn3_out)
-            attn3_horizon = self.mlp33(attn3_horizon.transpose(1,2))
-            if(self.n_positive!=0):
-                #attn4_out = self.out_linear54(self.out_linear44(self.out_linear34(self.out_linear14(attn4_out))))
-                #attn4_horizon = self.out_linear24(attn4_horizon.transpose(1,2))
-                attn4_out = self.mlp4(attn4_out)
-                attn4_horizon = self.mlp44(attn4_horizon.transpose(1,2))
-            if(self.n_negative!=0):
-                #attn5_out = self.out_linear55(self.out_linear45(self.out_linear35(self.out_linear15(attn5_out))))
-                #attn5_horizon = self.out_linear25(attn5_horizon.transpose(1,2))
-                attn5_out = self.mlp5(attn5_out)
-                attn5_horizon = self.mlp55(attn5_horizon.transpose(1,2))
-        #x_target = self.out_linear56(self.out_linear46(self.out_linear36(self.out_linear16(x_target))))
+
+        #attn1_out =  self.out_linear51(self.out_linear41(self.out_linear31(self.out_linear11(attn1_out))))
+        #attn1_horizon = self.out_linear21(attn1_horizon.transpose(1,2))
+        attn1_out = self.mlp1(attn1_out)
+        attn1_horizon = self.mlp11(attn1_horizon.transpose(1,2))
+
+        #attn3_out = self.out_linear53(self.out_linear43(self.out_linear33(self.out_linear13(attn3_out))))
+        #attn3_horizon = self.out_linear23(attn3_horizon.transpose(1,2))
+
+        attn3_out = self.mlp3(attn3_out)
+        attn3_horizon = self.mlp33(attn3_horizon.transpose(1,2))
+        #attn4_out = self.out_linear54(self.out_linear44(self.out_linear34(self.out_linear14(attn4_out))))
+        #attn4_horizon = self.out_linear24(attn4_horizon.transpose(1,2))
+        attn4_out = self.mlp4(attn4_out)
+        attn4_horizon = self.mlp44(attn4_horizon.transpose(1,2))
+
         x_target = self.mlp6(x_target)
+        
 
         #1 pos 2 neg 3 ran 4 crosspos 5 crossneg
-        if(self.hp.exp_mode==0):
+        """ if(self.hp.exp_mode==0):
             out = torch.cat((x_target,attn1_out,attn1_horizon,attn2_out,attn2_horizon,attn3_out,attn3_horizon,attn4_out,attn4_horizon,attn5_out,attn5_horizon),dim=2)
         elif(self.hp.exp_mode==1):
             out = torch.cat((x_target,attn2_out,attn2_horizon,attn3_out,attn3_horizon,attn5_out,attn5_horizon),dim=2)
@@ -596,8 +579,8 @@ class DSANet(LightningModule):
             out = torch.cat((x_target,attn1_out,attn1_horizon,attn2_out,attn2_horizon,attn3_out,attn3_horizon),dim=2)
         elif(self.hp.exp_mode==10):
             out = x_target
-
-
+        """
+        out = torch.cat((x_target,attn1_out,attn1_horizon,attn3_out,attn3_horizon,attn4_out,attn4_horizon),dim=2)
         #out = attn2_out
         out = torch.squeeze(out, 1)
         out = self.dropout(out)
@@ -625,11 +608,24 @@ class DSANet(LightningModule):
         # forward pass
         x, y = data_batch
 
-        y_hat = self.forward(x)
+        x_t = x[:,:,0]
+        x_t = x_t.unsqueeze(2)
+        x_pos = x[:,:,1:1+2*self.n_positive]
+        x_ran = x[:,:,1+2*self.n_positive:1+2*self.n_positive+self.n_random]
+        x_neg = x[:,:,1+2*self.n_positive+self.n_random:]
+
+        x_1 = torch.cat((x_t,x_pos,x_ran),dim=2)
+        x_2 = torch.cat((x_t,x_neg,x_ran),dim=2)
+
+        y_hat1 = self.forward(x_1)
+        y_hat2 = self.forward(x_2)
 
         # calculate loss
-        loss_val = self.loss(y, y_hat)
-
+        if(self.loss(y_hat1, y_hat2).item()<2):
+            loss_val = self.loss(y, y_hat1) - 0.2* self.loss(y_hat1, y_hat2)
+        else:
+            loss_val = self.loss(y, y_hat1)
+ 
         self.log("val_loss_train", loss_val, on_step=True, on_epoch=True, logger= True)
 
         # in DP mode (default) make sure if result is scalar, there's another dim in the beginning
@@ -648,9 +644,23 @@ class DSANet(LightningModule):
         Lightning calls this inside the validation loop
         """
         x, y = data_batch
-        y_hat = self.forward(x)
 
-        loss_val = self.loss(y, y_hat)
+        x_t = x[:,:,0]
+        x_t = x_t.unsqueeze(2)
+        x_pos = x[:,:,1:1+2*self.n_positive]
+        x_ran = x[:,:,1+2*self.n_positive:1+2*self.n_positive+self.n_random]
+        x_neg = x[:,:,1+2*self.n_positive+self.n_random:]
+
+        x_1 = torch.cat((x_t,x_pos,x_ran),dim=2)
+        x_2 = torch.cat((x_t,x_neg,x_ran),dim=2)
+
+        y_hat1 = self.forward(x_1)
+        y_hat2 = self.forward(x_2)
+        # calculate loss
+        if(self.loss(y_hat1, y_hat2).item()<2):
+            loss_val = self.loss(y, y_hat1) - 0.2* self.loss(y_hat1, y_hat2)
+        else:
+            loss_val = self.loss(y, y_hat1)
 
         # in DP mode (default) make sure if result is scalar, there's another dim in the beginning
         if self.trainer.strategy == 'dp':
@@ -661,7 +671,7 @@ class DSANet(LightningModule):
         output = OrderedDict({
             'val_loss': loss_val,
             'y': y,
-            'y_hat': y_hat,
+            'y_hat': y_hat1,
         })
 
         # can also return just a scalar instead of a dict (return loss_val)
@@ -715,14 +725,30 @@ class DSANet(LightningModule):
         return tqdm_dic
     
     def test_step(self, data_batch, batch_idx):
-        x , y = data_batch
-        y_hat = self.forward(x)
-        loss_val = self.loss(y, y_hat)
+        x, y = data_batch
+
+        x_t = x[:,:,0]
+        x_t = x_t.unsqueeze(2)
+        x_pos = x[:,:,1:1+2*self.n_positive]
+        x_ran = x[:,:,1+2*self.n_positive:1+2*self.n_positive+self.n_random]
+        x_neg = x[:,:,1+2*self.n_positive+self.n_random:]
+
+        x_1 = torch.cat((x_t,x_pos,x_ran),dim=2)
+        x_2 = torch.cat((x_t,x_neg,x_ran),dim=2)
+
+        y_hat1 = self.forward(x_1)
+        y_hat2 = self.forward(x_2)
+
+        # calculate loss
+        if(self.loss(y_hat1, y_hat2).item()<2):
+            loss_val = self.loss(y, y_hat1) - 0.2* self.loss(y_hat1, y_hat2)
+        else:
+            loss_val = self.loss(y, y_hat1)
         self.log("val_loss_test", loss_val, on_step=True, on_epoch=True, logger= True)
         output = OrderedDict({
             'val_loss': loss_val,
             'y': y,
-            'y_hat': y_hat,
+            'y_hat': y_hat1,
         })
         
         return output
@@ -906,8 +932,8 @@ class DSANet(LightningModule):
         parser.add_argument('--ckpt_path', type=str, default='./ckpt/0-v4.ckpt')
         parser.add_argument('--hp_path', type=str, default='./logs/version_0/hparams.yaml')
         parser.add_argument('--n_positive', type=int, default=5)
-        parser.add_argument('--n_negative', type=int, default=5)
-        parser.add_argument('--n_random', type=int, default=5)
+        parser.add_argument('--n_negative', type=int, default=10)
+        parser.add_argument('--n_random', type=int, default=10)
         parser.add_argument('--mode', type=str, default='target')
         parser.add_argument('--max_epoch', type=int, default=10)
         parser.add_argument('--exp_mode', type=int, default=2)

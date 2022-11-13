@@ -681,3 +681,7 @@ data_name: 206 max f1 score is 1.000000 and threshold is 16.055066
 data_name: 207 max f1 score is 0.992908 and threshold is 29.153755
 data_name: 208 max f1 score is 1.000000 and threshold is 65.894025
 data_name: 209 max f1 score is 0.956211 and threshold is 3.971852
+
+
+data_name: 0 max f1 score is 1.000000 and threshold is 8.633817
+data_name: 0 max f1 score is 1.000000 and threshold is 9.976688
