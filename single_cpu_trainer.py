@@ -16,7 +16,7 @@ import traceback
 from pytorch_lightning import Trainer
 from pytorch_lightning.callbacks import EarlyStopping, ModelCheckpoint
 
-from model_self_attn_pot import DSANet
+from model_self_attn_pot_mean_horizon import DSANet
 
 from pytorch_lightning.loggers import TensorBoardLogger
 import argparse
@@ -54,7 +54,7 @@ def main(hparams):
         max_epochs=hparams.max_epoch,
         callbacks=[early_stop,checkpoint],
         logger=logger,
-        accelerator="gpu",
+        accelerator="cpu",
         devices=1,
         #strategy=
     ) 
