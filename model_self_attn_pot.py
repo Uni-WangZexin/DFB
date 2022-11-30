@@ -365,7 +365,7 @@ class DSANet(LightningModule):
             d_inner=self.d_inner, n_layers=self.n_layers, n_head=self.n_head, drop_prob=self.drop_prob) """
         
         self.attn1 = Attn_Module(
-            window=self.window,  local=self.local, n_multiv=2*self.n_positive+1,  n_kernels=self.n_kernels,
+            window=self.window,  local=self.local, n_multiv=self.n_positive+1,  n_kernels=self.n_kernels,
             w_kernel=self.w_kernel, d_k=self.d_k, d_v=self.d_v, d_model=self.d_model,
             d_inner=self.d_inner, n_layers=self.n_layers, n_head=self.n_head, mode='target', drop_prob=self.drop_prob)
         self.attn2 = Attn_Module(
@@ -385,7 +385,7 @@ class DSANet(LightningModule):
             w_kernel=self.w_kernel, d_k=self.d_k, d_v=self.d_v, d_model=self.d_model,
             d_inner=self.d_inner, n_layers=self.n_layers, n_head=self.n_head, mode='target', drop_prob=self.drop_prob)
         
-        self.ar = AR2(window1=self.window+1,window2=1+2*self.n_positive+self.n_negative+self.n_random)
+        self.ar = AR2(window1=self.window+1,window2=1+self.n_positive+self.n_negative+self.n_random)
         dim = 0
         if(self.hp.exp_mode==0):
             dim=11
@@ -409,6 +409,12 @@ class DSANet(LightningModule):
             dim=7
         elif(self.hp.exp_mode==10):
             dim=1
+        elif(self.hp.exp_mode==11):
+            dim=2
+        elif(self.hp.exp_mode==12):
+            dim=5
+        elif(self.hp.exp_mode==13):
+            dim=3
         self.W_output1 = nn.Linear(dim, 1)
         self.dropout = nn.Dropout(p=self.drop_prob)
         self.active_func = nn.Tanh()
@@ -418,7 +424,7 @@ class DSANet(LightningModule):
 
         self.conv2 = nn.Conv2d(1, self.n_kernels, (self.window, self.w_kernel))
         self.conv1 = nn.Conv2d(1, self.n_kernels, (self.local, self.w_kernel))
-        self.pooling1 = nn.AdaptiveMaxPool2d((1, 1+2*self.n_positive+self.n_negative+self.n_random))
+        self.pooling1 = nn.AdaptiveMaxPool2d((1, 1+self.n_positive+self.n_negative+self.n_random))
 
         self.embedding1 = nn.Linear(2*self.n_kernels, self.d_model)
 
@@ -483,18 +489,19 @@ class DSANet(LightningModule):
         x_emb1 = x_emb1.unsqueeze(0)
         x_emb1 = torch.transpose(x_emb1.repeat(batch, dim, 1),1,2) """
         #batch*embding_dim*D
+        x = torch.cat((x[:,:,:1+self.n_positive],x[:,:,1+2*self.n_positive:]),dim = 2)
         originx = x
         x_window = x[:,0:self.window,:]
         x_horizon = x[:,self.window,:]#batch*D
         x_horizon = torch.unsqueeze(x_horizon, 2)
-        x_horizon_positive = x_horizon[:,1:1+2*self.n_positive,:]
-        x_horizon_random = x_horizon[:,1+2*self.n_positive:1+2*self.n_positive+self.n_random,:]
-        x_horizon_negatvie = x_horizon[:,1+2*self.n_positive+self.n_random:1+2*self.n_positive+self.n_random+self.n_negative,:]
+        x_horizon_positive = x_horizon[:,1:1+self.n_positive,:]
+        x_horizon_random = x_horizon[:,1+self.n_positive:1+self.n_positive+self.n_random,:]
+        x_horizon_negatvie = x_horizon[:,1+self.n_positive+self.n_random:1+self.n_positive+self.n_random+self.n_negative,:]
 
 
 
 
-        x_window = x_window.view(-1, self.w_kernel, self.window, 1+2*self.n_positive+self.n_random+self.n_negative)
+        x_window = x_window.view(-1, self.w_kernel, self.window, 1+self.n_positive+self.n_random+self.n_negative)
         x1 = F.relu(self.conv1(x_window))
         x1 = self.pooling1(x1)
         x1 = nn.Dropout(p=self.drop_prob)(x1)
@@ -511,12 +518,12 @@ class DSANet(LightningModule):
 
         x_target = x[:,0,:]
         x_target = x_target.unsqueeze(1)
-        x_positive = x[:,1:1+2*self.n_positive,:]
-        x_random = x[:,1+2*self.n_positive:1+2*self.n_positive+self.n_random,:]
-        x_negative = x[:,1+2*self.n_positive+self.n_random:1+2*self.n_positive+self.n_random+self.n_negative,:]
+        x_positive = x[:,1:1+self.n_positive,:]
+        x_random = x[:,1+self.n_positive:1+self.n_positive+self.n_random,:]
+        x_negative = x[:,1+self.n_positive+self.n_random:1+self.n_positive+self.n_random+self.n_negative,:]
 
         if(self.n_positive!=0):
-            attn1_out, attn1, *_ = self.attn1(torch.cat((x_positive,x_target),1),D=2*self.n_positive+1)
+            attn1_out, attn1, *_ = self.attn1(torch.cat((x_positive,x_target),1),D=self.n_positive+1)
             attn1_horizon = torch.bmm(attn1,x_horizon_positive)
         if(self.n_negative!=0):
             attn2_out, attn2, *_ = self.attn2(torch.cat((x_negative,x_target),1),D=self.n_negative+1)
@@ -597,6 +604,12 @@ class DSANet(LightningModule):
             out = torch.cat((x_target,attn1_out,attn1_horizon,attn2_out,attn2_horizon,attn3_out,attn3_horizon),dim=2)
         elif(self.hp.exp_mode==10):
             out = x_target
+        elif(self.hp.exp_mode==11):
+            out = torch.cat((x_target,attn1_horizon),dim=2)
+        elif(self.hp.exp_mode==12):
+            out = torch.cat((x_target,attn1_out,attn1_horizon,attn3_out,attn3_horizon),dim=2)
+        elif(self.hp.exp_mode==13):
+            out = torch.cat((x_target,attn1_horizon,attn3_horizon),dim=2)
 
 
         #out = attn2_out
@@ -777,12 +790,14 @@ class DSANet(LightningModule):
         score[np.where(score>10)] = 10
         #rand = np.random.randint(low=0,high=len(init_score)-1,size=int(0.001*len(init_score)),dtype=np.int32)
         #init_score[rand] = init_score[rand] + 5
-        result = pot_eval(init_score, score, label,level = 0.9975)
+        for i in range(100):
+            l = 0.99+i/10000
+            result = pot_eval(init_score, score, label,q=0.0001 ,level = l)
 
-        file_name = './resultpot2.txt'
-        with open(file_name,'a') as f:
-            f.write("data_name: {}".format(self.hp.data_name))
-            f.write(" max f1 score is %f and threshold is %f train_loss is %f test_loss is %f\n" %(result['pot-f1'], result['pot-threshold'], np.mean(init_score), np.mean(score)))
+            file_name = './resultpot_postive_only_day2.txt'
+            with open(file_name,'a') as f:
+                f.write("data_name: {}".format(self.hp.data_name))
+                f.write(" max f1 score is %f and threshold is %f level is %f train_loss is %f test_loss is %f\n" %(result['pot-f1'], result['pot-threshold'],l, np.mean(init_score), np.mean(score)))
         """ max_th = float(score.max())
         min_th = float(score.min())
         grain = 10000

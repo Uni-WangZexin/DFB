@@ -1,0 +1,6 @@
+data_name: 100 max f1 score is 0.000010 and threshold is 0.190191 train_loss is 0.025656 test_loss is 0.052416
+data_name: 101 max f1 score is 0.298857 and threshold is 0.448211 train_loss is 0.054574 test_loss is 0.039690
+data_name: 102 max f1 score is 0.168381 and threshold is 0.077644 train_loss is 0.016188 test_loss is 0.021234
+data_name: 103 max f1 score is 0.333869 and threshold is 0.114115 train_loss is 0.021786 test_loss is 0.024137
+data_name: 104 max f1 score is 0.392967 and threshold is 0.193211 train_loss is 0.037729 test_loss is 0.028027
+data_name: 105 max f1 score is 0.327919 and threshold is 0.131147 train_loss is 0.024633 test_loss is 0.031849

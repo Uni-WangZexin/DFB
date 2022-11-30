@@ -1,0 +1,2854 @@
+On branch pot
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   model_self_attn3.py
+	modified:   single_cpu_trainer2.py
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+	modified:   __pycache__/datapreprocess.cpython-39.pyc
+	modified:   __pycache__/dataset.cpython-39.pyc
+	modified:   __pycache__/model_self_attn.cpython-39.pyc
+	modified:   dataset.py
+	modified:   dsanet/__pycache__/Layers.cpython-39.pyc
+	modified:   dsanet/__pycache__/Modules.cpython-39.pyc
+	modified:   dsanet/__pycache__/SubLayers.cpython-39.pyc
+	modified:   dsanet/__pycache__/__init__.cpython-39.pyc
+	modified:   getxrsyscore.py
+	deleted:    logs/version_0/events.out.tfevents.1666267589.Ubuntu-2204.162007.0
+	deleted:    logs/version_0/events.out.tfevents.1666269243.Ubuntu-2204.162007.1
+	modified:   logs/version_0/hparams.yaml
+	deleted:    logs/version_100/events.out.tfevents.1666683815.Ubuntu-2204.872073.0
+	deleted:    logs/version_100/events.out.tfevents.1666684491.Ubuntu-2204.872073.1
+	modified:   logs/version_100/hparams.yaml
+	deleted:    logs/version_101/events.out.tfevents.1666684531.Ubuntu-2204.874074.0
+	deleted:    logs/version_101/events.out.tfevents.1666685204.Ubuntu-2204.874074.1
+	modified:   logs/version_101/hparams.yaml
+	deleted:    logs/version_102/events.out.tfevents.1666685244.Ubuntu-2204.876048.0
+	deleted:    logs/version_102/events.out.tfevents.1666685911.Ubuntu-2204.876048.1
+	modified:   logs/version_102/hparams.yaml
+	deleted:    logs/version_103/events.out.tfevents.1666685953.Ubuntu-2204.878024.0
+	deleted:    logs/version_103/events.out.tfevents.1666686675.Ubuntu-2204.878024.1
+	modified:   logs/version_103/hparams.yaml
+	deleted:    logs/version_104/events.out.tfevents.1666686701.Ubuntu-2204.880001.0
+	deleted:    logs/version_104/events.out.tfevents.1666687441.Ubuntu-2204.880001.1
+	modified:   logs/version_104/hparams.yaml
+	deleted:    logs/version_105/events.out.tfevents.1666687466.Ubuntu-2204.881985.0
+	deleted:    logs/version_105/events.out.tfevents.1666687995.Ubuntu-2204.881985.1
+	modified:   logs/version_105/hparams.yaml
+	deleted:    logs/version_106/events.out.tfevents.1666688019.Ubuntu-2204.883596.0
+	deleted:    logs/version_106/events.out.tfevents.1666688436.Ubuntu-2204.883596.1
+	modified:   logs/version_106/hparams.yaml
+	deleted:    logs/version_107/events.out.tfevents.1666688477.Ubuntu-2204.884863.0
+	deleted:    logs/version_107/events.out.tfevents.1666689194.Ubuntu-2204.884863.1
+	modified:   logs/version_107/hparams.yaml
+	deleted:    logs/version_108/events.out.tfevents.1666689237.Ubuntu-2204.886831.0
+	deleted:    logs/version_108/events.out.tfevents.1666689948.Ubuntu-2204.886831.1
+	modified:   logs/version_108/hparams.yaml
+	deleted:    logs/version_109/events.out.tfevents.1666689988.Ubuntu-2204.888811.0
+	deleted:    logs/version_109/events.out.tfevents.1666690728.Ubuntu-2204.888811.1
+	modified:   logs/version_109/hparams.yaml
+	deleted:    logs/version_110/events.out.tfevents.1666690752.Ubuntu-2204.890797.0
+	deleted:    logs/version_110/events.out.tfevents.1666691541.Ubuntu-2204.890797.1
+	modified:   logs/version_110/hparams.yaml
+	deleted:    logs/version_111/events.out.tfevents.1666691568.Ubuntu-2204.892772.0
+	deleted:    logs/version_111/events.out.tfevents.1666691993.Ubuntu-2204.892772.1
+	modified:   logs/version_111/hparams.yaml
+	deleted:    logs/version_112/events.out.tfevents.1666692017.Ubuntu-2204.894048.0
+	deleted:    logs/version_112/events.out.tfevents.1666692478.Ubuntu-2204.894048.1
+	modified:   logs/version_112/hparams.yaml
+	deleted:    logs/version_113/events.out.tfevents.1666692519.Ubuntu-2204.895306.0
+	deleted:    logs/version_113/events.out.tfevents.1666693027.Ubuntu-2204.895306.1
+	modified:   logs/version_113/hparams.yaml
+	deleted:    logs/version_114/events.out.tfevents.1666693068.Ubuntu-2204.896750.0
+	modified:   logs/version_114/hparams.yaml
+	deleted:    logs/version_115/events.out.tfevents.1666703740.Ubuntu-2204.936321.0
+	deleted:    logs/version_115/events.out.tfevents.1666704400.Ubuntu-2204.936321.1
+	modified:   logs/version_115/hparams.yaml
+	deleted:    logs/version_116/events.out.tfevents.1666704440.Ubuntu-2204.938515.0
+	deleted:    logs/version_116/events.out.tfevents.1666705127.Ubuntu-2204.938515.1
+	modified:   logs/version_116/hparams.yaml
+	deleted:    logs/version_117/events.out.tfevents.1666705168.Ubuntu-2204.940540.0
+	deleted:    logs/version_117/events.out.tfevents.1666705832.Ubuntu-2204.940540.1
+	modified:   logs/version_117/hparams.yaml
+	deleted:    logs/version_118/events.out.tfevents.1666705875.Ubuntu-2204.942510.0
+	deleted:    logs/version_118/events.out.tfevents.1666706274.Ubuntu-2204.942510.1
+	modified:   logs/version_118/hparams.yaml
+	deleted:    logs/version_119/events.out.tfevents.1666706315.Ubuntu-2204.943769.0
+	deleted:    logs/version_119/events.out.tfevents.1666707018.Ubuntu-2204.943769.1
+	modified:   logs/version_119/hparams.yaml
+	deleted:    logs/version_120/events.out.tfevents.1666707059.Ubuntu-2204.945750.0
+	deleted:    logs/version_120/events.out.tfevents.1666707730.Ubuntu-2204.945750.1
+	modified:   logs/version_120/hparams.yaml
+	deleted:    logs/version_121/events.out.tfevents.1666707770.Ubuntu-2204.947724.0
+	deleted:    logs/version_121/events.out.tfevents.1666708448.Ubuntu-2204.947724.1
+	modified:   logs/version_121/hparams.yaml
+	deleted:    logs/version_122/events.out.tfevents.1666708490.Ubuntu-2204.949706.0
+	deleted:    logs/version_122/events.out.tfevents.1666709192.Ubuntu-2204.949706.1
+	modified:   logs/version_122/hparams.yaml
+	deleted:    logs/version_123/events.out.tfevents.1666709235.Ubuntu-2204.951676.0
+	deleted:    logs/version_123/events.out.tfevents.1666709957.Ubuntu-2204.951676.1
+	modified:   logs/version_123/hparams.yaml
+	deleted:    logs/version_124/events.out.tfevents.1666710001.Ubuntu-2204.953650.0
+	deleted:    logs/version_124/events.out.tfevents.1666710450.Ubuntu-2204.953650.1
+	modified:   logs/version_124/hparams.yaml
+	deleted:    logs/version_125/events.out.tfevents.1666710493.Ubuntu-2204.954920.0
+	deleted:    logs/version_125/events.out.tfevents.1666711232.Ubuntu-2204.954920.1
+	modified:   logs/version_125/hparams.yaml
+	deleted:    logs/version_126/events.out.tfevents.1666711275.Ubuntu-2204.956897.0
+	deleted:    logs/version_126/events.out.tfevents.1666711985.Ubuntu-2204.956897.1
+	modified:   logs/version_126/hparams.yaml
+	deleted:    logs/version_127/events.out.tfevents.1666712027.Ubuntu-2204.958885.0
+	deleted:    logs/version_127/events.out.tfevents.1666712718.Ubuntu-2204.958885.1
+	modified:   logs/version_127/hparams.yaml
+	deleted:    logs/version_128/events.out.tfevents.1666712761.Ubuntu-2204.960858.0
+	deleted:    logs/version_128/events.out.tfevents.1666713506.Ubuntu-2204.960858.1
+	modified:   logs/version_128/hparams.yaml
+	deleted:    logs/version_129/events.out.tfevents.1666713547.Ubuntu-2204.962831.0
+	deleted:    logs/version_129/events.out.tfevents.1666714297.Ubuntu-2204.962831.1
+	modified:   logs/version_129/hparams.yaml
+	deleted:    logs/version_130/events.out.tfevents.1666714339.Ubuntu-2204.964834.0
+	deleted:    logs/version_130/events.out.tfevents.1666715064.Ubuntu-2204.964834.1
+	modified:   logs/version_130/hparams.yaml
+	deleted:    logs/version_131/events.out.tfevents.1666715106.Ubuntu-2204.966813.0
+	deleted:    logs/version_131/events.out.tfevents.1666715876.Ubuntu-2204.966813.1
+	modified:   logs/version_131/hparams.yaml
+	deleted:    logs/version_132/events.out.tfevents.1666715919.Ubuntu-2204.968787.0
+	deleted:    logs/version_132/events.out.tfevents.1666716445.Ubuntu-2204.968787.1
+	modified:   logs/version_132/hparams.yaml
+	deleted:    logs/version_133/events.out.tfevents.1666716488.Ubuntu-2204.970229.0
+	deleted:    logs/version_133/events.out.tfevents.1666717239.Ubuntu-2204.970229.1
+	modified:   logs/version_133/hparams.yaml
+	deleted:    logs/version_134/events.out.tfevents.1666717279.Ubuntu-2204.972204.0
+	deleted:    logs/version_134/events.out.tfevents.1666717948.Ubuntu-2204.972204.1
+	modified:   logs/version_134/hparams.yaml
+	deleted:    logs/version_135/events.out.tfevents.1666717987.Ubuntu-2204.974179.0
+	deleted:    logs/version_135/events.out.tfevents.1666718652.Ubuntu-2204.974179.1
+	modified:   logs/version_135/hparams.yaml
+	deleted:    logs/version_136/events.out.tfevents.1666718692.Ubuntu-2204.976166.0
+	deleted:    logs/version_136/events.out.tfevents.1666719364.Ubuntu-2204.976166.1
+	modified:   logs/version_136/hparams.yaml
+	deleted:    logs/version_137/events.out.tfevents.1666719403.Ubuntu-2204.978149.0
+	deleted:    logs/version_137/events.out.tfevents.1666720071.Ubuntu-2204.978149.1
+	modified:   logs/version_137/hparams.yaml
+	deleted:    logs/version_138/events.out.tfevents.1666720111.Ubuntu-2204.980132.0
+	deleted:    logs/version_138/events.out.tfevents.1666720773.Ubuntu-2204.980132.1
+	modified:   logs/version_138/hparams.yaml
+	deleted:    logs/version_139/events.out.tfevents.1666720812.Ubuntu-2204.982128.0
+	deleted:    logs/version_139/events.out.tfevents.1666721470.Ubuntu-2204.982128.1
+	modified:   logs/version_139/hparams.yaml
+	deleted:    logs/version_140/events.out.tfevents.1666721511.Ubuntu-2204.984104.0
+	deleted:    logs/version_140/events.out.tfevents.1666721989.Ubuntu-2204.984104.1
+	modified:   logs/version_140/hparams.yaml
+	deleted:    logs/version_141/events.out.tfevents.1666722032.Ubuntu-2204.985548.0
+	deleted:    logs/version_141/events.out.tfevents.1666722708.Ubuntu-2204.985548.1
+	modified:   logs/version_141/hparams.yaml
+	deleted:    logs/version_142/events.out.tfevents.1666722754.Ubuntu-2204.987523.0
+	deleted:    logs/version_142/events.out.tfevents.1666723403.Ubuntu-2204.987523.1
+	modified:   logs/version_142/hparams.yaml
+	deleted:    logs/version_143/events.out.tfevents.1666723443.Ubuntu-2204.989491.0
+	deleted:    logs/version_143/events.out.tfevents.1666723864.Ubuntu-2204.989491.1
+	modified:   logs/version_143/hparams.yaml
+	deleted:    logs/version_144/events.out.tfevents.1666723905.Ubuntu-2204.990755.0
+	deleted:    logs/version_144/events.out.tfevents.1666724648.Ubuntu-2204.990755.1
+	modified:   logs/version_144/hparams.yaml
+	deleted:    logs/version_145/events.out.tfevents.1666724690.Ubuntu-2204.992743.0
+	deleted:    logs/version_145/events.out.tfevents.1666725395.Ubuntu-2204.992743.1
+	modified:   logs/version_145/hparams.yaml
+	deleted:    logs/version_146/events.out.tfevents.1666725437.Ubuntu-2204.994720.0
+	deleted:    logs/version_146/events.out.tfevents.1666726158.Ubuntu-2204.994720.1
+	modified:   logs/version_146/hparams.yaml
+	deleted:    logs/version_147/events.out.tfevents.1666726199.Ubuntu-2204.996703.0
+	deleted:    logs/version_147/events.out.tfevents.1666726943.Ubuntu-2204.996703.1
+	modified:   logs/version_147/hparams.yaml
+	deleted:    logs/version_148/events.out.tfevents.1666726990.Ubuntu-2204.998673.0
+	deleted:    logs/version_148/events.out.tfevents.1666727405.Ubuntu-2204.998673.1
+	modified:   logs/version_148/hparams.yaml
+	deleted:    logs/version_149/events.out.tfevents.1666727446.Ubuntu-2204.999937.0
+	deleted:    logs/version_149/events.out.tfevents.1666727888.Ubuntu-2204.999937.1
+	modified:   logs/version_149/hparams.yaml
+	deleted:    logs/version_150/events.out.tfevents.1666727928.Ubuntu-2204.1001196.0
+	deleted:    logs/version_150/events.out.tfevents.1666728439.Ubuntu-2204.1001196.1
+	modified:   logs/version_150/hparams.yaml
+	deleted:    logs/version_151/events.out.tfevents.1666728479.Ubuntu-2204.1002648.0
+	deleted:    logs/version_151/events.out.tfevents.1666729185.Ubuntu-2204.1002648.1
+	modified:   logs/version_151/hparams.yaml
+	deleted:    logs/version_152/events.out.tfevents.1666729226.Ubuntu-2204.1004622.0
+	deleted:    logs/version_152/events.out.tfevents.1666729913.Ubuntu-2204.1004622.1
+	modified:   logs/version_152/hparams.yaml
+	deleted:    logs/version_153/events.out.tfevents.1666729955.Ubuntu-2204.1006607.0
+	deleted:    logs/version_153/events.out.tfevents.1666730640.Ubuntu-2204.1006607.1
+	modified:   logs/version_153/hparams.yaml
+	deleted:    logs/version_154/events.out.tfevents.1666730686.Ubuntu-2204.1008583.0
+	deleted:    logs/version_154/events.out.tfevents.1666731362.Ubuntu-2204.1008583.1
+	modified:   logs/version_154/hparams.yaml
+	deleted:    logs/version_155/events.out.tfevents.1666731403.Ubuntu-2204.1010552.0
+	deleted:    logs/version_155/events.out.tfevents.1666731805.Ubuntu-2204.1010552.1
+	modified:   logs/version_155/hparams.yaml
+	deleted:    logs/version_156/events.out.tfevents.1666731846.Ubuntu-2204.1011831.0
+	deleted:    logs/version_156/events.out.tfevents.1666732581.Ubuntu-2204.1011831.1
+	modified:   logs/version_156/hparams.yaml
+	deleted:    logs/version_157/events.out.tfevents.1666732623.Ubuntu-2204.1013805.0
+	deleted:    logs/version_157/events.out.tfevents.1666733344.Ubuntu-2204.1013805.1
+	modified:   logs/version_157/hparams.yaml
+	deleted:    logs/version_158/events.out.tfevents.1666733384.Ubuntu-2204.1015793.0
+	deleted:    logs/version_158/events.out.tfevents.1666734059.Ubuntu-2204.1015793.1
+	modified:   logs/version_158/hparams.yaml
+	deleted:    logs/version_159/events.out.tfevents.1666734099.Ubuntu-2204.1017784.0
+	deleted:    logs/version_159/events.out.tfevents.1666734777.Ubuntu-2204.1017784.1
+	modified:   logs/version_159/hparams.yaml
+	deleted:    logs/version_160/events.out.tfevents.1666734819.Ubuntu-2204.1019761.0
+	deleted:    logs/version_160/events.out.tfevents.1666735497.Ubuntu-2204.1019761.1
+	modified:   logs/version_160/hparams.yaml
+	deleted:    logs/version_161/events.out.tfevents.1666735539.Ubuntu-2204.1021736.0
+	deleted:    logs/version_161/events.out.tfevents.1666736203.Ubuntu-2204.1021736.1
+	modified:   logs/version_161/hparams.yaml
+	deleted:    logs/version_162/events.out.tfevents.1666736244.Ubuntu-2204.1023709.0
+	deleted:    logs/version_162/events.out.tfevents.1666736891.Ubuntu-2204.1023709.1
+	modified:   logs/version_162/hparams.yaml
+	deleted:    logs/version_163/events.out.tfevents.1666736932.Ubuntu-2204.1025696.0
+	deleted:    logs/version_163/events.out.tfevents.1666737600.Ubuntu-2204.1025696.1
+	modified:   logs/version_163/hparams.yaml
+	deleted:    logs/version_164/events.out.tfevents.1666737642.Ubuntu-2204.1027745.0
+	deleted:    logs/version_164/events.out.tfevents.1666738337.Ubuntu-2204.1027745.1
+	modified:   logs/version_164/hparams.yaml
+	deleted:    logs/version_165/events.out.tfevents.1666738379.Ubuntu-2204.1029724.0
+	deleted:    logs/version_165/events.out.tfevents.1666739133.Ubuntu-2204.1029724.1
+	modified:   logs/version_165/hparams.yaml
+	deleted:    logs/version_166/events.out.tfevents.1666739174.Ubuntu-2204.1031700.0
+	deleted:    logs/version_166/events.out.tfevents.1666739901.Ubuntu-2204.1031700.1
+	modified:   logs/version_166/hparams.yaml
+	deleted:    logs/version_167/events.out.tfevents.1666739943.Ubuntu-2204.1033682.0
+	deleted:    logs/version_167/events.out.tfevents.1666740686.Ubuntu-2204.1033682.1
+	modified:   logs/version_167/hparams.yaml
+	deleted:    logs/version_168/events.out.tfevents.1666740728.Ubuntu-2204.1035664.0
+	deleted:    logs/version_168/events.out.tfevents.1666741310.Ubuntu-2204.1035664.1
+	modified:   logs/version_168/hparams.yaml
+	deleted:    logs/version_169/events.out.tfevents.1666741353.Ubuntu-2204.1037323.0
+	deleted:    logs/version_169/events.out.tfevents.1666742098.Ubuntu-2204.1037323.1
+	modified:   logs/version_169/hparams.yaml
+	deleted:    logs/version_170/events.out.tfevents.1666742140.Ubuntu-2204.1039304.0
+	deleted:    logs/version_170/events.out.tfevents.1666742817.Ubuntu-2204.1039304.1
+	modified:   logs/version_170/hparams.yaml
+	deleted:    logs/version_171/events.out.tfevents.1666742857.Ubuntu-2204.1041285.0
+	deleted:    logs/version_171/events.out.tfevents.1666743539.Ubuntu-2204.1041285.1
+	modified:   logs/version_171/hparams.yaml
+	deleted:    logs/version_172/events.out.tfevents.1666743580.Ubuntu-2204.1043262.0
+	deleted:    logs/version_172/events.out.tfevents.1666744253.Ubuntu-2204.1043262.1
+	modified:   logs/version_172/hparams.yaml
+	deleted:    logs/version_173/events.out.tfevents.1666744296.Ubuntu-2204.1045255.0
+	deleted:    logs/version_173/events.out.tfevents.1666745032.Ubuntu-2204.1045255.1
+	modified:   logs/version_173/hparams.yaml
+	deleted:    logs/version_174/events.out.tfevents.1666745073.Ubuntu-2204.1047229.0
+	deleted:    logs/version_174/events.out.tfevents.1666745812.Ubuntu-2204.1047229.1
+	modified:   logs/version_174/hparams.yaml
+	deleted:    logs/version_175/events.out.tfevents.1666745854.Ubuntu-2204.1049204.0
+	deleted:    logs/version_175/events.out.tfevents.1666746551.Ubuntu-2204.1049204.1
+	modified:   logs/version_175/hparams.yaml
+	deleted:    logs/version_176/events.out.tfevents.1666746593.Ubuntu-2204.1051668.0
+	deleted:    logs/version_176/events.out.tfevents.1666747265.Ubuntu-2204.1051668.1
+	modified:   logs/version_176/hparams.yaml
+	deleted:    logs/version_177/events.out.tfevents.1666747305.Ubuntu-2204.1053845.0
+	deleted:    logs/version_177/events.out.tfevents.1666747990.Ubuntu-2204.1053845.1
+	modified:   logs/version_177/hparams.yaml
+	deleted:    logs/version_178/events.out.tfevents.1666748033.Ubuntu-2204.1056073.0
+	deleted:    logs/version_178/events.out.tfevents.1666748721.Ubuntu-2204.1056073.1
+	modified:   logs/version_178/hparams.yaml
+	deleted:    logs/version_179/events.out.tfevents.1666748765.Ubuntu-2204.1058283.0
+	deleted:    logs/version_179/events.out.tfevents.1666749455.Ubuntu-2204.1058283.1
+	modified:   logs/version_179/hparams.yaml
+	deleted:    logs/version_180/events.out.tfevents.1666749498.Ubuntu-2204.1060511.0
+	deleted:    logs/version_180/events.out.tfevents.1666750178.Ubuntu-2204.1060511.1
+	modified:   logs/version_180/hparams.yaml
+	deleted:    logs/version_181/events.out.tfevents.1666750220.Ubuntu-2204.1062680.0
+	deleted:    logs/version_181/events.out.tfevents.1666750908.Ubuntu-2204.1062680.1
+	modified:   logs/version_181/hparams.yaml
+	deleted:    logs/version_182/events.out.tfevents.1666750947.Ubuntu-2204.1064654.0
+	deleted:    logs/version_182/events.out.tfevents.1666751632.Ubuntu-2204.1064654.1
+	modified:   logs/version_182/hparams.yaml
+	deleted:    logs/version_183/events.out.tfevents.1666751672.Ubuntu-2204.1066637.0
+	deleted:    logs/version_183/events.out.tfevents.1666752362.Ubuntu-2204.1066637.1
+	modified:   logs/version_183/hparams.yaml
+	deleted:    logs/version_184/events.out.tfevents.1666752403.Ubuntu-2204.1068608.0
+	deleted:    logs/version_184/events.out.tfevents.1666752816.Ubuntu-2204.1068608.1
+	modified:   logs/version_184/hparams.yaml
+	deleted:    logs/version_185/events.out.tfevents.1666752857.Ubuntu-2204.1069868.0
+	deleted:    logs/version_185/events.out.tfevents.1666753525.Ubuntu-2204.1069868.1
+	modified:   logs/version_185/hparams.yaml
+	deleted:    logs/version_186/events.out.tfevents.1666753565.Ubuntu-2204.1071874.0
+	deleted:    logs/version_186/events.out.tfevents.1666754240.Ubuntu-2204.1071874.1
+	modified:   logs/version_186/hparams.yaml
+	deleted:    logs/version_187/events.out.tfevents.1666754280.Ubuntu-2204.1073855.0
+	deleted:    logs/version_187/events.out.tfevents.1666754949.Ubuntu-2204.1073855.1
+	modified:   logs/version_187/hparams.yaml
+	deleted:    logs/version_188/events.out.tfevents.1666754992.Ubuntu-2204.1075841.0
+	deleted:    logs/version_188/events.out.tfevents.1666755681.Ubuntu-2204.1075841.1
+	modified:   logs/version_188/hparams.yaml
+	deleted:    logs/version_189/events.out.tfevents.1666755725.Ubuntu-2204.1077816.0
+	deleted:    logs/version_189/events.out.tfevents.1666756407.Ubuntu-2204.1077816.1
+	modified:   logs/version_189/hparams.yaml
+	deleted:    logs/version_190/events.out.tfevents.1666756449.Ubuntu-2204.1079816.0
+	deleted:    logs/version_190/events.out.tfevents.1666757136.Ubuntu-2204.1079816.1
+	modified:   logs/version_190/hparams.yaml
+	deleted:    logs/version_191/events.out.tfevents.1666757177.Ubuntu-2204.1081795.0
+	deleted:    logs/version_191/events.out.tfevents.1666757845.Ubuntu-2204.1081795.1
+	modified:   logs/version_191/hparams.yaml
+	deleted:    logs/version_192/events.out.tfevents.1666757885.Ubuntu-2204.1083773.0
+	deleted:    logs/version_192/events.out.tfevents.1666758551.Ubuntu-2204.1083773.1
+	modified:   logs/version_192/hparams.yaml
+	deleted:    logs/version_193/events.out.tfevents.1666758591.Ubuntu-2204.1085748.0
+	deleted:    logs/version_193/events.out.tfevents.1666759293.Ubuntu-2204.1085748.1
+	modified:   logs/version_193/hparams.yaml
+	deleted:    logs/version_194/events.out.tfevents.1666759334.Ubuntu-2204.1087730.0
+	deleted:    logs/version_194/events.out.tfevents.1666760010.Ubuntu-2204.1087730.1
+	modified:   logs/version_194/hparams.yaml
+	deleted:    logs/version_195/events.out.tfevents.1666760050.Ubuntu-2204.1089706.0
+	deleted:    logs/version_195/events.out.tfevents.1666760738.Ubuntu-2204.1089706.1
+	modified:   logs/version_195/hparams.yaml
+	deleted:    logs/version_196/events.out.tfevents.1666760779.Ubuntu-2204.1091678.0
+	deleted:    logs/version_196/events.out.tfevents.1666761521.Ubuntu-2204.1091678.1
+	modified:   logs/version_196/hparams.yaml
+	deleted:    logs/version_197/events.out.tfevents.1666761563.Ubuntu-2204.1094258.0
+	deleted:    logs/version_197/events.out.tfevents.1666762224.Ubuntu-2204.1094258.1
+	modified:   logs/version_197/hparams.yaml
+	deleted:    logs/version_198/events.out.tfevents.1666762266.Ubuntu-2204.1096238.0
+	deleted:    logs/version_198/events.out.tfevents.1666762936.Ubuntu-2204.1096238.1
+	modified:   logs/version_198/hparams.yaml
+	deleted:    logs/version_199/events.out.tfevents.1666762979.Ubuntu-2204.1098218.0
+	deleted:    logs/version_199/events.out.tfevents.1666763697.Ubuntu-2204.1098218.1
+	modified:   logs/version_199/hparams.yaml
+	deleted:    logs/version_200/events.out.tfevents.1666763741.Ubuntu-2204.1100189.0
+	deleted:    logs/version_200/events.out.tfevents.1666764406.Ubuntu-2204.1100189.1
+	modified:   logs/version_200/hparams.yaml
+	deleted:    logs/version_201/events.out.tfevents.1666764448.Ubuntu-2204.1102172.0
+	modified:   logs/version_201/hparams.yaml
+	deleted:    logs/version_202/events.out.tfevents.1666962858.Ubuntu-2204.1129392.0
+	deleted:    logs/version_202/events.out.tfevents.1666963588.Ubuntu-2204.1129392.1
+	modified:   logs/version_202/hparams.yaml
+	deleted:    logs/version_203/events.out.tfevents.1666966557.Ubuntu-2204.1136019.0
+	deleted:    logs/version_203/events.out.tfevents.1666966876.Ubuntu-2204.1136019.1
+	modified:   logs/version_203/hparams.yaml
+	deleted:    logs/version_204/events.out.tfevents.1666966897.Ubuntu-2204.1138329.0
+	deleted:    logs/version_204/events.out.tfevents.1666967215.Ubuntu-2204.1138329.1
+	modified:   logs/version_204/hparams.yaml
+	deleted:    logs/version_205/events.out.tfevents.1666967235.Ubuntu-2204.1140301.0
+	deleted:    logs/version_205/events.out.tfevents.1666967560.Ubuntu-2204.1140301.1
+	modified:   logs/version_205/hparams.yaml
+	deleted:    logs/version_206/events.out.tfevents.1666967580.Ubuntu-2204.1142271.0
+	deleted:    logs/version_206/events.out.tfevents.1666967771.Ubuntu-2204.1142271.1
+	modified:   logs/version_206/hparams.yaml
+	deleted:    logs/version_207/events.out.tfevents.1666967791.Ubuntu-2204.1143530.0
+	deleted:    logs/version_207/events.out.tfevents.1666968121.Ubuntu-2204.1143530.1
+	modified:   logs/version_207/hparams.yaml
+	deleted:    logs/version_208/events.out.tfevents.1666968142.Ubuntu-2204.1145496.0
+	deleted:    logs/version_208/events.out.tfevents.1666968456.Ubuntu-2204.1145496.1
+	modified:   logs/version_208/hparams.yaml
+	deleted:    logs/version_209/events.out.tfevents.1666968476.Ubuntu-2204.1147463.0
+	deleted:    logs/version_209/events.out.tfevents.1666968798.Ubuntu-2204.1147463.1
+	modified:   logs/version_209/hparams.yaml
+	deleted:    logs/version_210/events.out.tfevents.1666968819.Ubuntu-2204.1149434.0
+	deleted:    logs/version_210/events.out.tfevents.1666969142.Ubuntu-2204.1149434.1
+	modified:   logs/version_210/hparams.yaml
+	deleted:    logs/version_211/events.out.tfevents.1666969162.Ubuntu-2204.1151403.0
+	deleted:    logs/version_211/events.out.tfevents.1666969459.Ubuntu-2204.1151403.1
+	modified:   logs/version_211/hparams.yaml
+	deleted:    logs/version_212/events.out.tfevents.1667022806.Ubuntu-2204.1157844.0
+	deleted:    logs/version_212/events.out.tfevents.1667023488.Ubuntu-2204.1157844.1
+	modified:   logs/version_212/hparams.yaml
+	deleted:    logs/version_213/events.out.tfevents.1667023528.Ubuntu-2204.1160002.0
+	deleted:    logs/version_213/events.out.tfevents.1667024229.Ubuntu-2204.1160002.1
+	modified:   logs/version_213/hparams.yaml
+	deleted:    logs/version_214/events.out.tfevents.1667024270.Ubuntu-2204.1161990.0
+	deleted:    logs/version_214/events.out.tfevents.1667024943.Ubuntu-2204.1161990.1
+	modified:   logs/version_214/hparams.yaml
+	deleted:    logs/version_215/events.out.tfevents.1667024983.Ubuntu-2204.1163979.0
+	deleted:    logs/version_215/events.out.tfevents.1667025667.Ubuntu-2204.1163979.1
+	modified:   logs/version_215/hparams.yaml
+	deleted:    logs/version_216/events.out.tfevents.1667025708.Ubuntu-2204.1165960.0
+	deleted:    logs/version_216/events.out.tfevents.1667026189.Ubuntu-2204.1165960.1
+	modified:   logs/version_216/hparams.yaml
+	deleted:    logs/version_217/events.out.tfevents.1667026232.Ubuntu-2204.1167402.0
+	deleted:    logs/version_217/events.out.tfevents.1667026947.Ubuntu-2204.1167402.1
+	modified:   logs/version_217/hparams.yaml
+	deleted:    logs/version_218/events.out.tfevents.1667026987.Ubuntu-2204.1169378.0
+	deleted:    logs/version_218/events.out.tfevents.1667027651.Ubuntu-2204.1169378.1
+	modified:   logs/version_218/hparams.yaml
+	deleted:    logs/version_219/events.out.tfevents.1667027692.Ubuntu-2204.1171362.0
+	deleted:    logs/version_219/events.out.tfevents.1667028361.Ubuntu-2204.1171362.1
+	modified:   logs/version_219/hparams.yaml
+	deleted:    logs/version_220/events.out.tfevents.1667028400.Ubuntu-2204.1173340.0
+	deleted:    logs/version_220/events.out.tfevents.1667029045.Ubuntu-2204.1173340.1
+	modified:   logs/version_220/hparams.yaml
+	deleted:    logs/version_221/events.out.tfevents.1667029086.Ubuntu-2204.1175315.0
+	deleted:    logs/version_221/events.out.tfevents.1667029684.Ubuntu-2204.1175315.1
+	modified:   logs/version_221/hparams.yaml
+	deleted:    logs/version_222/events.out.tfevents.1667029725.Ubuntu-2204.1177111.0
+	deleted:    logs/version_222/events.out.tfevents.1667030387.Ubuntu-2204.1177111.1
+	modified:   logs/version_222/hparams.yaml
+	deleted:    logs/version_223/events.out.tfevents.1667030427.Ubuntu-2204.1179095.0
+	deleted:    logs/version_223/events.out.tfevents.1667031124.Ubuntu-2204.1179095.1
+	modified:   logs/version_223/hparams.yaml
+	deleted:    logs/version_224/events.out.tfevents.1667031167.Ubuntu-2204.1181073.0
+	deleted:    logs/version_224/events.out.tfevents.1667031901.Ubuntu-2204.1181073.1
+	modified:   logs/version_224/hparams.yaml
+	deleted:    logs/version_225/events.out.tfevents.1667031943.Ubuntu-2204.1183059.0
+	deleted:    logs/version_225/events.out.tfevents.1667032677.Ubuntu-2204.1183059.1
+	modified:   logs/version_225/hparams.yaml
+	deleted:    logs/version_226/events.out.tfevents.1667032721.Ubuntu-2204.1185034.0
+	deleted:    logs/version_226/events.out.tfevents.1667033472.Ubuntu-2204.1185034.1
+	modified:   logs/version_226/hparams.yaml
+	deleted:    logs/version_227/events.out.tfevents.1667033515.Ubuntu-2204.1187008.0
+	deleted:    logs/version_227/events.out.tfevents.1667034236.Ubuntu-2204.1187008.1
+	modified:   logs/version_227/hparams.yaml
+	deleted:    logs/version_228/events.out.tfevents.1667034278.Ubuntu-2204.1188988.0
+	deleted:    logs/version_228/events.out.tfevents.1667035002.Ubuntu-2204.1188988.1
+	modified:   logs/version_228/hparams.yaml
+	deleted:    logs/version_229/events.out.tfevents.1667035044.Ubuntu-2204.1190964.0
+	deleted:    logs/version_229/events.out.tfevents.1667035781.Ubuntu-2204.1190964.1
+	modified:   logs/version_229/hparams.yaml
+	deleted:    logs/version_230/events.out.tfevents.1667035821.Ubuntu-2204.1192946.0
+	deleted:    logs/version_230/events.out.tfevents.1667036486.Ubuntu-2204.1192946.1
+	modified:   logs/version_230/hparams.yaml
+	deleted:    logs/version_231/events.out.tfevents.1667036528.Ubuntu-2204.1194923.0
+	deleted:    logs/version_231/events.out.tfevents.1667037156.Ubuntu-2204.1194923.1
+	modified:   logs/version_231/hparams.yaml
+	deleted:    logs/version_232/events.out.tfevents.1667037196.Ubuntu-2204.1196723.0
+	deleted:    logs/version_232/events.out.tfevents.1667037846.Ubuntu-2204.1196723.1
+	modified:   logs/version_232/hparams.yaml
+	deleted:    logs/version_233/events.out.tfevents.1667037887.Ubuntu-2204.1198753.0
+	deleted:    logs/version_233/events.out.tfevents.1667038582.Ubuntu-2204.1198753.1
+	modified:   logs/version_233/hparams.yaml
+	deleted:    logs/version_234/events.out.tfevents.1667038622.Ubuntu-2204.1200733.0
+	deleted:    logs/version_234/events.out.tfevents.1667039294.Ubuntu-2204.1200733.1
+	modified:   logs/version_234/hparams.yaml
+	deleted:    logs/version_235/events.out.tfevents.1667039335.Ubuntu-2204.1202712.0
+	deleted:    logs/version_235/events.out.tfevents.1667039732.Ubuntu-2204.1202712.1
+	modified:   logs/version_235/hparams.yaml
+	deleted:    logs/version_236/events.out.tfevents.1667039773.Ubuntu-2204.1203980.0
+	deleted:    logs/version_236/events.out.tfevents.1667040465.Ubuntu-2204.1203980.1
+	modified:   logs/version_236/hparams.yaml
+	deleted:    logs/version_237/events.out.tfevents.1667040507.Ubuntu-2204.1205953.0
+	deleted:    logs/version_237/events.out.tfevents.1667041170.Ubuntu-2204.1205953.1
+	modified:   logs/version_237/hparams.yaml
+	deleted:    logs/version_238/events.out.tfevents.1667041210.Ubuntu-2204.1207929.0
+	deleted:    logs/version_238/events.out.tfevents.1667041873.Ubuntu-2204.1207929.1
+	modified:   logs/version_238/hparams.yaml
+	deleted:    logs/version_239/events.out.tfevents.1667041915.Ubuntu-2204.1209919.0
+	deleted:    logs/version_239/events.out.tfevents.1667042620.Ubuntu-2204.1209919.1
+	modified:   logs/version_239/hparams.yaml
+	deleted:    logs/version_240/events.out.tfevents.1667042663.Ubuntu-2204.1211902.0
+	deleted:    logs/version_240/events.out.tfevents.1667043395.Ubuntu-2204.1211902.1
+	modified:   logs/version_240/hparams.yaml
+	deleted:    logs/version_241/events.out.tfevents.1667043439.Ubuntu-2204.1213911.0
+	deleted:    logs/version_241/events.out.tfevents.1667043877.Ubuntu-2204.1213911.1
+	modified:   logs/version_241/hparams.yaml
+	deleted:    logs/version_242/events.out.tfevents.1667043921.Ubuntu-2204.1215207.0
+	deleted:    logs/version_242/events.out.tfevents.1667044657.Ubuntu-2204.1215207.1
+	modified:   logs/version_242/hparams.yaml
+	deleted:    logs/version_243/events.out.tfevents.1667044701.Ubuntu-2204.1217182.0
+	deleted:    logs/version_243/events.out.tfevents.1667045428.Ubuntu-2204.1217182.1
+	modified:   logs/version_243/hparams.yaml
+	deleted:    logs/version_244/events.out.tfevents.1667045471.Ubuntu-2204.1219166.0
+	deleted:    logs/version_244/events.out.tfevents.1667046161.Ubuntu-2204.1219166.1
+	modified:   logs/version_244/hparams.yaml
+	deleted:    logs/version_245/events.out.tfevents.1667046204.Ubuntu-2204.1221144.0
+	deleted:    logs/version_245/events.out.tfevents.1667046956.Ubuntu-2204.1221144.1
+	modified:   logs/version_245/hparams.yaml
+	deleted:    logs/version_246/events.out.tfevents.1667046998.Ubuntu-2204.1223128.0
+	deleted:    logs/version_246/events.out.tfevents.1667047749.Ubuntu-2204.1223128.1
+	modified:   logs/version_246/hparams.yaml
+	deleted:    logs/version_247/events.out.tfevents.1667047792.Ubuntu-2204.1225104.0
+	deleted:    logs/version_247/events.out.tfevents.1667048507.Ubuntu-2204.1225104.1
+	modified:   logs/version_247/hparams.yaml
+	deleted:    logs/version_248/events.out.tfevents.1667048549.Ubuntu-2204.1227077.0
+	deleted:    logs/version_248/events.out.tfevents.1667049289.Ubuntu-2204.1227077.1
+	modified:   logs/version_248/hparams.yaml
+	deleted:    logs/version_249/events.out.tfevents.1667049332.Ubuntu-2204.1229054.0
+	deleted:    logs/version_249/events.out.tfevents.1667049855.Ubuntu-2204.1229054.1
+	modified:   logs/version_249/hparams.yaml
+	deleted:    logs/version_250/events.out.tfevents.1667049899.Ubuntu-2204.1230503.0
+	deleted:    logs/version_250/events.out.tfevents.1667050640.Ubuntu-2204.1230503.1
+	modified:   logs/version_250/hparams.yaml
+	deleted:    logs/version_251/events.out.tfevents.1667050680.Ubuntu-2204.1232539.0
+	deleted:    logs/version_251/events.out.tfevents.1667051343.Ubuntu-2204.1232539.1
+	modified:   logs/version_251/hparams.yaml
+	deleted:    logs/version_252/events.out.tfevents.1667051383.Ubuntu-2204.1234514.0
+	deleted:    logs/version_252/events.out.tfevents.1667052067.Ubuntu-2204.1234514.1
+	modified:   logs/version_252/hparams.yaml
+	deleted:    logs/version_253/events.out.tfevents.1667052107.Ubuntu-2204.1236498.0
+	deleted:    logs/version_253/events.out.tfevents.1667052778.Ubuntu-2204.1236498.1
+	modified:   logs/version_253/hparams.yaml
+	deleted:    logs/version_254/events.out.tfevents.1667052817.Ubuntu-2204.1238478.0
+	deleted:    logs/version_254/events.out.tfevents.1667053482.Ubuntu-2204.1238478.1
+	modified:   logs/version_254/hparams.yaml
+	deleted:    logs/version_255/events.out.tfevents.1667053522.Ubuntu-2204.1240472.0
+	deleted:    logs/version_255/events.out.tfevents.1667054190.Ubuntu-2204.1240472.1
+	modified:   logs/version_255/hparams.yaml
+	deleted:    logs/version_256/events.out.tfevents.1667054230.Ubuntu-2204.1242446.0
+	deleted:    logs/version_256/events.out.tfevents.1667054889.Ubuntu-2204.1242446.1
+	modified:   logs/version_256/hparams.yaml
+	deleted:    logs/version_257/events.out.tfevents.1667054931.Ubuntu-2204.1244418.0
+	deleted:    logs/version_257/events.out.tfevents.1667055407.Ubuntu-2204.1244418.1
+	modified:   logs/version_257/hparams.yaml
+	deleted:    logs/version_258/events.out.tfevents.1667055450.Ubuntu-2204.1245861.0
+	deleted:    logs/version_258/events.out.tfevents.1667056138.Ubuntu-2204.1245861.1
+	modified:   logs/version_258/hparams.yaml
+	deleted:    logs/version_259/events.out.tfevents.1667056185.Ubuntu-2204.1247835.0
+	deleted:    logs/version_259/events.out.tfevents.1667056852.Ubuntu-2204.1247835.1
+	modified:   logs/version_259/hparams.yaml
+	deleted:    logs/version_260/events.out.tfevents.1667056893.Ubuntu-2204.1249809.0
+	deleted:    logs/version_260/events.out.tfevents.1667057311.Ubuntu-2204.1249809.1
+	modified:   logs/version_260/hparams.yaml
+	deleted:    logs/version_261/events.out.tfevents.1667057352.Ubuntu-2204.1251080.0
+	deleted:    logs/version_261/events.out.tfevents.1667058096.Ubuntu-2204.1251080.1
+	modified:   logs/version_261/hparams.yaml
+	deleted:    logs/version_262/events.out.tfevents.1667058139.Ubuntu-2204.1253053.0
+	deleted:    logs/version_262/events.out.tfevents.1667058804.Ubuntu-2204.1253053.1
+	modified:   logs/version_262/hparams.yaml
+	deleted:    logs/version_263/events.out.tfevents.1667058845.Ubuntu-2204.1255027.0
+	deleted:    logs/version_263/events.out.tfevents.1667059579.Ubuntu-2204.1255027.1
+	modified:   logs/version_263/hparams.yaml
+	deleted:    logs/version_264/events.out.tfevents.1667059619.Ubuntu-2204.1257072.0
+	deleted:    logs/version_264/events.out.tfevents.1667060347.Ubuntu-2204.1257072.1
+	modified:   logs/version_264/hparams.yaml
+	deleted:    logs/version_265/events.out.tfevents.1667060394.Ubuntu-2204.1259055.0
+	deleted:    logs/version_265/events.out.tfevents.1667060810.Ubuntu-2204.1259055.1
+	modified:   logs/version_265/hparams.yaml
+	deleted:    logs/version_266/events.out.tfevents.1667060851.Ubuntu-2204.1260322.0
+	deleted:    logs/version_266/events.out.tfevents.1667061288.Ubuntu-2204.1260322.1
+	modified:   logs/version_266/hparams.yaml
+	deleted:    logs/version_267/events.out.tfevents.1667061328.Ubuntu-2204.1261586.0
+	deleted:    logs/version_267/events.out.tfevents.1667061846.Ubuntu-2204.1261586.1
+	modified:   logs/version_267/hparams.yaml
+	deleted:    logs/version_268/events.out.tfevents.1667061887.Ubuntu-2204.1263031.0
+	deleted:    logs/version_268/events.out.tfevents.1667062630.Ubuntu-2204.1263031.1
+	modified:   logs/version_268/hparams.yaml
+	deleted:    logs/version_269/events.out.tfevents.1667062671.Ubuntu-2204.1265004.0
+	deleted:    logs/version_269/events.out.tfevents.1667063352.Ubuntu-2204.1265004.1
+	modified:   logs/version_269/hparams.yaml
+	deleted:    logs/version_270/events.out.tfevents.1667063395.Ubuntu-2204.1266985.0
+	deleted:    logs/version_270/events.out.tfevents.1667064080.Ubuntu-2204.1266985.1
+	modified:   logs/version_270/hparams.yaml
+	deleted:    logs/version_271/events.out.tfevents.1667064126.Ubuntu-2204.1268961.0
+	deleted:    logs/version_271/events.out.tfevents.1667064801.Ubuntu-2204.1268961.1
+	modified:   logs/version_271/hparams.yaml
+	deleted:    logs/version_272/events.out.tfevents.1667064842.Ubuntu-2204.1270945.0
+	deleted:    logs/version_272/events.out.tfevents.1667065243.Ubuntu-2204.1270945.1
+	modified:   logs/version_272/hparams.yaml
+	deleted:    logs/version_273/events.out.tfevents.1667065284.Ubuntu-2204.1272214.0
+	deleted:    logs/version_273/events.out.tfevents.1667066022.Ubuntu-2204.1272214.1
+	modified:   logs/version_273/hparams.yaml
+	deleted:    logs/version_274/events.out.tfevents.1667066063.Ubuntu-2204.1274201.0
+	deleted:    logs/version_274/events.out.tfevents.1667066800.Ubuntu-2204.1274201.1
+	modified:   logs/version_274/hparams.yaml
+	deleted:    logs/version_275/events.out.tfevents.1667066840.Ubuntu-2204.1276178.0
+	deleted:    logs/version_275/events.out.tfevents.1667067504.Ubuntu-2204.1276178.1
+	modified:   logs/version_275/hparams.yaml
+	deleted:    logs/version_276/events.out.tfevents.1667067545.Ubuntu-2204.1278163.0
+	deleted:    logs/version_276/events.out.tfevents.1667068201.Ubuntu-2204.1278163.1
+	modified:   logs/version_276/hparams.yaml
+	deleted:    logs/version_277/events.out.tfevents.1667068241.Ubuntu-2204.1280138.0
+	deleted:    logs/version_277/events.out.tfevents.1667068914.Ubuntu-2204.1280138.1
+	modified:   logs/version_277/hparams.yaml
+	deleted:    logs/version_278/events.out.tfevents.1667068956.Ubuntu-2204.1282114.0
+	deleted:    logs/version_278/events.out.tfevents.1667069634.Ubuntu-2204.1282114.1
+	modified:   logs/version_278/hparams.yaml
+	deleted:    logs/version_279/events.out.tfevents.1667069675.Ubuntu-2204.1284090.0
+	deleted:    logs/version_279/events.out.tfevents.1667070361.Ubuntu-2204.1284090.1
+	modified:   logs/version_279/hparams.yaml
+	deleted:    logs/version_280/events.out.tfevents.1667070403.Ubuntu-2204.1286065.0
+	deleted:    logs/version_280/events.out.tfevents.1667071061.Ubuntu-2204.1286065.1
+	modified:   logs/version_280/hparams.yaml
+	deleted:    logs/version_281/events.out.tfevents.1667071103.Ubuntu-2204.1288045.0
+	deleted:    logs/version_281/events.out.tfevents.1667071792.Ubuntu-2204.1288045.1
+	modified:   logs/version_281/hparams.yaml
+	deleted:    logs/version_282/events.out.tfevents.1667071833.Ubuntu-2204.1290035.0
+	deleted:    logs/version_282/events.out.tfevents.1667072593.Ubuntu-2204.1290035.1
+	modified:   logs/version_282/hparams.yaml
+	deleted:    logs/version_283/events.out.tfevents.1667072635.Ubuntu-2204.1292005.0
+	deleted:    logs/version_283/events.out.tfevents.1667073355.Ubuntu-2204.1292005.1
+	modified:   logs/version_283/hparams.yaml
+	deleted:    logs/version_284/events.out.tfevents.1667073398.Ubuntu-2204.1293983.0
+	deleted:    logs/version_284/events.out.tfevents.1667074148.Ubuntu-2204.1293983.1
+	modified:   logs/version_284/hparams.yaml
+	deleted:    logs/version_285/events.out.tfevents.1667074190.Ubuntu-2204.1295975.0
+	deleted:    logs/version_285/events.out.tfevents.1667074780.Ubuntu-2204.1295975.1
+	modified:   logs/version_285/hparams.yaml
+	deleted:    logs/version_286/events.out.tfevents.1667074822.Ubuntu-2204.1297605.0
+	deleted:    logs/version_286/events.out.tfevents.1667075568.Ubuntu-2204.1297605.1
+	modified:   logs/version_286/hparams.yaml
+	deleted:    logs/version_287/events.out.tfevents.1667075609.Ubuntu-2204.1299582.0
+	deleted:    logs/version_287/events.out.tfevents.1667076283.Ubuntu-2204.1299582.1
+	modified:   logs/version_287/hparams.yaml
+	deleted:    logs/version_288/events.out.tfevents.1667076323.Ubuntu-2204.1301566.0
+	deleted:    logs/version_288/events.out.tfevents.1667076999.Ubuntu-2204.1301566.1
+	modified:   logs/version_288/hparams.yaml
+	deleted:    logs/version_289/events.out.tfevents.1667077040.Ubuntu-2204.1303540.0
+	deleted:    logs/version_289/events.out.tfevents.1667077708.Ubuntu-2204.1303540.1
+	modified:   logs/version_289/hparams.yaml
+	deleted:    logs/version_290/events.out.tfevents.1667077750.Ubuntu-2204.1305527.0
+	deleted:    logs/version_290/events.out.tfevents.1667078490.Ubuntu-2204.1305527.1
+	modified:   logs/version_290/hparams.yaml
+	deleted:    logs/version_291/events.out.tfevents.1667078532.Ubuntu-2204.1307504.0
+	deleted:    logs/version_291/events.out.tfevents.1667079273.Ubuntu-2204.1307504.1
+	modified:   logs/version_291/hparams.yaml
+	deleted:    logs/version_292/events.out.tfevents.1667079315.Ubuntu-2204.1309494.0
+	deleted:    logs/version_292/events.out.tfevents.1667080009.Ubuntu-2204.1309494.1
+	modified:   logs/version_292/hparams.yaml
+	deleted:    logs/version_293/events.out.tfevents.1667080050.Ubuntu-2204.1311465.0
+	deleted:    logs/version_293/events.out.tfevents.1667080722.Ubuntu-2204.1311465.1
+	modified:   logs/version_293/hparams.yaml
+	deleted:    logs/version_294/events.out.tfevents.1667080762.Ubuntu-2204.1313450.0
+	deleted:    logs/version_294/events.out.tfevents.1667081447.Ubuntu-2204.1313450.1
+	modified:   logs/version_294/hparams.yaml
+	deleted:    logs/version_295/events.out.tfevents.1667081489.Ubuntu-2204.1315501.0
+	deleted:    logs/version_295/events.out.tfevents.1667082169.Ubuntu-2204.1315501.1
+	modified:   logs/version_295/hparams.yaml
+	deleted:    logs/version_296/events.out.tfevents.1667082212.Ubuntu-2204.1317477.0
+	deleted:    logs/version_296/events.out.tfevents.1667082892.Ubuntu-2204.1317477.1
+	modified:   logs/version_296/hparams.yaml
+	deleted:    logs/version_297/events.out.tfevents.1667082935.Ubuntu-2204.1319458.0
+	deleted:    logs/version_297/events.out.tfevents.1667083620.Ubuntu-2204.1319458.1
+	modified:   logs/version_297/hparams.yaml
+	deleted:    logs/version_298/events.out.tfevents.1667083662.Ubuntu-2204.1321432.0
+	deleted:    logs/version_298/events.out.tfevents.1667084359.Ubuntu-2204.1321432.1
+	modified:   logs/version_298/hparams.yaml
+	deleted:    logs/version_299/events.out.tfevents.1667084399.Ubuntu-2204.1323410.0
+	deleted:    logs/version_299/events.out.tfevents.1667085074.Ubuntu-2204.1323410.1
+	modified:   logs/version_299/hparams.yaml
+	deleted:    logs/version_300/events.out.tfevents.1667085114.Ubuntu-2204.1325379.0
+	deleted:    logs/version_300/events.out.tfevents.1667085787.Ubuntu-2204.1325379.1
+	modified:   logs/version_300/hparams.yaml
+	deleted:    logs/version_301/events.out.tfevents.1667085828.Ubuntu-2204.1327364.0
+	deleted:    logs/version_301/events.out.tfevents.1667086232.Ubuntu-2204.1327364.1
+	modified:   logs/version_301/hparams.yaml
+	deleted:    logs/version_302/events.out.tfevents.1667086273.Ubuntu-2204.1328666.0
+	deleted:    logs/version_302/events.out.tfevents.1667086939.Ubuntu-2204.1328666.1
+	modified:   logs/version_302/hparams.yaml
+	deleted:    logs/version_303/events.out.tfevents.1667086979.Ubuntu-2204.1330681.0
+	deleted:    logs/version_303/events.out.tfevents.1667087647.Ubuntu-2204.1330681.1
+	deleted:    logs/version_303/hparams.yaml
+	deleted:    logs/version_304/events.out.tfevents.1667087686.Ubuntu-2204.1332656.0
+	deleted:    logs/version_304/events.out.tfevents.1667088353.Ubuntu-2204.1332656.1
+	deleted:    logs/version_304/hparams.yaml
+	deleted:    logs/version_305/events.out.tfevents.1667088396.Ubuntu-2204.1334630.0
+	deleted:    logs/version_305/events.out.tfevents.1667089068.Ubuntu-2204.1334630.1
+	deleted:    logs/version_305/hparams.yaml
+	deleted:    logs/version_306/events.out.tfevents.1667089111.Ubuntu-2204.1336618.0
+	deleted:    logs/version_306/events.out.tfevents.1667089801.Ubuntu-2204.1336618.1
+	deleted:    logs/version_306/hparams.yaml
+	deleted:    logs/version_307/events.out.tfevents.1667089844.Ubuntu-2204.1338608.0
+	deleted:    logs/version_307/events.out.tfevents.1667090521.Ubuntu-2204.1338608.1
+	deleted:    logs/version_307/hparams.yaml
+	deleted:    logs/version_308/events.out.tfevents.1667090562.Ubuntu-2204.1340580.0
+	deleted:    logs/version_308/events.out.tfevents.1667091230.Ubuntu-2204.1340580.1
+	deleted:    logs/version_308/hparams.yaml
+	deleted:    logs/version_309/events.out.tfevents.1667091270.Ubuntu-2204.1342556.0
+	deleted:    logs/version_309/events.out.tfevents.1667091941.Ubuntu-2204.1342556.1
+	deleted:    logs/version_309/hparams.yaml
+	deleted:    logs/version_310/events.out.tfevents.1667091982.Ubuntu-2204.1344530.0
+	deleted:    logs/version_310/events.out.tfevents.1667092692.Ubuntu-2204.1344530.1
+	deleted:    logs/version_310/hparams.yaml
+	deleted:    logs/version_311/events.out.tfevents.1667092732.Ubuntu-2204.1346513.0
+	deleted:    logs/version_311/events.out.tfevents.1667093388.Ubuntu-2204.1346513.1
+	deleted:    logs/version_311/hparams.yaml
+	deleted:    logs/version_312/events.out.tfevents.1667093428.Ubuntu-2204.1348494.0
+	deleted:    logs/version_312/events.out.tfevents.1667094125.Ubuntu-2204.1348494.1
+	deleted:    logs/version_312/hparams.yaml
+	deleted:    logs/version_313/events.out.tfevents.1667094166.Ubuntu-2204.1351049.0
+	deleted:    logs/version_313/events.out.tfevents.1667094884.Ubuntu-2204.1351049.1
+	deleted:    logs/version_313/hparams.yaml
+	deleted:    logs/version_314/events.out.tfevents.1667094927.Ubuntu-2204.1353025.0
+	deleted:    logs/version_314/events.out.tfevents.1667095596.Ubuntu-2204.1353025.1
+	deleted:    logs/version_314/hparams.yaml
+	deleted:    logs/version_315/events.out.tfevents.1667095638.Ubuntu-2204.1355021.0
+	deleted:    logs/version_315/events.out.tfevents.1667096312.Ubuntu-2204.1355021.1
+	deleted:    logs/version_315/hparams.yaml
+	deleted:    logs/version_316/events.out.tfevents.1667096355.Ubuntu-2204.1357002.0
+	deleted:    logs/version_316/events.out.tfevents.1667097066.Ubuntu-2204.1357002.1
+	deleted:    logs/version_316/hparams.yaml
+	deleted:    logs/version_317/events.out.tfevents.1667097109.Ubuntu-2204.1358980.0
+	deleted:    logs/version_317/events.out.tfevents.1667097778.Ubuntu-2204.1358980.1
+	deleted:    logs/version_317/hparams.yaml
+	deleted:    logs/version_318/events.out.tfevents.1667097822.Ubuntu-2204.1360952.0
+	deleted:    logs/version_318/events.out.tfevents.1667098500.Ubuntu-2204.1360952.1
+	deleted:    logs/version_318/hparams.yaml
+	deleted:    logs/version_319/events.out.tfevents.1667098543.Ubuntu-2204.1362935.0
+	deleted:    logs/version_319/events.out.tfevents.1667099236.Ubuntu-2204.1362935.1
+	deleted:    logs/version_319/hparams.yaml
+	deleted:    logs/version_320/events.out.tfevents.1667099278.Ubuntu-2204.1364914.0
+	deleted:    logs/version_320/events.out.tfevents.1667099942.Ubuntu-2204.1364914.1
+	deleted:    logs/version_320/hparams.yaml
+	deleted:    logs/version_321/events.out.tfevents.1667099985.Ubuntu-2204.1366892.0
+	deleted:    logs/version_321/events.out.tfevents.1667100641.Ubuntu-2204.1366892.1
+	deleted:    logs/version_321/hparams.yaml
+	deleted:    logs/version_322/events.out.tfevents.1667100685.Ubuntu-2204.1368870.0
+	deleted:    logs/version_322/events.out.tfevents.1667101400.Ubuntu-2204.1368870.1
+	deleted:    logs/version_322/hparams.yaml
+	deleted:    logs/version_323/events.out.tfevents.1667101443.Ubuntu-2204.1370844.0
+	deleted:    logs/version_323/events.out.tfevents.1667102125.Ubuntu-2204.1370844.1
+	deleted:    logs/version_323/hparams.yaml
+	deleted:    logs/version_324/events.out.tfevents.1667102168.Ubuntu-2204.1372820.0
+	deleted:    logs/version_324/events.out.tfevents.1667102837.Ubuntu-2204.1372820.1
+	deleted:    logs/version_324/hparams.yaml
+	deleted:    logs/version_325/events.out.tfevents.1667102880.Ubuntu-2204.1374795.0
+	deleted:    logs/version_325/events.out.tfevents.1667103561.Ubuntu-2204.1374795.1
+	deleted:    logs/version_325/hparams.yaml
+	deleted:    logs/version_326/events.out.tfevents.1667103601.Ubuntu-2204.1376773.0
+	deleted:    logs/version_326/events.out.tfevents.1667104271.Ubuntu-2204.1376773.1
+	deleted:    logs/version_326/hparams.yaml
+	deleted:    logs/version_327/events.out.tfevents.1667104311.Ubuntu-2204.1378751.0
+	deleted:    logs/version_327/events.out.tfevents.1667104985.Ubuntu-2204.1378751.1
+	deleted:    logs/version_327/hparams.yaml
+	deleted:    logs/version_328/events.out.tfevents.1667105026.Ubuntu-2204.1380724.0
+	deleted:    logs/version_328/events.out.tfevents.1667105715.Ubuntu-2204.1380724.1
+	deleted:    logs/version_328/hparams.yaml
+	deleted:    logs/version_329/events.out.tfevents.1667105759.Ubuntu-2204.1382703.0
+	deleted:    logs/version_329/events.out.tfevents.1667106438.Ubuntu-2204.1382703.1
+	deleted:    logs/version_329/hparams.yaml
+	deleted:    logs/version_330/events.out.tfevents.1667106480.Ubuntu-2204.1384682.0
+	deleted:    logs/version_330/events.out.tfevents.1667107090.Ubuntu-2204.1384682.1
+	deleted:    logs/version_330/hparams.yaml
+	deleted:    logs/version_331/events.out.tfevents.1667107131.Ubuntu-2204.1386488.0
+	deleted:    logs/version_331/events.out.tfevents.1667107806.Ubuntu-2204.1386488.1
+	deleted:    logs/version_331/hparams.yaml
+	deleted:    logs/version_332/events.out.tfevents.1667107847.Ubuntu-2204.1388472.0
+	deleted:    logs/version_332/events.out.tfevents.1667108574.Ubuntu-2204.1388472.1
+	deleted:    logs/version_332/hparams.yaml
+	deleted:    logs/version_333/events.out.tfevents.1667108615.Ubuntu-2204.1390452.0
+	deleted:    logs/version_333/events.out.tfevents.1667109315.Ubuntu-2204.1390452.1
+	deleted:    logs/version_333/hparams.yaml
+	deleted:    logs/version_334/events.out.tfevents.1667109360.Ubuntu-2204.1392429.0
+	deleted:    logs/version_334/events.out.tfevents.1667109781.Ubuntu-2204.1392429.1
+	deleted:    logs/version_334/hparams.yaml
+	deleted:    logs/version_335/events.out.tfevents.1667109822.Ubuntu-2204.1393691.0
+	deleted:    logs/version_335/events.out.tfevents.1667110549.Ubuntu-2204.1393691.1
+	deleted:    logs/version_335/hparams.yaml
+	deleted:    logs/version_336/events.out.tfevents.1667110592.Ubuntu-2204.1395676.0
+	deleted:    logs/version_336/events.out.tfevents.1667111333.Ubuntu-2204.1395676.1
+	deleted:    logs/version_336/hparams.yaml
+	deleted:    logs/version_337/events.out.tfevents.1667111375.Ubuntu-2204.1397682.0
+	deleted:    logs/version_337/events.out.tfevents.1667112108.Ubuntu-2204.1397682.1
+	deleted:    logs/version_337/hparams.yaml
+	deleted:    logs/version_338/events.out.tfevents.1667112149.Ubuntu-2204.1399658.0
+	deleted:    logs/version_338/events.out.tfevents.1667112833.Ubuntu-2204.1399658.1
+	deleted:    logs/version_338/hparams.yaml
+	deleted:    logs/version_339/events.out.tfevents.1667112874.Ubuntu-2204.1401636.0
+	deleted:    logs/version_339/events.out.tfevents.1667113555.Ubuntu-2204.1401636.1
+	deleted:    logs/version_339/hparams.yaml
+	deleted:    logs/version_340/events.out.tfevents.1667113600.Ubuntu-2204.1403610.0
+	deleted:    logs/version_340/events.out.tfevents.1667114155.Ubuntu-2204.1403610.1
+	deleted:    logs/version_340/hparams.yaml
+	deleted:    logs/version_341/events.out.tfevents.1667114195.Ubuntu-2204.1405238.0
+	deleted:    logs/version_341/events.out.tfevents.1667114885.Ubuntu-2204.1405238.1
+	deleted:    logs/version_341/hparams.yaml
+	deleted:    logs/version_342/events.out.tfevents.1667114926.Ubuntu-2204.1407217.0
+	deleted:    logs/version_342/events.out.tfevents.1667115641.Ubuntu-2204.1407217.1
+	deleted:    logs/version_342/hparams.yaml
+	deleted:    logs/version_343/events.out.tfevents.1667115683.Ubuntu-2204.1409195.0
+	deleted:    logs/version_343/events.out.tfevents.1667116386.Ubuntu-2204.1409195.1
+	deleted:    logs/version_343/hparams.yaml
+	deleted:    logs/version_344/events.out.tfevents.1667116428.Ubuntu-2204.1411167.0
+	deleted:    logs/version_344/events.out.tfevents.1667117117.Ubuntu-2204.1411167.1
+	deleted:    logs/version_344/hparams.yaml
+	deleted:    logs/version_345/events.out.tfevents.1667117160.Ubuntu-2204.1413155.0
+	deleted:    logs/version_345/events.out.tfevents.1667117888.Ubuntu-2204.1413155.1
+	deleted:    logs/version_345/hparams.yaml
+	deleted:    logs/version_346/events.out.tfevents.1667117935.Ubuntu-2204.1415142.0
+	deleted:    logs/version_346/events.out.tfevents.1667118353.Ubuntu-2204.1415142.1
+	deleted:    logs/version_346/hparams.yaml
+	deleted:    logs/version_347/events.out.tfevents.1667118391.Ubuntu-2204.1416411.0
+	deleted:    logs/version_347/events.out.tfevents.1667119051.Ubuntu-2204.1416411.1
+	deleted:    logs/version_347/hparams.yaml
+	deleted:    logs/version_348/events.out.tfevents.1667119091.Ubuntu-2204.1418393.0
+	deleted:    logs/version_348/events.out.tfevents.1667119587.Ubuntu-2204.1418393.1
+	deleted:    logs/version_348/hparams.yaml
+	deleted:    logs/version_349/events.out.tfevents.1667119646.Ubuntu-2204.1419851.0
+	deleted:    logs/version_349/events.out.tfevents.1667120091.Ubuntu-2204.1419851.1
+	deleted:    logs/version_349/hparams.yaml
+	deleted:    logs/version_350/events.out.tfevents.1667120135.Ubuntu-2204.1421297.0
+	deleted:    logs/version_350/events.out.tfevents.1667120805.Ubuntu-2204.1421297.1
+	deleted:    logs/version_350/hparams.yaml
+	deleted:    logs/version_351/events.out.tfevents.1667120845.Ubuntu-2204.1423269.0
+	deleted:    logs/version_351/events.out.tfevents.1667121545.Ubuntu-2204.1423269.1
+	deleted:    logs/version_351/hparams.yaml
+	deleted:    logs/version_352/events.out.tfevents.1667121589.Ubuntu-2204.1425246.0
+	deleted:    logs/version_352/events.out.tfevents.1667122017.Ubuntu-2204.1425246.1
+	deleted:    logs/version_352/hparams.yaml
+	deleted:    logs/version_353/events.out.tfevents.1667122056.Ubuntu-2204.1426512.0
+	deleted:    logs/version_353/events.out.tfevents.1667122747.Ubuntu-2204.1426512.1
+	deleted:    logs/version_353/hparams.yaml
+	deleted:    logs/version_354/events.out.tfevents.1667122789.Ubuntu-2204.1428490.0
+	deleted:    logs/version_354/events.out.tfevents.1667123529.Ubuntu-2204.1428490.1
+	deleted:    logs/version_354/hparams.yaml
+	deleted:    logs/version_355/events.out.tfevents.1667123570.Ubuntu-2204.1430470.0
+	deleted:    logs/version_355/events.out.tfevents.1667124269.Ubuntu-2204.1430470.1
+	deleted:    logs/version_355/hparams.yaml
+	deleted:    logs/version_356/events.out.tfevents.1667124311.Ubuntu-2204.1432450.0
+	deleted:    logs/version_356/events.out.tfevents.1667124975.Ubuntu-2204.1432450.1
+	deleted:    logs/version_356/hparams.yaml
+	deleted:    logs/version_357/events.out.tfevents.1667125019.Ubuntu-2204.1434421.0
+	deleted:    logs/version_357/events.out.tfevents.1667125702.Ubuntu-2204.1434421.1
+	deleted:    logs/version_357/hparams.yaml
+	deleted:    logs/version_358/events.out.tfevents.1667125750.Ubuntu-2204.1436405.0
+	deleted:    logs/version_358/events.out.tfevents.1667126461.Ubuntu-2204.1436405.1
+	deleted:    logs/version_358/hparams.yaml
+	deleted:    logs/version_359/events.out.tfevents.1667126501.Ubuntu-2204.1438380.0
+	deleted:    logs/version_359/events.out.tfevents.1667127071.Ubuntu-2204.1438380.1
+	deleted:    logs/version_359/hparams.yaml
+	deleted:    logs/version_360/events.out.tfevents.1667127111.Ubuntu-2204.1440359.0
+	deleted:    logs/version_360/events.out.tfevents.1667127793.Ubuntu-2204.1440359.1
+	deleted:    logs/version_360/hparams.yaml
+	deleted:    logs/version_361/events.out.tfevents.1667127849.Ubuntu-2204.1442338.0
+	deleted:    logs/version_361/events.out.tfevents.1667128467.Ubuntu-2204.1442338.1
+	deleted:    logs/version_361/hparams.yaml
+	deleted:    logs/version_362/events.out.tfevents.1667128514.Ubuntu-2204.1444314.0
+	deleted:    logs/version_362/events.out.tfevents.1667129176.Ubuntu-2204.1444314.1
+	deleted:    logs/version_362/hparams.yaml
+	deleted:    logs/version_363/events.out.tfevents.1667129219.Ubuntu-2204.1446299.0
+	deleted:    logs/version_363/events.out.tfevents.1667129899.Ubuntu-2204.1446299.1
+	deleted:    logs/version_363/hparams.yaml
+	deleted:    logs/version_364/events.out.tfevents.1667129942.Ubuntu-2204.1448296.0
+	deleted:    logs/version_364/events.out.tfevents.1667130615.Ubuntu-2204.1448296.1
+	deleted:    logs/version_364/hparams.yaml
+	deleted:    logs/version_365/events.out.tfevents.1667130659.Ubuntu-2204.1450270.0
+	deleted:    logs/version_365/events.out.tfevents.1667131342.Ubuntu-2204.1450270.1
+	deleted:    logs/version_365/hparams.yaml
+	deleted:    logs/version_366/events.out.tfevents.1667131386.Ubuntu-2204.1452246.0
+	deleted:    logs/version_366/events.out.tfevents.1667132105.Ubuntu-2204.1452246.1
+	deleted:    logs/version_366/hparams.yaml
+	deleted:    logs/version_367/events.out.tfevents.1667132148.Ubuntu-2204.1454232.0
+	deleted:    logs/version_367/events.out.tfevents.1667132818.Ubuntu-2204.1454232.1
+	deleted:    logs/version_367/hparams.yaml
+	deleted:    logs/version_368/events.out.tfevents.1667132859.Ubuntu-2204.1456220.0
+	deleted:    logs/version_368/events.out.tfevents.1667133524.Ubuntu-2204.1456220.1
+	deleted:    logs/version_368/hparams.yaml
+	deleted:    logs/version_369/events.out.tfevents.1667133567.Ubuntu-2204.1458200.0
+	deleted:    logs/version_369/events.out.tfevents.1667134234.Ubuntu-2204.1458200.1
+	deleted:    logs/version_369/hparams.yaml
+	deleted:    logs/version_370/events.out.tfevents.1667134277.Ubuntu-2204.1460250.0
+	deleted:    logs/version_370/events.out.tfevents.1667134956.Ubuntu-2204.1460250.1
+	deleted:    logs/version_370/hparams.yaml
+	deleted:    logs/version_371/events.out.tfevents.1667134999.Ubuntu-2204.1462233.0
+	deleted:    logs/version_371/events.out.tfevents.1667135676.Ubuntu-2204.1462233.1
+	deleted:    logs/version_371/hparams.yaml
+	deleted:    logs/version_372/events.out.tfevents.1667135719.Ubuntu-2204.1464208.0
+	deleted:    logs/version_372/events.out.tfevents.1667136425.Ubuntu-2204.1464208.1
+	deleted:    logs/version_372/hparams.yaml
+	deleted:    logs/version_373/events.out.tfevents.1667136467.Ubuntu-2204.1466187.0
+	deleted:    logs/version_373/events.out.tfevents.1667137138.Ubuntu-2204.1466187.1
+	deleted:    logs/version_373/hparams.yaml
+	deleted:    logs/version_374/events.out.tfevents.1667137179.Ubuntu-2204.1468173.0
+	deleted:    logs/version_374/events.out.tfevents.1667137882.Ubuntu-2204.1468173.1
+	deleted:    logs/version_374/hparams.yaml
+	deleted:    logs/version_375/events.out.tfevents.1667137923.Ubuntu-2204.1470146.0
+	deleted:    logs/version_375/events.out.tfevents.1667138678.Ubuntu-2204.1470146.1
+	deleted:    logs/version_375/hparams.yaml
+	deleted:    logs/version_376/events.out.tfevents.1667138720.Ubuntu-2204.1472125.0
+	deleted:    logs/version_376/events.out.tfevents.1667139439.Ubuntu-2204.1472125.1
+	deleted:    logs/version_376/hparams.yaml
+	deleted:    logs/version_377/events.out.tfevents.1667139481.Ubuntu-2204.1474110.0
+	deleted:    logs/version_377/events.out.tfevents.1667140181.Ubuntu-2204.1474110.1
+	deleted:    logs/version_377/hparams.yaml
+	deleted:    logs/version_378/events.out.tfevents.1667140222.Ubuntu-2204.1476091.0
+	deleted:    logs/version_378/events.out.tfevents.1667140944.Ubuntu-2204.1476091.1
+	deleted:    logs/version_378/hparams.yaml
+	deleted:    logs/version_379/events.out.tfevents.1667140987.Ubuntu-2204.1478071.0
+	deleted:    logs/version_379/events.out.tfevents.1667141744.Ubuntu-2204.1478071.1
+	deleted:    logs/version_379/hparams.yaml
+	deleted:    logs/version_380/events.out.tfevents.1667141786.Ubuntu-2204.1480053.0
+	deleted:    logs/version_380/events.out.tfevents.1667142474.Ubuntu-2204.1480053.1
+	deleted:    logs/version_380/hparams.yaml
+	deleted:    logs/version_381/events.out.tfevents.1667142517.Ubuntu-2204.1482032.0
+	deleted:    logs/version_381/events.out.tfevents.1667143190.Ubuntu-2204.1482032.1
+	deleted:    logs/version_381/hparams.yaml
+	deleted:    logs/version_382/events.out.tfevents.1667143234.Ubuntu-2204.1484010.0
+	deleted:    logs/version_382/events.out.tfevents.1667143907.Ubuntu-2204.1484010.1
+	deleted:    logs/version_382/hparams.yaml
+	deleted:    logs/version_383/events.out.tfevents.1667143950.Ubuntu-2204.1485994.0
+	deleted:    logs/version_383/events.out.tfevents.1667144651.Ubuntu-2204.1485994.1
+	deleted:    logs/version_383/hparams.yaml
+	deleted:    logs/version_384/events.out.tfevents.1667144695.Ubuntu-2204.1487974.0
+	deleted:    logs/version_384/events.out.tfevents.1667145428.Ubuntu-2204.1487974.1
+	deleted:    logs/version_384/hparams.yaml
+	deleted:    logs/version_385/events.out.tfevents.1667145471.Ubuntu-2204.1489948.0
+	deleted:    logs/version_385/events.out.tfevents.1667146152.Ubuntu-2204.1489948.1
+	deleted:    logs/version_385/hparams.yaml
+	deleted:    logs/version_386/events.out.tfevents.1667146194.Ubuntu-2204.1491962.0
+	deleted:    logs/version_386/events.out.tfevents.1667146893.Ubuntu-2204.1491962.1
+	deleted:    logs/version_386/hparams.yaml
+	deleted:    logs/version_387/events.out.tfevents.1667146934.Ubuntu-2204.1493952.0
+	deleted:    logs/version_387/events.out.tfevents.1667147681.Ubuntu-2204.1493952.1
+	deleted:    logs/version_387/hparams.yaml
+	deleted:    logs/version_388/events.out.tfevents.1667147725.Ubuntu-2204.1495935.0
+	deleted:    logs/version_388/events.out.tfevents.1667148269.Ubuntu-2204.1495935.1
+	deleted:    logs/version_388/hparams.yaml
+	deleted:    logs/version_389/events.out.tfevents.1667148310.Ubuntu-2204.1497557.0
+	deleted:    logs/version_389/events.out.tfevents.1667149004.Ubuntu-2204.1497557.1
+	deleted:    logs/version_389/hparams.yaml
+	deleted:    logs/version_390/events.out.tfevents.1667149045.Ubuntu-2204.1499553.0
+	deleted:    logs/version_390/events.out.tfevents.1667149770.Ubuntu-2204.1499553.1
+	deleted:    logs/version_390/hparams.yaml
+	deleted:    logs/version_391/events.out.tfevents.1667149812.Ubuntu-2204.1501528.0
+	deleted:    logs/version_391/events.out.tfevents.1667150550.Ubuntu-2204.1501528.1
+	deleted:    logs/version_391/hparams.yaml
+	deleted:    logs/version_392/events.out.tfevents.1667150592.Ubuntu-2204.1503511.0
+	deleted:    logs/version_392/events.out.tfevents.1667151280.Ubuntu-2204.1503511.1
+	deleted:    logs/version_392/hparams.yaml
+	deleted:    logs/version_393/events.out.tfevents.1667151323.Ubuntu-2204.1505500.0
+	deleted:    logs/version_393/events.out.tfevents.1667151997.Ubuntu-2204.1505500.1
+	deleted:    logs/version_393/hparams.yaml
+	deleted:    logs/version_394/events.out.tfevents.1667152039.Ubuntu-2204.1507474.0
+	deleted:    logs/version_394/events.out.tfevents.1667152726.Ubuntu-2204.1507474.1
+	deleted:    logs/version_394/hparams.yaml
+	deleted:    logs/version_395/events.out.tfevents.1667152769.Ubuntu-2204.1509452.0
+	deleted:    logs/version_395/events.out.tfevents.1667153441.Ubuntu-2204.1509452.1
+	deleted:    logs/version_395/hparams.yaml
+	deleted:    logs/version_396/events.out.tfevents.1667153483.Ubuntu-2204.1511420.0
+	deleted:    logs/version_396/events.out.tfevents.1667154205.Ubuntu-2204.1511420.1
+	deleted:    logs/version_396/hparams.yaml
+	deleted:    logs/version_397/events.out.tfevents.1667154248.Ubuntu-2204.1513404.0
+	deleted:    logs/version_397/events.out.tfevents.1667154920.Ubuntu-2204.1513404.1
+	deleted:    logs/version_397/hparams.yaml
+	deleted:    logs/version_398/events.out.tfevents.1667154962.Ubuntu-2204.1515377.0
+	deleted:    logs/version_398/events.out.tfevents.1667155450.Ubuntu-2204.1515377.1
+	deleted:    logs/version_398/hparams.yaml
+	deleted:    logs/version_399/events.out.tfevents.1667155492.Ubuntu-2204.1516820.0
+	deleted:    logs/version_399/events.out.tfevents.1667156173.Ubuntu-2204.1516820.1
+	deleted:    logs/version_399/hparams.yaml
+	deleted:    logs/version_400/events.out.tfevents.1667156215.Ubuntu-2204.1518793.0
+	deleted:    logs/version_400/events.out.tfevents.1667156930.Ubuntu-2204.1518793.1
+	deleted:    logs/version_400/hparams.yaml
+	deleted:    logs/version_401/events.out.tfevents.1667156971.Ubuntu-2204.1520776.0
+	deleted:    logs/version_401/events.out.tfevents.1667157647.Ubuntu-2204.1520776.1
+	deleted:    logs/version_401/hparams.yaml
+	deleted:    logs/version_402/events.out.tfevents.1667157688.Ubuntu-2204.1522753.0
+	deleted:    logs/version_402/events.out.tfevents.1667158103.Ubuntu-2204.1522753.1
+	deleted:    logs/version_402/hparams.yaml
+	deleted:    logs/version_403/events.out.tfevents.1667158144.Ubuntu-2204.1524022.0
+	deleted:    logs/version_403/events.out.tfevents.1667158829.Ubuntu-2204.1524022.1
+	deleted:    logs/version_403/hparams.yaml
+	deleted:    logs/version_404/events.out.tfevents.1667158871.Ubuntu-2204.1525995.0
+	deleted:    logs/version_404/events.out.tfevents.1667159584.Ubuntu-2204.1525995.1
+	deleted:    logs/version_404/hparams.yaml
+	deleted:    logs/version_405/events.out.tfevents.1667159625.Ubuntu-2204.1527967.0
+	deleted:    logs/version_405/events.out.tfevents.1667160347.Ubuntu-2204.1527967.1
+	deleted:    logs/version_405/hparams.yaml
+	deleted:    logs/version_406/events.out.tfevents.1667160390.Ubuntu-2204.1529952.0
+	deleted:    logs/version_406/events.out.tfevents.1667161080.Ubuntu-2204.1529952.1
+	deleted:    logs/version_406/hparams.yaml
+	deleted:    logs/version_407/events.out.tfevents.1667161122.Ubuntu-2204.1531933.0
+	deleted:    logs/version_407/events.out.tfevents.1667161818.Ubuntu-2204.1531933.1
+	deleted:    logs/version_407/hparams.yaml
+	deleted:    logs/version_408/events.out.tfevents.1667161858.Ubuntu-2204.1533913.0
+	deleted:    logs/version_408/events.out.tfevents.1667162257.Ubuntu-2204.1533913.1
+	deleted:    logs/version_408/hparams.yaml
+	deleted:    logs/version_409/events.out.tfevents.1667162297.Ubuntu-2204.1535174.0
+	deleted:    logs/version_409/events.out.tfevents.1667162961.Ubuntu-2204.1535174.1
+	deleted:    logs/version_409/hparams.yaml
+	deleted:    logs/version_410/events.out.tfevents.1667163003.Ubuntu-2204.1537149.0
+	deleted:    logs/version_410/events.out.tfevents.1667163753.Ubuntu-2204.1537149.1
+	deleted:    logs/version_410/hparams.yaml
+	deleted:    logs/version_411/events.out.tfevents.1667163795.Ubuntu-2204.1539126.0
+	deleted:    logs/version_411/events.out.tfevents.1667164394.Ubuntu-2204.1539126.1
+	deleted:    logs/version_411/hparams.yaml
+	deleted:    logs/version_412/events.out.tfevents.1667164437.Ubuntu-2204.1540742.0
+	deleted:    logs/version_412/events.out.tfevents.1667165167.Ubuntu-2204.1540742.1
+	deleted:    logs/version_412/hparams.yaml
+	deleted:    logs/version_413/events.out.tfevents.1667165210.Ubuntu-2204.1542727.0
+	deleted:    logs/version_413/events.out.tfevents.1667165918.Ubuntu-2204.1542727.1
+	deleted:    logs/version_413/hparams.yaml
+	deleted:    logs/version_414/events.out.tfevents.1667165961.Ubuntu-2204.1544699.0
+	deleted:    logs/version_414/events.out.tfevents.1667166657.Ubuntu-2204.1544699.1
+	deleted:    logs/version_414/hparams.yaml
+	deleted:    logs/version_415/events.out.tfevents.1667166698.Ubuntu-2204.1546672.0
+	deleted:    logs/version_415/events.out.tfevents.1667167448.Ubuntu-2204.1546672.1
+	deleted:    logs/version_415/hparams.yaml
+	deleted:    logs/version_416/events.out.tfevents.1667167491.Ubuntu-2204.1548651.0
+	deleted:    logs/version_416/events.out.tfevents.1667168265.Ubuntu-2204.1548651.1
+	deleted:    logs/version_416/hparams.yaml
+	deleted:    logs/version_417/events.out.tfevents.1667168307.Ubuntu-2204.1550626.0
+	deleted:    logs/version_417/events.out.tfevents.1667168759.Ubuntu-2204.1550626.1
+	deleted:    logs/version_417/hparams.yaml
+	deleted:    logs/version_418/events.out.tfevents.1667168800.Ubuntu-2204.1551898.0
+	deleted:    logs/version_418/events.out.tfevents.1667169501.Ubuntu-2204.1551898.1
+	deleted:    logs/version_418/hparams.yaml
+	deleted:    logs/version_419/events.out.tfevents.1667169543.Ubuntu-2204.1553880.0
+	deleted:    logs/version_419/events.out.tfevents.1667170268.Ubuntu-2204.1553880.1
+	deleted:    logs/version_419/hparams.yaml
+	deleted:    logs/version_420/events.out.tfevents.1667170310.Ubuntu-2204.1555854.0
+	deleted:    logs/version_420/events.out.tfevents.1667171043.Ubuntu-2204.1555854.1
+	deleted:    logs/version_420/hparams.yaml
+	deleted:    logs/version_421/events.out.tfevents.1667171084.Ubuntu-2204.1557915.0
+	deleted:    logs/version_421/events.out.tfevents.1667171840.Ubuntu-2204.1557915.1
+	deleted:    logs/version_421/hparams.yaml
+	deleted:    logs/version_422/events.out.tfevents.1667224725.Ubuntu-2204.1563672.0
+	deleted:    logs/version_422/hparams.yaml
+	deleted:    logs/version_423/events.out.tfevents.1667224960.Ubuntu-2204.1565576.0
+	deleted:    logs/version_423/events.out.tfevents.1667225371.Ubuntu-2204.1565576.1
+	deleted:    logs/version_423/hparams.yaml
+	deleted:    logs/version_424/events.out.tfevents.1667225504.Ubuntu-2204.1569240.0
+	deleted:    logs/version_424/events.out.tfevents.1667225654.Ubuntu-2204.1569240.1
+	deleted:    logs/version_424/hparams.yaml
+	deleted:    logs/version_425/events.out.tfevents.1667225672.Ubuntu-2204.1571514.0
+	deleted:    logs/version_425/events.out.tfevents.1667225826.Ubuntu-2204.1571514.1
+	deleted:    logs/version_425/hparams.yaml
+	deleted:    logs/version_426/events.out.tfevents.1667225843.Ubuntu-2204.1573476.0
+	deleted:    logs/version_426/events.out.tfevents.1667225987.Ubuntu-2204.1573476.1
+	deleted:    logs/version_426/hparams.yaml
+	deleted:    logs/version_427/events.out.tfevents.1667226005.Ubuntu-2204.1575446.0
+	deleted:    logs/version_427/events.out.tfevents.1667226153.Ubuntu-2204.1575446.1
+	deleted:    logs/version_427/hparams.yaml
+	deleted:    logs/version_428/events.out.tfevents.1667226170.Ubuntu-2204.1577406.0
+	deleted:    logs/version_428/events.out.tfevents.1667226329.Ubuntu-2204.1577406.1
+	deleted:    logs/version_428/hparams.yaml
+	deleted:    logs/version_429/events.out.tfevents.1667226347.Ubuntu-2204.1579370.0
+	deleted:    logs/version_429/events.out.tfevents.1667226507.Ubuntu-2204.1579370.1
+	deleted:    logs/version_429/hparams.yaml
+	deleted:    logs/version_430/events.out.tfevents.1667226525.Ubuntu-2204.1581162.0
+	deleted:    logs/version_430/events.out.tfevents.1667226687.Ubuntu-2204.1581162.1
+	deleted:    logs/version_430/hparams.yaml
+	deleted:    logs/version_431/events.out.tfevents.1667226705.Ubuntu-2204.1583126.0
+	deleted:    logs/version_431/events.out.tfevents.1667226874.Ubuntu-2204.1583126.1
+	deleted:    logs/version_431/hparams.yaml
+	deleted:    logs/version_432/events.out.tfevents.1667226891.Ubuntu-2204.1585092.0
+	deleted:    logs/version_432/events.out.tfevents.1667227062.Ubuntu-2204.1585092.1
+	deleted:    logs/version_432/hparams.yaml
+	deleted:    logs/version_433/events.out.tfevents.1667227081.Ubuntu-2204.1587051.0
+	deleted:    logs/version_433/events.out.tfevents.1667227237.Ubuntu-2204.1587051.1
+	deleted:    logs/version_433/hparams.yaml
+	deleted:    logs/version_434/events.out.tfevents.1667227257.Ubuntu-2204.1589012.0
+	deleted:    logs/version_434/events.out.tfevents.1667227644.Ubuntu-2204.1589012.1
+	deleted:    logs/version_434/hparams.yaml
+	deleted:    logs/version_435/events.out.tfevents.1667227680.Ubuntu-2204.1590987.0
+	deleted:    logs/version_435/events.out.tfevents.1667228062.Ubuntu-2204.1590987.1
+	deleted:    logs/version_435/hparams.yaml
+	deleted:    logs/version_436/events.out.tfevents.1667228099.Ubuntu-2204.1592956.0
+	deleted:    logs/version_436/events.out.tfevents.1667228402.Ubuntu-2204.1592956.1
+	deleted:    logs/version_436/hparams.yaml
+	deleted:    logs/version_437/events.out.tfevents.1667228438.Ubuntu-2204.1594582.0
+	deleted:    logs/version_437/events.out.tfevents.1667228669.Ubuntu-2204.1594582.1
+	deleted:    logs/version_437/hparams.yaml
+	deleted:    logs/version_438/events.out.tfevents.1667228705.Ubuntu-2204.1595842.0
+	deleted:    logs/version_438/events.out.tfevents.1667229074.Ubuntu-2204.1595842.1
+	deleted:    logs/version_438/hparams.yaml
+	deleted:    logs/version_439/events.out.tfevents.1667229110.Ubuntu-2204.1597804.0
+	deleted:    logs/version_439/events.out.tfevents.1667229488.Ubuntu-2204.1597804.1
+	deleted:    logs/version_439/hparams.yaml
+	deleted:    logs/version_440/events.out.tfevents.1667229525.Ubuntu-2204.1599775.0
+	deleted:    logs/version_440/events.out.tfevents.1667229901.Ubuntu-2204.1599775.1
+	deleted:    logs/version_440/hparams.yaml
+	deleted:    logs/version_441/events.out.tfevents.1667229937.Ubuntu-2204.1601745.0
+	deleted:    logs/version_441/events.out.tfevents.1667230303.Ubuntu-2204.1601745.1
+	deleted:    logs/version_441/hparams.yaml
+	deleted:    logs/version_442/events.out.tfevents.1667230339.Ubuntu-2204.1603722.0
+	deleted:    logs/version_442/events.out.tfevents.1667230703.Ubuntu-2204.1603722.1
+	deleted:    logs/version_442/hparams.yaml
+	deleted:    logs/version_443/events.out.tfevents.1667230739.Ubuntu-2204.1605691.0
+	deleted:    logs/version_443/events.out.tfevents.1667231114.Ubuntu-2204.1605691.1
+	deleted:    logs/version_443/hparams.yaml
+	deleted:    logs/version_444/events.out.tfevents.1667231150.Ubuntu-2204.1607659.0
+	deleted:    logs/version_444/events.out.tfevents.1667231525.Ubuntu-2204.1607659.1
+	deleted:    logs/version_444/hparams.yaml
+	deleted:    logs/version_445/events.out.tfevents.1667231561.Ubuntu-2204.1609622.0
+	deleted:    logs/version_445/events.out.tfevents.1667231928.Ubuntu-2204.1609622.1
+	deleted:    logs/version_445/hparams.yaml
+	deleted:    logs/version_446/events.out.tfevents.1667231965.Ubuntu-2204.1611595.0
+	deleted:    logs/version_446/events.out.tfevents.1667232390.Ubuntu-2204.1611595.1
+	deleted:    logs/version_446/hparams.yaml
+	deleted:    logs/version_447/events.out.tfevents.1667232427.Ubuntu-2204.1613620.0
+	deleted:    logs/version_447/events.out.tfevents.1667232820.Ubuntu-2204.1613620.1
+	deleted:    logs/version_447/hparams.yaml
+	deleted:    logs/version_448/events.out.tfevents.1667232857.Ubuntu-2204.1615590.0
+	deleted:    logs/version_448/events.out.tfevents.1667233271.Ubuntu-2204.1615590.1
+	deleted:    logs/version_448/hparams.yaml
+	deleted:    logs/version_449/events.out.tfevents.1667233309.Ubuntu-2204.1617586.0
+	deleted:    logs/version_449/events.out.tfevents.1667233716.Ubuntu-2204.1617586.1
+	deleted:    logs/version_449/hparams.yaml
+	deleted:    logs/version_450/events.out.tfevents.1667233752.Ubuntu-2204.1619566.0
+	deleted:    logs/version_450/events.out.tfevents.1667234177.Ubuntu-2204.1619566.1
+	deleted:    logs/version_450/hparams.yaml
+	deleted:    logs/version_451/events.out.tfevents.1667234214.Ubuntu-2204.1621530.0
+	deleted:    logs/version_451/events.out.tfevents.1667234641.Ubuntu-2204.1621530.1
+	deleted:    logs/version_451/hparams.yaml
+	deleted:    logs/version_452/events.out.tfevents.1667234678.Ubuntu-2204.1623504.0
+	deleted:    logs/version_452/events.out.tfevents.1667235052.Ubuntu-2204.1623504.1
+	deleted:    logs/version_452/hparams.yaml
+	deleted:    logs/version_453/events.out.tfevents.1667235087.Ubuntu-2204.1625466.0
+	deleted:    logs/version_453/events.out.tfevents.1667235463.Ubuntu-2204.1625466.1
+	deleted:    logs/version_453/hparams.yaml
+	deleted:    logs/version_454/events.out.tfevents.1667235499.Ubuntu-2204.1627435.0
+	deleted:    logs/version_454/events.out.tfevents.1667235872.Ubuntu-2204.1627435.1
+	deleted:    logs/version_454/hparams.yaml
+	deleted:    logs/version_455/events.out.tfevents.1667235908.Ubuntu-2204.1629411.0
+	deleted:    logs/version_455/events.out.tfevents.1667236209.Ubuntu-2204.1629411.1
+	deleted:    logs/version_455/hparams.yaml
+	deleted:    logs/version_456/events.out.tfevents.1667236245.Ubuntu-2204.1631023.0
+	deleted:    logs/version_456/events.out.tfevents.1667236607.Ubuntu-2204.1631023.1
+	deleted:    logs/version_456/hparams.yaml
+	deleted:    logs/version_457/events.out.tfevents.1667236643.Ubuntu-2204.1632994.0
+	deleted:    logs/version_457/events.out.tfevents.1667236940.Ubuntu-2204.1632994.1
+	deleted:    logs/version_457/hparams.yaml
+	deleted:    logs/version_458/events.out.tfevents.1667236977.Ubuntu-2204.1634606.0
+	deleted:    logs/version_458/events.out.tfevents.1667237352.Ubuntu-2204.1634606.1
+	deleted:    logs/version_458/hparams.yaml
+	deleted:    logs/version_459/events.out.tfevents.1667237388.Ubuntu-2204.1636582.0
+	deleted:    logs/version_459/events.out.tfevents.1667237774.Ubuntu-2204.1636582.1
+	deleted:    logs/version_459/hparams.yaml
+	deleted:    logs/version_460/events.out.tfevents.1667237810.Ubuntu-2204.1638566.0
+	deleted:    logs/version_460/events.out.tfevents.1667238208.Ubuntu-2204.1638566.1
+	deleted:    logs/version_460/hparams.yaml
+	deleted:    logs/version_461/events.out.tfevents.1667238244.Ubuntu-2204.1640548.0
+	deleted:    logs/version_461/events.out.tfevents.1667238640.Ubuntu-2204.1640548.1
+	deleted:    logs/version_461/hparams.yaml
+	deleted:    logs/version_462/events.out.tfevents.1667238678.Ubuntu-2204.1642519.0
+	deleted:    logs/version_462/events.out.tfevents.1667239083.Ubuntu-2204.1642519.1
+	deleted:    logs/version_462/hparams.yaml
+	deleted:    logs/version_463/events.out.tfevents.1667239120.Ubuntu-2204.1644488.0
+	deleted:    logs/version_463/events.out.tfevents.1667239517.Ubuntu-2204.1644488.1
+	deleted:    logs/version_463/hparams.yaml
+	deleted:    logs/version_464/events.out.tfevents.1667239554.Ubuntu-2204.1646456.0
+	deleted:    logs/version_464/events.out.tfevents.1667239956.Ubuntu-2204.1646456.1
+	deleted:    logs/version_464/hparams.yaml
+	deleted:    logs/version_465/events.out.tfevents.1667239993.Ubuntu-2204.1648420.0
+	deleted:    logs/version_465/events.out.tfevents.1667240405.Ubuntu-2204.1648420.1
+	deleted:    logs/version_465/hparams.yaml
+	deleted:    logs/version_466/events.out.tfevents.1667240442.Ubuntu-2204.1650393.0
+	deleted:    logs/version_466/events.out.tfevents.1667240708.Ubuntu-2204.1650393.1
+	deleted:    logs/version_466/hparams.yaml
+	deleted:    logs/version_467/events.out.tfevents.1667240744.Ubuntu-2204.1651834.0
+	deleted:    logs/version_467/events.out.tfevents.1667241175.Ubuntu-2204.1651834.1
+	deleted:    logs/version_467/hparams.yaml
+	deleted:    logs/version_468/events.out.tfevents.1667241211.Ubuntu-2204.1653801.0
+	deleted:    logs/version_468/events.out.tfevents.1667241626.Ubuntu-2204.1653801.1
+	deleted:    logs/version_468/hparams.yaml
+	deleted:    logs/version_469/events.out.tfevents.1667241662.Ubuntu-2204.1655768.0
+	deleted:    logs/version_469/events.out.tfevents.1667242079.Ubuntu-2204.1655768.1
+	deleted:    logs/version_469/hparams.yaml
+	deleted:    logs/version_470/events.out.tfevents.1667242116.Ubuntu-2204.1658322.0
+	deleted:    logs/version_470/events.out.tfevents.1667242530.Ubuntu-2204.1658322.1
+	deleted:    logs/version_470/hparams.yaml
+	deleted:    logs/version_471/events.out.tfevents.1667242568.Ubuntu-2204.1660290.0
+	deleted:    logs/version_471/events.out.tfevents.1667242929.Ubuntu-2204.1660290.1
+	deleted:    logs/version_471/hparams.yaml
+	deleted:    logs/version_472/events.out.tfevents.1667242967.Ubuntu-2204.1662093.0
+	deleted:    logs/version_472/events.out.tfevents.1667243385.Ubuntu-2204.1662093.1
+	deleted:    logs/version_472/hparams.yaml
+	deleted:    logs/version_473/events.out.tfevents.1667243421.Ubuntu-2204.1664063.0
+	deleted:    logs/version_473/events.out.tfevents.1667243790.Ubuntu-2204.1664063.1
+	deleted:    logs/version_473/hparams.yaml
+	deleted:    logs/version_474/events.out.tfevents.1667243826.Ubuntu-2204.1666033.0
+	deleted:    logs/version_474/events.out.tfevents.1667244194.Ubuntu-2204.1666033.1
+	deleted:    logs/version_474/hparams.yaml
+	deleted:    logs/version_475/events.out.tfevents.1667244230.Ubuntu-2204.1667998.0
+	deleted:    logs/version_475/events.out.tfevents.1667244567.Ubuntu-2204.1667998.1
+	deleted:    logs/version_475/hparams.yaml
+	deleted:    logs/version_476/events.out.tfevents.1667244602.Ubuntu-2204.1669795.0
+	deleted:    logs/version_476/events.out.tfevents.1667244972.Ubuntu-2204.1669795.1
+	deleted:    logs/version_476/hparams.yaml
+	deleted:    logs/version_477/events.out.tfevents.1667245008.Ubuntu-2204.1671758.0
+	deleted:    logs/version_477/events.out.tfevents.1667245377.Ubuntu-2204.1671758.1
+	deleted:    logs/version_477/hparams.yaml
+	deleted:    logs/version_478/events.out.tfevents.1667245413.Ubuntu-2204.1673731.0
+	deleted:    logs/version_478/events.out.tfevents.1667245784.Ubuntu-2204.1673731.1
+	deleted:    logs/version_478/hparams.yaml
+	deleted:    logs/version_479/events.out.tfevents.1667245820.Ubuntu-2204.1675701.0
+	deleted:    logs/version_479/events.out.tfevents.1667246210.Ubuntu-2204.1675701.1
+	deleted:    logs/version_479/hparams.yaml
+	deleted:    logs/version_480/events.out.tfevents.1667246247.Ubuntu-2204.1677669.0
+	deleted:    logs/version_480/events.out.tfevents.1667246501.Ubuntu-2204.1677669.1
+	deleted:    logs/version_480/hparams.yaml
+	deleted:    logs/version_481/events.out.tfevents.1667246541.Ubuntu-2204.1679105.0
+	deleted:    logs/version_481/events.out.tfevents.1667246904.Ubuntu-2204.1679105.1
+	deleted:    logs/version_481/hparams.yaml
+	deleted:    logs/version_482/events.out.tfevents.1667246939.Ubuntu-2204.1681070.0
+	deleted:    logs/version_482/events.out.tfevents.1667247324.Ubuntu-2204.1681070.1
+	deleted:    logs/version_482/hparams.yaml
+	deleted:    logs/version_483/events.out.tfevents.1667247360.Ubuntu-2204.1683045.0
+	deleted:    logs/version_483/events.out.tfevents.1667247673.Ubuntu-2204.1683045.1
+	deleted:    logs/version_483/hparams.yaml
+	deleted:    logs/version_484/events.out.tfevents.1667247709.Ubuntu-2204.1684661.0
+	deleted:    logs/version_484/events.out.tfevents.1667247985.Ubuntu-2204.1684661.1
+	deleted:    logs/version_484/hparams.yaml
+	deleted:    logs/version_485/events.out.tfevents.1667248022.Ubuntu-2204.1686279.0
+	deleted:    logs/version_485/events.out.tfevents.1667248438.Ubuntu-2204.1686279.1
+	deleted:    logs/version_485/hparams.yaml
+	deleted:    logs/version_486/events.out.tfevents.1667248475.Ubuntu-2204.1688248.0
+	deleted:    logs/version_486/events.out.tfevents.1667248855.Ubuntu-2204.1688248.1
+	deleted:    logs/version_486/hparams.yaml
+	deleted:    logs/version_487/events.out.tfevents.1667248895.Ubuntu-2204.1690211.0
+	deleted:    logs/version_487/events.out.tfevents.1667249248.Ubuntu-2204.1690211.1
+	deleted:    logs/version_487/hparams.yaml
+	deleted:    logs/version_488/events.out.tfevents.1667249285.Ubuntu-2204.1692003.0
+	deleted:    logs/version_488/events.out.tfevents.1667249710.Ubuntu-2204.1692003.1
+	deleted:    logs/version_488/hparams.yaml
+	deleted:    logs/version_489/events.out.tfevents.1667249747.Ubuntu-2204.1693970.0
+	deleted:    logs/version_489/events.out.tfevents.1667249994.Ubuntu-2204.1693970.1
+	deleted:    logs/version_489/hparams.yaml
+	deleted:    logs/version_490/events.out.tfevents.1667250031.Ubuntu-2204.1695235.0
+	deleted:    logs/version_490/events.out.tfevents.1667250318.Ubuntu-2204.1695235.1
+	deleted:    logs/version_490/hparams.yaml
+	deleted:    logs/version_491/events.out.tfevents.1667250355.Ubuntu-2204.1696854.0
+	deleted:    logs/version_491/events.out.tfevents.1667250738.Ubuntu-2204.1696854.1
+	deleted:    logs/version_491/hparams.yaml
+	deleted:    logs/version_492/events.out.tfevents.1667250774.Ubuntu-2204.1698818.0
+	deleted:    logs/version_492/events.out.tfevents.1667251123.Ubuntu-2204.1698818.1
+	deleted:    logs/version_492/hparams.yaml
+	deleted:    logs/version_493/events.out.tfevents.1667251162.Ubuntu-2204.1700800.0
+	deleted:    logs/version_493/events.out.tfevents.1667251493.Ubuntu-2204.1700800.1
+	deleted:    logs/version_493/hparams.yaml
+	deleted:    logs/version_494/events.out.tfevents.1667251528.Ubuntu-2204.1702591.0
+	deleted:    logs/version_494/events.out.tfevents.1667251909.Ubuntu-2204.1702591.1
+	deleted:    logs/version_494/hparams.yaml
+	deleted:    logs/version_495/events.out.tfevents.1667251946.Ubuntu-2204.1704558.0
+	deleted:    logs/version_495/events.out.tfevents.1667252247.Ubuntu-2204.1704558.1
+	deleted:    logs/version_495/hparams.yaml
+	deleted:    logs/version_496/events.out.tfevents.1667252284.Ubuntu-2204.1706171.0
+	deleted:    logs/version_496/events.out.tfevents.1667252555.Ubuntu-2204.1706171.1
+	deleted:    logs/version_496/hparams.yaml
+	deleted:    logs/version_497/events.out.tfevents.1667252591.Ubuntu-2204.1707782.0
+	deleted:    logs/version_497/events.out.tfevents.1667252974.Ubuntu-2204.1707782.1
+	deleted:    logs/version_497/hparams.yaml
+	deleted:    logs/version_498/events.out.tfevents.1667253009.Ubuntu-2204.1709761.0
+	deleted:    logs/version_498/events.out.tfevents.1667253376.Ubuntu-2204.1709761.1
+	deleted:    logs/version_498/hparams.yaml
+	deleted:    logs/version_499/events.out.tfevents.1667253412.Ubuntu-2204.1711737.0
+	deleted:    logs/version_499/events.out.tfevents.1667253784.Ubuntu-2204.1711737.1
+	deleted:    logs/version_499/hparams.yaml
+	deleted:    logs/version_500/events.out.tfevents.1667253821.Ubuntu-2204.1713704.0
+	deleted:    logs/version_500/events.out.tfevents.1667254200.Ubuntu-2204.1713704.1
+	deleted:    logs/version_500/hparams.yaml
+	deleted:    logs/version_501/events.out.tfevents.1667254236.Ubuntu-2204.1715704.0
+	deleted:    logs/version_501/events.out.tfevents.1667254620.Ubuntu-2204.1715704.1
+	deleted:    logs/version_501/hparams.yaml
+	deleted:    logs/version_502/events.out.tfevents.1667254656.Ubuntu-2204.1717675.0
+	deleted:    logs/version_502/events.out.tfevents.1667255034.Ubuntu-2204.1717675.1
+	deleted:    logs/version_502/hparams.yaml
+	deleted:    logs/version_503/events.out.tfevents.1667255072.Ubuntu-2204.1719645.0
+	deleted:    logs/version_503/events.out.tfevents.1667255515.Ubuntu-2204.1719645.1
+	deleted:    logs/version_503/hparams.yaml
+	deleted:    logs/version_504/events.out.tfevents.1667255552.Ubuntu-2204.1721623.0
+	deleted:    logs/version_504/events.out.tfevents.1667255963.Ubuntu-2204.1721623.1
+	deleted:    logs/version_504/hparams.yaml
+	deleted:    logs/version_505/events.out.tfevents.1667256000.Ubuntu-2204.1723665.0
+	deleted:    logs/version_505/events.out.tfevents.1667256402.Ubuntu-2204.1723665.1
+	deleted:    logs/version_505/hparams.yaml
+	deleted:    logs/version_506/events.out.tfevents.1667256440.Ubuntu-2204.1725632.0
+	deleted:    logs/version_506/events.out.tfevents.1667256863.Ubuntu-2204.1725632.1
+	deleted:    logs/version_506/hparams.yaml
+	deleted:    logs/version_507/events.out.tfevents.1667256899.Ubuntu-2204.1727603.0
+	deleted:    logs/version_507/events.out.tfevents.1667257317.Ubuntu-2204.1727603.1
+	deleted:    logs/version_507/hparams.yaml
+	deleted:    logs/version_508/events.out.tfevents.1667257353.Ubuntu-2204.1729572.0
+	deleted:    logs/version_508/events.out.tfevents.1667257677.Ubuntu-2204.1729572.1
+	deleted:    logs/version_508/hparams.yaml
+	deleted:    logs/version_509/events.out.tfevents.1667257714.Ubuntu-2204.1731185.0
+	deleted:    logs/version_509/events.out.tfevents.1667258074.Ubuntu-2204.1731185.1
+	deleted:    logs/version_509/hparams.yaml
+	deleted:    logs/version_510/events.out.tfevents.1667258110.Ubuntu-2204.1733155.0
+	deleted:    logs/version_510/events.out.tfevents.1667258467.Ubuntu-2204.1733155.1
+	deleted:    logs/version_510/hparams.yaml
+	deleted:    logs/version_511/events.out.tfevents.1667258503.Ubuntu-2204.1735121.0
+	deleted:    logs/version_511/events.out.tfevents.1667258870.Ubuntu-2204.1735121.1
+	deleted:    logs/version_511/hparams.yaml
+	deleted:    logs/version_512/events.out.tfevents.1667258907.Ubuntu-2204.1737094.0
+	deleted:    logs/version_512/events.out.tfevents.1667259333.Ubuntu-2204.1737094.1
+	deleted:    logs/version_512/hparams.yaml
+	deleted:    logs/version_513/events.out.tfevents.1667259370.Ubuntu-2204.1739119.0
+	deleted:    logs/version_513/events.out.tfevents.1667259758.Ubuntu-2204.1739119.1
+	deleted:    logs/version_513/hparams.yaml
+	deleted:    logs/version_514/events.out.tfevents.1667259794.Ubuntu-2204.1741089.0
+	deleted:    logs/version_514/events.out.tfevents.1667260139.Ubuntu-2204.1741089.1
+	deleted:    logs/version_514/hparams.yaml
+	deleted:    logs/version_515/events.out.tfevents.1667260175.Ubuntu-2204.1742897.0
+	deleted:    logs/version_515/events.out.tfevents.1667260552.Ubuntu-2204.1742897.1
+	deleted:    logs/version_515/hparams.yaml
+	deleted:    logs/version_516/events.out.tfevents.1667260588.Ubuntu-2204.1744863.0
+	deleted:    logs/version_516/events.out.tfevents.1667260962.Ubuntu-2204.1744863.1
+	deleted:    logs/version_516/hparams.yaml
+	deleted:    logs/version_517/events.out.tfevents.1667260998.Ubuntu-2204.1746840.0
+	deleted:    logs/version_517/events.out.tfevents.1667261383.Ubuntu-2204.1746840.1
+	deleted:    logs/version_517/hparams.yaml
+	deleted:    logs/version_518/events.out.tfevents.1667261421.Ubuntu-2204.1748807.0
+	deleted:    logs/version_518/events.out.tfevents.1667261785.Ubuntu-2204.1748807.1
+	deleted:    logs/version_518/hparams.yaml
+	deleted:    logs/version_519/events.out.tfevents.1667261822.Ubuntu-2204.1750782.0
+	deleted:    logs/version_519/events.out.tfevents.1667262093.Ubuntu-2204.1750782.1
+	deleted:    logs/version_519/hparams.yaml
+	deleted:    logs/version_520/events.out.tfevents.1667262130.Ubuntu-2204.1752221.0
+	deleted:    logs/version_520/events.out.tfevents.1667262506.Ubuntu-2204.1752221.1
+	deleted:    logs/version_520/hparams.yaml
+	deleted:    logs/version_521/events.out.tfevents.1667262542.Ubuntu-2204.1754197.0
+	deleted:    logs/version_521/events.out.tfevents.1667262770.Ubuntu-2204.1754197.1
+	deleted:    logs/version_521/hparams.yaml
+	deleted:    logs/version_522/events.out.tfevents.1667262807.Ubuntu-2204.1755454.0
+	deleted:    logs/version_522/events.out.tfevents.1667263188.Ubuntu-2204.1755454.1
+	deleted:    logs/version_522/hparams.yaml
+	deleted:    logs/version_523/events.out.tfevents.1667263224.Ubuntu-2204.1757433.0
+	deleted:    logs/version_523/events.out.tfevents.1667263613.Ubuntu-2204.1757433.1
+	deleted:    logs/version_523/hparams.yaml
+	deleted:    logs/version_524/events.out.tfevents.1667263648.Ubuntu-2204.1759400.0
+	deleted:    logs/version_524/events.out.tfevents.1667264026.Ubuntu-2204.1759400.1
+	deleted:    logs/version_524/hparams.yaml
+	deleted:    logs/version_525/events.out.tfevents.1667264062.Ubuntu-2204.1761368.0
+	deleted:    logs/version_525/events.out.tfevents.1667264426.Ubuntu-2204.1761368.1
+	deleted:    logs/version_525/hparams.yaml
+	deleted:    logs/version_526/events.out.tfevents.1667264462.Ubuntu-2204.1763337.0
+	deleted:    logs/version_526/events.out.tfevents.1667264825.Ubuntu-2204.1763337.1
+	deleted:    logs/version_526/hparams.yaml
+	deleted:    logs/version_527/events.out.tfevents.1667264862.Ubuntu-2204.1765300.0
+	deleted:    logs/version_527/events.out.tfevents.1667265237.Ubuntu-2204.1765300.1
+	deleted:    logs/version_527/hparams.yaml
+	deleted:    logs/version_528/events.out.tfevents.1667265274.Ubuntu-2204.1767273.0
+	deleted:    logs/version_528/events.out.tfevents.1667265659.Ubuntu-2204.1767273.1
+	deleted:    logs/version_528/hparams.yaml
+	deleted:    logs/version_529/events.out.tfevents.1667265696.Ubuntu-2204.1769238.0
+	deleted:    logs/version_529/events.out.tfevents.1667265931.Ubuntu-2204.1769238.1
+	deleted:    logs/version_529/hparams.yaml
+	deleted:    logs/version_530/events.out.tfevents.1667265968.Ubuntu-2204.1771002.0
+	deleted:    logs/version_530/events.out.tfevents.1667266365.Ubuntu-2204.1771002.1
+	deleted:    logs/version_530/hparams.yaml
+	deleted:    logs/version_531/events.out.tfevents.1667266401.Ubuntu-2204.1773242.0
+	deleted:    logs/version_531/events.out.tfevents.1667266775.Ubuntu-2204.1773242.1
+	deleted:    logs/version_531/hparams.yaml
+	deleted:    logs/version_532/events.out.tfevents.1667266810.Ubuntu-2204.1775210.0
+	deleted:    logs/version_532/events.out.tfevents.1667267203.Ubuntu-2204.1775210.1
+	deleted:    logs/version_532/hparams.yaml
+	deleted:    logs/version_533/events.out.tfevents.1667267239.Ubuntu-2204.1777178.0
+	deleted:    logs/version_533/events.out.tfevents.1667267621.Ubuntu-2204.1777178.1
+	deleted:    logs/version_533/hparams.yaml
+	deleted:    logs/version_534/events.out.tfevents.1667267657.Ubuntu-2204.1779150.0
+	deleted:    logs/version_534/events.out.tfevents.1667268049.Ubuntu-2204.1779150.1
+	deleted:    logs/version_534/hparams.yaml
+	deleted:    logs/version_535/events.out.tfevents.1667268085.Ubuntu-2204.1781119.0
+	deleted:    logs/version_535/events.out.tfevents.1667268490.Ubuntu-2204.1781119.1
+	deleted:    logs/version_535/hparams.yaml
+	deleted:    logs/version_536/events.out.tfevents.1667268527.Ubuntu-2204.1783086.0
+	deleted:    logs/version_536/events.out.tfevents.1667268905.Ubuntu-2204.1783086.1
+	deleted:    logs/version_536/hparams.yaml
+	deleted:    logs/version_537/events.out.tfevents.1667268942.Ubuntu-2204.1785108.0
+	deleted:    logs/version_537/events.out.tfevents.1667269305.Ubuntu-2204.1785108.1
+	deleted:    logs/version_537/hparams.yaml
+	deleted:    logs/version_538/events.out.tfevents.1667269343.Ubuntu-2204.1787076.0
+	deleted:    logs/version_538/events.out.tfevents.1667269685.Ubuntu-2204.1787076.1
+	deleted:    logs/version_538/hparams.yaml
+	deleted:    logs/version_539/events.out.tfevents.1667269722.Ubuntu-2204.1788942.0
+	deleted:    logs/version_539/events.out.tfevents.1667270111.Ubuntu-2204.1788942.1
+	deleted:    logs/version_539/hparams.yaml
+	deleted:    logs/version_540/events.out.tfevents.1667270149.Ubuntu-2204.1791227.0
+	deleted:    logs/version_540/events.out.tfevents.1667270493.Ubuntu-2204.1791227.1
+	deleted:    logs/version_540/hparams.yaml
+	deleted:    logs/version_541/events.out.tfevents.1667270531.Ubuntu-2204.1793133.0
+	deleted:    logs/version_541/hparams.yaml
+	deleted:    logs/version_542/events.out.tfevents.1667271059.Ubuntu-2204.1795378.0
+	deleted:    logs/version_542/events.out.tfevents.1667271447.Ubuntu-2204.1795378.1
+	deleted:    logs/version_542/hparams.yaml
+	deleted:    logs/version_543/events.out.tfevents.1667271484.Ubuntu-2204.1797652.0
+	deleted:    logs/version_543/events.out.tfevents.1667271871.Ubuntu-2204.1797652.1
+	deleted:    logs/version_543/hparams.yaml
+	deleted:    logs/version_544/events.out.tfevents.1667271907.Ubuntu-2204.1800091.0
+	deleted:    logs/version_544/events.out.tfevents.1667272214.Ubuntu-2204.1800091.1
+	deleted:    logs/version_544/hparams.yaml
+	deleted:    logs/version_545/events.out.tfevents.1667272250.Ubuntu-2204.1801750.0
+	deleted:    logs/version_545/events.out.tfevents.1667272478.Ubuntu-2204.1801750.1
+	deleted:    logs/version_545/hparams.yaml
+	deleted:    logs/version_546/events.out.tfevents.1667272514.Ubuntu-2204.1803017.0
+	deleted:    logs/version_546/events.out.tfevents.1667272892.Ubuntu-2204.1803017.1
+	deleted:    logs/version_546/hparams.yaml
+	deleted:    logs/version_547/events.out.tfevents.1667272928.Ubuntu-2204.1804983.0
+	deleted:    logs/version_547/events.out.tfevents.1667273308.Ubuntu-2204.1804983.1
+	deleted:    logs/version_547/hparams.yaml
+	deleted:    logs/version_548/events.out.tfevents.1667273345.Ubuntu-2204.1806960.0
+	deleted:    logs/version_548/events.out.tfevents.1667273715.Ubuntu-2204.1806960.1
+	deleted:    logs/version_548/hparams.yaml
+	deleted:    logs/version_549/events.out.tfevents.1667273751.Ubuntu-2204.1808958.0
+	deleted:    logs/version_549/events.out.tfevents.1667274121.Ubuntu-2204.1808958.1
+	deleted:    logs/version_549/hparams.yaml
+	deleted:    logs/version_550/events.out.tfevents.1667274157.Ubuntu-2204.1810929.0
+	deleted:    logs/version_550/events.out.tfevents.1667274522.Ubuntu-2204.1810929.1
+	deleted:    logs/version_550/hparams.yaml
+	deleted:    logs/version_551/events.out.tfevents.1667274558.Ubuntu-2204.1812902.0
+	deleted:    logs/version_551/events.out.tfevents.1667274931.Ubuntu-2204.1812902.1
+	deleted:    logs/version_551/hparams.yaml
+	deleted:    logs/version_552/events.out.tfevents.1667274967.Ubuntu-2204.1814867.0
+	deleted:    logs/version_552/events.out.tfevents.1667275345.Ubuntu-2204.1814867.1
+	deleted:    logs/version_552/hparams.yaml
+	deleted:    logs/version_553/events.out.tfevents.1667275381.Ubuntu-2204.1816839.0
+	deleted:    logs/version_553/events.out.tfevents.1667275756.Ubuntu-2204.1816839.1
+	deleted:    logs/version_553/hparams.yaml
+	deleted:    logs/version_554/events.out.tfevents.1667275793.Ubuntu-2204.1818807.0
+	deleted:    logs/version_554/events.out.tfevents.1667276213.Ubuntu-2204.1818807.1
+	deleted:    logs/version_554/hparams.yaml
+	deleted:    logs/version_555/events.out.tfevents.1667276250.Ubuntu-2204.1820777.0
+	deleted:    logs/version_555/events.out.tfevents.1667276642.Ubuntu-2204.1820777.1
+	deleted:    logs/version_555/hparams.yaml
+	deleted:    logs/version_556/events.out.tfevents.1667276680.Ubuntu-2204.1822747.0
+	deleted:    logs/version_556/events.out.tfevents.1667277099.Ubuntu-2204.1822747.1
+	deleted:    logs/version_556/hparams.yaml
+	deleted:    logs/version_557/events.out.tfevents.1667277139.Ubuntu-2204.1824720.0
+	deleted:    logs/version_557/events.out.tfevents.1667277540.Ubuntu-2204.1824720.1
+	deleted:    logs/version_557/hparams.yaml
+	deleted:    logs/version_558/events.out.tfevents.1667277577.Ubuntu-2204.1826691.0
+	deleted:    logs/version_558/events.out.tfevents.1667278007.Ubuntu-2204.1826691.1
+	deleted:    logs/version_558/hparams.yaml
+	deleted:    logs/version_559/events.out.tfevents.1667278044.Ubuntu-2204.1828658.0
+	deleted:    logs/version_559/events.out.tfevents.1667278466.Ubuntu-2204.1828658.1
+	deleted:    logs/version_559/hparams.yaml
+	deleted:    logs/version_560/events.out.tfevents.1667278503.Ubuntu-2204.1830635.0
+	deleted:    logs/version_560/events.out.tfevents.1667278878.Ubuntu-2204.1830635.1
+	deleted:    logs/version_560/hparams.yaml
+	deleted:    logs/version_561/events.out.tfevents.1667278914.Ubuntu-2204.1832607.0
+	deleted:    logs/version_561/events.out.tfevents.1667279299.Ubuntu-2204.1832607.1
+	deleted:    logs/version_561/hparams.yaml
+	deleted:    logs/version_562/events.out.tfevents.1667279335.Ubuntu-2204.1834574.0
+	deleted:    logs/version_562/events.out.tfevents.1667279713.Ubuntu-2204.1834574.1
+	deleted:    logs/version_562/hparams.yaml
+	deleted:    logs/version_563/events.out.tfevents.1667279749.Ubuntu-2204.1836544.0
+	deleted:    logs/version_563/events.out.tfevents.1667280062.Ubuntu-2204.1836544.1
+	deleted:    logs/version_563/hparams.yaml
+	deleted:    logs/version_564/events.out.tfevents.1667280099.Ubuntu-2204.1838158.0
+	deleted:    logs/version_564/events.out.tfevents.1667280465.Ubuntu-2204.1838158.1
+	deleted:    logs/version_564/hparams.yaml
+	deleted:    logs/version_565/events.out.tfevents.1667280501.Ubuntu-2204.1840136.0
+	deleted:    logs/version_565/events.out.tfevents.1667280802.Ubuntu-2204.1840136.1
+	deleted:    logs/version_565/hparams.yaml
+	deleted:    logs/version_566/events.out.tfevents.1667280839.Ubuntu-2204.1841763.0
+	deleted:    logs/version_566/events.out.tfevents.1667281204.Ubuntu-2204.1841763.1
+	deleted:    logs/version_566/hparams.yaml
+	deleted:    logs/version_567/events.out.tfevents.1667281239.Ubuntu-2204.1843780.0
+	deleted:    logs/version_567/events.out.tfevents.1667281626.Ubuntu-2204.1843780.1
+	deleted:    logs/version_567/hparams.yaml
+	deleted:    logs/version_568/events.out.tfevents.1667281662.Ubuntu-2204.1845751.0
+	deleted:    logs/version_568/events.out.tfevents.1667282051.Ubuntu-2204.1845751.1
+	deleted:    logs/version_568/hparams.yaml
+	deleted:    logs/version_569/events.out.tfevents.1667282087.Ubuntu-2204.1847745.0
+	deleted:    logs/version_569/events.out.tfevents.1667282481.Ubuntu-2204.1847745.1
+	deleted:    logs/version_569/hparams.yaml
+	deleted:    logs/version_570/events.out.tfevents.1667282518.Ubuntu-2204.1849733.0
+	deleted:    logs/version_570/events.out.tfevents.1667282934.Ubuntu-2204.1849733.1
+	deleted:    logs/version_570/hparams.yaml
+	deleted:    logs/version_571/events.out.tfevents.1667282973.Ubuntu-2204.1851716.0
+	deleted:    logs/version_571/events.out.tfevents.1667283365.Ubuntu-2204.1851716.1
+	deleted:    logs/version_571/hparams.yaml
+	deleted:    logs/version_572/events.out.tfevents.1667283402.Ubuntu-2204.1853690.0
+	deleted:    logs/version_572/events.out.tfevents.1667283805.Ubuntu-2204.1853690.1
+	deleted:    logs/version_572/hparams.yaml
+	deleted:    logs/version_573/events.out.tfevents.1667283842.Ubuntu-2204.1855666.0
+	deleted:    logs/version_573/events.out.tfevents.1667284253.Ubuntu-2204.1855666.1
+	deleted:    logs/version_573/hparams.yaml
+	deleted:    logs/version_574/events.out.tfevents.1667284291.Ubuntu-2204.1857652.0
+	deleted:    logs/version_574/events.out.tfevents.1667284557.Ubuntu-2204.1857652.1
+	deleted:    logs/version_574/hparams.yaml
+	deleted:    logs/version_575/events.out.tfevents.1667284594.Ubuntu-2204.1859089.0
+	deleted:    logs/version_575/events.out.tfevents.1667285034.Ubuntu-2204.1859089.1
+	deleted:    logs/version_575/hparams.yaml
+	deleted:    logs/version_576/events.out.tfevents.1667285071.Ubuntu-2204.1861434.0
+	deleted:    logs/version_576/events.out.tfevents.1667285480.Ubuntu-2204.1861434.1
+	deleted:    logs/version_576/hparams.yaml
+	deleted:    logs/version_577/events.out.tfevents.1667287956.Ubuntu-2204.1868908.0
+	deleted:    logs/version_577/events.out.tfevents.1667288359.Ubuntu-2204.1868908.1
+	deleted:    logs/version_577/hparams.yaml
+	deleted:    logs/version_578/events.out.tfevents.1667288395.Ubuntu-2204.1871021.0
+	deleted:    logs/version_578/events.out.tfevents.1667288808.Ubuntu-2204.1871021.1
+	deleted:    logs/version_578/hparams.yaml
+	deleted:    logs/version_579/events.out.tfevents.1667288845.Ubuntu-2204.1873014.0
+	deleted:    logs/version_579/events.out.tfevents.1667289288.Ubuntu-2204.1873014.1
+	deleted:    logs/version_579/hparams.yaml
+	deleted:    logs/version_580/events.out.tfevents.1667289327.Ubuntu-2204.1875371.0
+	deleted:    logs/version_580/events.out.tfevents.1667289710.Ubuntu-2204.1875371.1
+	deleted:    logs/version_580/hparams.yaml
+	deleted:    logs/version_581/events.out.tfevents.1667289747.Ubuntu-2204.1877550.0
+	deleted:    logs/version_581/events.out.tfevents.1667290152.Ubuntu-2204.1877550.1
+	deleted:    logs/version_581/hparams.yaml
+	deleted:    logs/version_582/events.out.tfevents.1667290189.Ubuntu-2204.1879555.0
+	deleted:    logs/version_582/events.out.tfevents.1667290567.Ubuntu-2204.1879555.1
+	deleted:    logs/version_582/hparams.yaml
+	deleted:    logs/version_583/events.out.tfevents.1667290603.Ubuntu-2204.1881553.0
+	deleted:    logs/version_583/events.out.tfevents.1667290977.Ubuntu-2204.1881553.1
+	deleted:    logs/version_583/hparams.yaml
+	deleted:    logs/version_584/events.out.tfevents.1667291013.Ubuntu-2204.1883547.0
+	deleted:    logs/version_584/events.out.tfevents.1667291347.Ubuntu-2204.1883547.1
+	deleted:    logs/version_584/hparams.yaml
+	deleted:    logs/version_585/events.out.tfevents.1667291384.Ubuntu-2204.1885366.0
+	deleted:    logs/version_585/events.out.tfevents.1667291759.Ubuntu-2204.1885366.1
+	deleted:    logs/version_585/hparams.yaml
+	deleted:    logs/version_586/events.out.tfevents.1667291795.Ubuntu-2204.1887507.0
+	deleted:    logs/version_586/events.out.tfevents.1667292184.Ubuntu-2204.1887507.1
+	deleted:    logs/version_586/hparams.yaml
+	deleted:    logs/version_587/events.out.tfevents.1667292219.Ubuntu-2204.1889473.0
+	deleted:    logs/version_587/events.out.tfevents.1667292593.Ubuntu-2204.1889473.1
+	deleted:    logs/version_587/hparams.yaml
+	deleted:    logs/version_588/events.out.tfevents.1667292631.Ubuntu-2204.1891531.0
+	deleted:    logs/version_588/events.out.tfevents.1667293070.Ubuntu-2204.1891531.1
+	deleted:    logs/version_588/hparams.yaml
+	deleted:    logs/version_589/events.out.tfevents.1667293106.Ubuntu-2204.1893839.0
+	deleted:    logs/version_589/events.out.tfevents.1667293733.Ubuntu-2204.1893839.1
+	deleted:    logs/version_589/hparams.yaml
+	deleted:    logs/version_590/events.out.tfevents.1667293790.Ubuntu-2204.1896411.0
+	deleted:    logs/version_590/events.out.tfevents.1667294161.Ubuntu-2204.1896411.1
+	deleted:    logs/version_590/hparams.yaml
+	deleted:    logs/version_591/events.out.tfevents.1667294197.Ubuntu-2204.1898727.0
+	deleted:    logs/version_591/events.out.tfevents.1667294582.Ubuntu-2204.1898727.1
+	deleted:    logs/version_591/hparams.yaml
+	deleted:    logs/version_592/events.out.tfevents.1667294619.Ubuntu-2204.1900747.0
+	deleted:    logs/version_592/events.out.tfevents.1667294937.Ubuntu-2204.1900747.1
+	deleted:    logs/version_592/hparams.yaml
+	deleted:    logs/version_593/events.out.tfevents.1667294974.Ubuntu-2204.1902394.0
+	deleted:    logs/version_593/events.out.tfevents.1667295240.Ubuntu-2204.1902394.1
+	deleted:    logs/version_593/hparams.yaml
+	deleted:    logs/version_594/events.out.tfevents.1667295277.Ubuntu-2204.1904125.0
+	deleted:    logs/version_594/events.out.tfevents.1667296065.Ubuntu-2204.1904125.1
+	deleted:    logs/version_594/hparams.yaml
+	deleted:    logs/version_595/events.out.tfevents.1667296102.Ubuntu-2204.1907900.0
+	deleted:    logs/version_595/events.out.tfevents.1667296592.Ubuntu-2204.1907900.1
+	deleted:    logs/version_595/hparams.yaml
+	deleted:    logs/version_596/events.out.tfevents.1667296631.Ubuntu-2204.1910076.0
+	deleted:    logs/version_596/events.out.tfevents.1667297100.Ubuntu-2204.1910076.1
+	deleted:    logs/version_596/hparams.yaml
+	deleted:    logs/version_597/events.out.tfevents.1667297159.Ubuntu-2204.1912276.0
+	deleted:    logs/version_597/events.out.tfevents.1667297767.Ubuntu-2204.1912276.1
+	deleted:    logs/version_597/hparams.yaml
+	deleted:    logs/version_598/events.out.tfevents.1667297804.Ubuntu-2204.1914528.0
+	deleted:    logs/version_598/events.out.tfevents.1667298176.Ubuntu-2204.1914528.1
+	deleted:    logs/version_598/hparams.yaml
+	deleted:    logs/version_599/events.out.tfevents.1667298214.Ubuntu-2204.1916190.0
+	deleted:    logs/version_599/events.out.tfevents.1667298521.Ubuntu-2204.1916190.1
+	deleted:    logs/version_599/hparams.yaml
+	deleted:    logs/version_600/events.out.tfevents.1667298558.Ubuntu-2204.1918102.0
+	deleted:    logs/version_600/events.out.tfevents.1667299053.Ubuntu-2204.1918102.1
+	deleted:    logs/version_600/hparams.yaml
+	deleted:    logs/version_601/events.out.tfevents.1667299089.Ubuntu-2204.1920304.0
+	deleted:    logs/version_601/events.out.tfevents.1667299730.Ubuntu-2204.1920304.1
+	deleted:    logs/version_601/hparams.yaml
+	deleted:    logs/version_602/events.out.tfevents.1667299771.Ubuntu-2204.1924205.0
+	deleted:    logs/version_602/events.out.tfevents.1667300116.Ubuntu-2204.1924205.1
+	deleted:    logs/version_602/hparams.yaml
+	deleted:    logs/version_603/events.out.tfevents.1667300151.Ubuntu-2204.1926402.0
+	deleted:    logs/version_603/events.out.tfevents.1667301111.Ubuntu-2204.1926402.1
+	deleted:    logs/version_603/hparams.yaml
+	deleted:    logs/version_604/events.out.tfevents.1667301159.Ubuntu-2204.1933268.0
+	deleted:    logs/version_604/events.out.tfevents.1667301873.Ubuntu-2204.1933268.1
+	deleted:    logs/version_604/hparams.yaml
+	deleted:    logs/version_605/events.out.tfevents.1667301925.Ubuntu-2204.1938575.0
+	deleted:    logs/version_605/events.out.tfevents.1667302567.Ubuntu-2204.1938575.1
+	deleted:    logs/version_605/hparams.yaml
+	deleted:    logs/version_606/events.out.tfevents.1667302615.Ubuntu-2204.1943544.0
+	deleted:    logs/version_606/events.out.tfevents.1667303315.Ubuntu-2204.1943544.1
+	deleted:    logs/version_606/hparams.yaml
+	deleted:    logs/version_607/events.out.tfevents.1667303351.Ubuntu-2204.1948209.0
+	deleted:    logs/version_607/events.out.tfevents.1667303734.Ubuntu-2204.1948209.1
+	deleted:    logs/version_607/hparams.yaml
+	deleted:    logs/version_608/events.out.tfevents.1667303770.Ubuntu-2204.1950205.0
+	deleted:    logs/version_608/events.out.tfevents.1667303990.Ubuntu-2204.1950205.1
+	deleted:    logs/version_608/hparams.yaml
+	deleted:    logs/version_609/events.out.tfevents.1667304027.Ubuntu-2204.1951487.0
+	deleted:    logs/version_609/events.out.tfevents.1667304403.Ubuntu-2204.1951487.1
+	deleted:    logs/version_609/hparams.yaml
+	deleted:    logs/version_610/events.out.tfevents.1667304440.Ubuntu-2204.1953517.0
+	deleted:    logs/version_610/events.out.tfevents.1667304839.Ubuntu-2204.1953517.1
+	deleted:    logs/version_610/hparams.yaml
+	deleted:    logs/version_611/events.out.tfevents.1667304875.Ubuntu-2204.1956090.0
+	deleted:    logs/version_611/events.out.tfevents.1667305263.Ubuntu-2204.1956090.1
+	deleted:    logs/version_611/hparams.yaml
+	deleted:    logs/version_612/events.out.tfevents.1667305300.Ubuntu-2204.1958379.0
+	deleted:    logs/version_612/events.out.tfevents.1667305775.Ubuntu-2204.1958379.1
+	deleted:    logs/version_612/hparams.yaml
+	deleted:    logs/version_613/events.out.tfevents.1667305835.Ubuntu-2204.1962461.0
+	deleted:    logs/version_613/events.out.tfevents.1667306291.Ubuntu-2204.1962461.1
+	deleted:    logs/version_613/hparams.yaml
+	deleted:    logs/version_614/events.out.tfevents.1667307525.Ubuntu-2204.1975149.0
+	deleted:    logs/version_614/events.out.tfevents.1667307944.Ubuntu-2204.1975149.1
+	deleted:    logs/version_614/hparams.yaml
+	deleted:    logs/version_615/events.out.tfevents.1667307986.Ubuntu-2204.1979804.0
+	deleted:    logs/version_615/events.out.tfevents.1667308397.Ubuntu-2204.1979804.1
+	deleted:    logs/version_615/hparams.yaml
+	deleted:    logs/version_616/events.out.tfevents.1667308440.Ubuntu-2204.1984632.0
+	deleted:    logs/version_616/events.out.tfevents.1667308873.Ubuntu-2204.1984632.1
+	deleted:    logs/version_616/hparams.yaml
+	deleted:    logs/version_617/events.out.tfevents.1667308916.Ubuntu-2204.1991181.0
+	deleted:    logs/version_617/hparams.yaml
+	deleted:    logs/version_618/events.out.tfevents.1667310939.Ubuntu-2204.11689.0
+	deleted:    logs/version_618/events.out.tfevents.1667311357.Ubuntu-2204.11689.1
+	deleted:    logs/version_618/hparams.yaml
+	deleted:    logs/version_619/events.out.tfevents.1667311393.Ubuntu-2204.15585.0
+	deleted:    logs/version_619/events.out.tfevents.1667311795.Ubuntu-2204.15585.1
+	deleted:    logs/version_619/hparams.yaml
+	deleted:    logs/version_620/events.out.tfevents.1667311831.Ubuntu-2204.17546.0
+	deleted:    logs/version_620/events.out.tfevents.1667312188.Ubuntu-2204.17546.1
+	deleted:    logs/version_620/hparams.yaml
+	deleted:    logs/version_621/events.out.tfevents.1667312223.Ubuntu-2204.19519.0
+	deleted:    logs/version_621/events.out.tfevents.1667312578.Ubuntu-2204.19519.1
+	deleted:    logs/version_621/hparams.yaml
+	deleted:    logs/version_622/events.out.tfevents.1667312615.Ubuntu-2204.21484.0
+	deleted:    logs/version_622/events.out.tfevents.1667312979.Ubuntu-2204.21484.1
+	deleted:    logs/version_622/hparams.yaml
+	deleted:    logs/version_623/events.out.tfevents.1667313017.Ubuntu-2204.23449.0
+	deleted:    logs/version_623/events.out.tfevents.1667313447.Ubuntu-2204.23449.1
+	deleted:    logs/version_623/hparams.yaml
+	deleted:    logs/version_624/events.out.tfevents.1667313483.Ubuntu-2204.25413.0
+	deleted:    logs/version_624/events.out.tfevents.1667313879.Ubuntu-2204.25413.1
+	deleted:    logs/version_624/hparams.yaml
+	deleted:    logs/version_625/events.out.tfevents.1667313917.Ubuntu-2204.27374.0
+	deleted:    logs/version_625/events.out.tfevents.1667314262.Ubuntu-2204.27374.1
+	deleted:    logs/version_625/hparams.yaml
+	deleted:    logs/version_626/events.out.tfevents.1667314299.Ubuntu-2204.29159.0
+	deleted:    logs/version_626/events.out.tfevents.1667314673.Ubuntu-2204.29159.1
+	deleted:    logs/version_626/hparams.yaml
+	deleted:    logs/version_627/events.out.tfevents.1667314709.Ubuntu-2204.31121.0
+	deleted:    logs/version_627/events.out.tfevents.1667315076.Ubuntu-2204.31121.1
+	deleted:    logs/version_627/hparams.yaml
+	deleted:    logs/version_628/events.out.tfevents.1667315112.Ubuntu-2204.33082.0
+	deleted:    logs/version_628/events.out.tfevents.1667315484.Ubuntu-2204.33082.1
+	deleted:    logs/version_628/hparams.yaml
+	deleted:    logs/version_629/events.out.tfevents.1667315522.Ubuntu-2204.35042.0
+	deleted:    logs/version_629/events.out.tfevents.1667315898.Ubuntu-2204.35042.1
+	deleted:    logs/version_629/hparams.yaml
+	deleted:    logs/version_630/events.out.tfevents.1667315935.Ubuntu-2204.37007.0
+	deleted:    logs/version_630/events.out.tfevents.1667316210.Ubuntu-2204.37007.1
+	deleted:    logs/version_630/hparams.yaml
+	deleted:    logs/version_631/events.out.tfevents.1667316247.Ubuntu-2204.38441.0
+	deleted:    logs/version_631/events.out.tfevents.1667316608.Ubuntu-2204.38441.1
+	deleted:    logs/version_631/hparams.yaml
+	deleted:    logs/version_632/events.out.tfevents.1667316645.Ubuntu-2204.40418.0
+	deleted:    logs/version_632/events.out.tfevents.1667316870.Ubuntu-2204.40418.1
+	deleted:    logs/version_632/hparams.yaml
+	deleted:    logs/version_633/events.out.tfevents.1667316905.Ubuntu-2204.41684.0
+	deleted:    logs/version_633/events.out.tfevents.1667317281.Ubuntu-2204.41684.1
+	deleted:    logs/version_633/hparams.yaml
+	deleted:    logs/version_634/events.out.tfevents.1667317317.Ubuntu-2204.43647.0
+	deleted:    logs/version_634/events.out.tfevents.1667317697.Ubuntu-2204.43647.1
+	deleted:    logs/version_634/hparams.yaml
+	deleted:    logs/version_635/events.out.tfevents.1667317733.Ubuntu-2204.45609.0
+	deleted:    logs/version_635/events.out.tfevents.1667318115.Ubuntu-2204.45609.1
+	deleted:    logs/version_635/hparams.yaml
+	deleted:    logs/version_636/events.out.tfevents.1667318150.Ubuntu-2204.47569.0
+	deleted:    logs/version_636/events.out.tfevents.1667318529.Ubuntu-2204.47569.1
+	deleted:    logs/version_636/hparams.yaml
+	deleted:    logs/version_637/events.out.tfevents.1667318565.Ubuntu-2204.49553.0
+	deleted:    logs/version_637/events.out.tfevents.1667318939.Ubuntu-2204.49553.1
+	deleted:    logs/version_637/hparams.yaml
+	deleted:    logs/version_638/events.out.tfevents.1667318977.Ubuntu-2204.51515.0
+	deleted:    logs/version_638/events.out.tfevents.1667319356.Ubuntu-2204.51515.1
+	deleted:    logs/version_638/hparams.yaml
+	deleted:    logs/version_639/events.out.tfevents.1667319394.Ubuntu-2204.53483.0
+	deleted:    logs/version_639/events.out.tfevents.1667319777.Ubuntu-2204.53483.1
+	deleted:    logs/version_639/hparams.yaml
+	deleted:    logs/version_640/events.out.tfevents.1667319815.Ubuntu-2204.55448.0
+	deleted:    logs/version_640/events.out.tfevents.1667320044.Ubuntu-2204.55448.1
+	deleted:    logs/version_640/hparams.yaml
+	deleted:    logs/version_641/events.out.tfevents.1667320080.Ubuntu-2204.56705.0
+	deleted:    logs/version_641/events.out.tfevents.1667320459.Ubuntu-2204.56705.1
+	deleted:    logs/version_641/hparams.yaml
+	deleted:    logs/version_642/events.out.tfevents.1667320495.Ubuntu-2204.58665.0
+	deleted:    logs/version_642/events.out.tfevents.1667320872.Ubuntu-2204.58665.1
+	deleted:    logs/version_642/hparams.yaml
+	deleted:    logs/version_643/events.out.tfevents.1667320908.Ubuntu-2204.60625.0
+	deleted:    logs/version_643/events.out.tfevents.1667321299.Ubuntu-2204.60625.1
+	deleted:    logs/version_643/hparams.yaml
+	deleted:    logs/version_644/events.out.tfevents.1667321335.Ubuntu-2204.62587.0
+	deleted:    logs/version_644/events.out.tfevents.1667321727.Ubuntu-2204.62587.1
+	deleted:    logs/version_644/hparams.yaml
+	deleted:    logs/version_645/events.out.tfevents.1667321764.Ubuntu-2204.64548.0
+	deleted:    logs/version_645/events.out.tfevents.1667322160.Ubuntu-2204.64548.1
+	deleted:    logs/version_645/hparams.yaml
+	deleted:    logs/version_646/events.out.tfevents.1667322196.Ubuntu-2204.66509.0
+	deleted:    logs/version_646/events.out.tfevents.1667322598.Ubuntu-2204.66509.1
+	deleted:    logs/version_646/hparams.yaml
+	deleted:    logs/version_647/events.out.tfevents.1667322635.Ubuntu-2204.68470.0
+	deleted:    logs/version_647/events.out.tfevents.1667323000.Ubuntu-2204.68470.1
+	deleted:    logs/version_647/hparams.yaml
+	deleted:    logs/version_648/events.out.tfevents.1667323037.Ubuntu-2204.70443.0
+	deleted:    logs/version_648/events.out.tfevents.1667323398.Ubuntu-2204.70443.1
+	deleted:    logs/version_648/hparams.yaml
+	deleted:    logs/version_649/events.out.tfevents.1667323436.Ubuntu-2204.72405.0
+	deleted:    logs/version_649/events.out.tfevents.1667323805.Ubuntu-2204.72405.1
+	deleted:    logs/version_649/hparams.yaml
+	deleted:    logs/version_650/events.out.tfevents.1667323843.Ubuntu-2204.74364.0
+	deleted:    logs/version_650/events.out.tfevents.1667324227.Ubuntu-2204.74364.1
+	deleted:    logs/version_650/hparams.yaml
+	deleted:    logs/version_651/events.out.tfevents.1667324264.Ubuntu-2204.76327.0
+	deleted:    logs/version_651/events.out.tfevents.1667324565.Ubuntu-2204.76327.1
+	deleted:    logs/version_651/hparams.yaml
+	deleted:    logs/version_652/events.out.tfevents.1667324602.Ubuntu-2204.77934.0
+	deleted:    logs/version_652/events.out.tfevents.1667324986.Ubuntu-2204.77934.1
+	deleted:    logs/version_652/hparams.yaml
+	deleted:    logs/version_653/events.out.tfevents.1667325023.Ubuntu-2204.79895.0
+	deleted:    logs/version_653/events.out.tfevents.1667325396.Ubuntu-2204.79895.1
+	deleted:    logs/version_653/hparams.yaml
+	deleted:    logs/version_654/events.out.tfevents.1667325433.Ubuntu-2204.81857.0
+	deleted:    logs/version_654/events.out.tfevents.1667325787.Ubuntu-2204.81857.1
+	deleted:    logs/version_654/hparams.yaml
+	deleted:    logs/version_655/events.out.tfevents.1667325825.Ubuntu-2204.83817.0
+	deleted:    logs/version_655/events.out.tfevents.1667326197.Ubuntu-2204.83817.1
+	deleted:    logs/version_655/hparams.yaml
+	deleted:    logs/version_656/events.out.tfevents.1667326235.Ubuntu-2204.85777.0
+	deleted:    logs/version_656/events.out.tfevents.1667326620.Ubuntu-2204.85777.1
+	deleted:    logs/version_656/hparams.yaml
+	deleted:    logs/version_657/events.out.tfevents.1667326658.Ubuntu-2204.87743.0
+	deleted:    logs/version_657/events.out.tfevents.1667327049.Ubuntu-2204.87743.1
+	deleted:    logs/version_657/hparams.yaml
+	deleted:    logs/version_658/events.out.tfevents.1667327086.Ubuntu-2204.89704.0
+	deleted:    logs/version_658/events.out.tfevents.1667327463.Ubuntu-2204.89704.1
+	deleted:    logs/version_658/hparams.yaml
+	deleted:    logs/version_659/events.out.tfevents.1667327499.Ubuntu-2204.91664.0
+	deleted:    logs/version_659/events.out.tfevents.1667327880.Ubuntu-2204.91664.1
+	deleted:    logs/version_659/hparams.yaml
+	deleted:    logs/version_660/events.out.tfevents.1667327916.Ubuntu-2204.93626.0
+	deleted:    logs/version_660/events.out.tfevents.1667328131.Ubuntu-2204.93626.1
+	deleted:    logs/version_660/hparams.yaml
+	deleted:    logs/version_661/events.out.tfevents.1667328166.Ubuntu-2204.94881.0
+	deleted:    logs/version_661/events.out.tfevents.1667328544.Ubuntu-2204.94881.1
+	deleted:    logs/version_661/hparams.yaml
+	deleted:    logs/version_662/events.out.tfevents.1667328583.Ubuntu-2204.96841.0
+	deleted:    logs/version_662/events.out.tfevents.1667328949.Ubuntu-2204.96841.1
+	deleted:    logs/version_662/hparams.yaml
+	deleted:    logs/version_663/events.out.tfevents.1667328985.Ubuntu-2204.98803.0
+	deleted:    logs/version_663/events.out.tfevents.1667329358.Ubuntu-2204.98803.1
+	deleted:    logs/version_663/hparams.yaml
+	deleted:    logs/version_664/events.out.tfevents.1667329395.Ubuntu-2204.100764.0
+	deleted:    logs/version_664/events.out.tfevents.1667329764.Ubuntu-2204.100764.1
+	deleted:    logs/version_664/hparams.yaml
+	deleted:    logs/version_665/events.out.tfevents.1667329800.Ubuntu-2204.102724.0
+	deleted:    logs/version_665/events.out.tfevents.1667330215.Ubuntu-2204.102724.1
+	deleted:    logs/version_665/hparams.yaml
+	deleted:    logs/version_666/events.out.tfevents.1667330252.Ubuntu-2204.104692.0
+	deleted:    logs/version_666/events.out.tfevents.1667330584.Ubuntu-2204.104692.1
+	deleted:    logs/version_666/hparams.yaml
+	deleted:    logs/version_667/events.out.tfevents.1667330621.Ubuntu-2204.106477.0
+	deleted:    logs/version_667/events.out.tfevents.1667331008.Ubuntu-2204.106477.1
+	deleted:    logs/version_667/hparams.yaml
+	deleted:    logs/version_668/events.out.tfevents.1667331045.Ubuntu-2204.108445.0
+	deleted:    logs/version_668/events.out.tfevents.1667331429.Ubuntu-2204.108445.1
+	deleted:    logs/version_668/hparams.yaml
+	deleted:    logs/version_669/events.out.tfevents.1667331465.Ubuntu-2204.110408.0
+	deleted:    logs/version_669/events.out.tfevents.1667331882.Ubuntu-2204.110408.1
+	deleted:    logs/version_669/hparams.yaml
+	deleted:    logs/version_670/events.out.tfevents.1667331918.Ubuntu-2204.112370.0
+	deleted:    logs/version_670/events.out.tfevents.1667332302.Ubuntu-2204.112370.1
+	deleted:    logs/version_670/hparams.yaml
+	deleted:    logs/version_671/events.out.tfevents.1667332338.Ubuntu-2204.114338.0
+	deleted:    logs/version_671/events.out.tfevents.1667332714.Ubuntu-2204.114338.1
+	deleted:    logs/version_671/hparams.yaml
+	deleted:    logs/version_672/events.out.tfevents.1667332750.Ubuntu-2204.116299.0
+	deleted:    logs/version_672/events.out.tfevents.1667333127.Ubuntu-2204.116299.1
+	deleted:    logs/version_672/hparams.yaml
+	deleted:    logs/version_673/events.out.tfevents.1667333164.Ubuntu-2204.118259.0
+	deleted:    logs/version_673/events.out.tfevents.1667333429.Ubuntu-2204.118259.1
+	deleted:    logs/version_673/hparams.yaml
+	deleted:    logs/version_674/events.out.tfevents.1667333464.Ubuntu-2204.119691.0
+	deleted:    logs/version_674/events.out.tfevents.1667333842.Ubuntu-2204.119691.1
+	deleted:    logs/version_674/hparams.yaml
+	deleted:    logs/version_675/events.out.tfevents.1667333878.Ubuntu-2204.121661.0
+	deleted:    logs/version_675/events.out.tfevents.1667334285.Ubuntu-2204.121661.1
+	deleted:    logs/version_675/hparams.yaml
+	deleted:    logs/version_676/events.out.tfevents.1667334321.Ubuntu-2204.123630.0
+	deleted:    logs/version_676/events.out.tfevents.1667334710.Ubuntu-2204.123630.1
+	deleted:    logs/version_676/hparams.yaml
+	deleted:    logs/version_677/events.out.tfevents.1667334746.Ubuntu-2204.125591.0
+	deleted:    logs/version_677/events.out.tfevents.1667335124.Ubuntu-2204.125591.1
+	deleted:    logs/version_677/hparams.yaml
+	deleted:    logs/version_678/events.out.tfevents.1667335161.Ubuntu-2204.127560.0
+	deleted:    logs/version_678/events.out.tfevents.1667335502.Ubuntu-2204.127560.1
+	deleted:    logs/version_678/hparams.yaml
+	deleted:    logs/version_679/events.out.tfevents.1667335542.Ubuntu-2204.129346.0
+	deleted:    logs/version_679/events.out.tfevents.1667335969.Ubuntu-2204.129346.1
+	deleted:    logs/version_679/hparams.yaml
+	deleted:    logs/version_680/events.out.tfevents.1667336004.Ubuntu-2204.131307.0
+	deleted:    logs/version_680/events.out.tfevents.1667336217.Ubuntu-2204.131307.1
+	deleted:    logs/version_680/hparams.yaml
+	deleted:    logs/version_681/events.out.tfevents.1667336248.Ubuntu-2204.132564.0
+	deleted:    logs/version_681/events.out.tfevents.1667336588.Ubuntu-2204.132564.1
+	deleted:    logs/version_681/hparams.yaml
+	deleted:    logs/version_682/events.out.tfevents.1667336640.Ubuntu-2204.134533.0
+	deleted:    logs/version_682/events.out.tfevents.1667336892.Ubuntu-2204.134533.1
+	deleted:    logs/version_682/hparams.yaml
+	deleted:    logs/version_683/events.out.tfevents.1667336931.Ubuntu-2204.136141.0
+	deleted:    logs/version_683/events.out.tfevents.1667337315.Ubuntu-2204.136141.1
+	deleted:    logs/version_683/hparams.yaml
+	deleted:    logs/version_684/events.out.tfevents.1667337351.Ubuntu-2204.138101.0
+	deleted:    logs/version_684/events.out.tfevents.1667337582.Ubuntu-2204.138101.1
+	deleted:    logs/version_684/hparams.yaml
+	deleted:    logs/version_685/events.out.tfevents.1667337618.Ubuntu-2204.139620.0
+	deleted:    logs/version_685/events.out.tfevents.1667338015.Ubuntu-2204.139620.1
+	deleted:    logs/version_685/hparams.yaml
+	deleted:    logs/version_686/events.out.tfevents.1667338051.Ubuntu-2204.141584.0
+	deleted:    logs/version_686/events.out.tfevents.1667338452.Ubuntu-2204.141584.1
+	deleted:    logs/version_686/hparams.yaml
+	deleted:    logs/version_687/events.out.tfevents.1667338489.Ubuntu-2204.143544.0
+	deleted:    logs/version_687/events.out.tfevents.1667338897.Ubuntu-2204.143544.1
+	deleted:    logs/version_687/hparams.yaml
+	deleted:    logs/version_688/events.out.tfevents.1667338934.Ubuntu-2204.145505.0
+	deleted:    logs/version_688/events.out.tfevents.1667339319.Ubuntu-2204.145505.1
+	deleted:    logs/version_688/hparams.yaml
+	deleted:    logs/version_689/events.out.tfevents.1667339356.Ubuntu-2204.147466.0
+	deleted:    logs/version_689/events.out.tfevents.1667339716.Ubuntu-2204.147466.1
+	deleted:    logs/version_689/hparams.yaml
+	deleted:    logs/version_690/events.out.tfevents.1667339753.Ubuntu-2204.149427.0
+	deleted:    logs/version_690/events.out.tfevents.1667340108.Ubuntu-2204.149427.1
+	deleted:    logs/version_690/hparams.yaml
+	deleted:    logs/version_691/events.out.tfevents.1667340148.Ubuntu-2204.151387.0
+	deleted:    logs/version_691/events.out.tfevents.1667340361.Ubuntu-2204.151387.1
+	deleted:    logs/version_691/hparams.yaml
+	deleted:    logs/version_692/events.out.tfevents.1667340397.Ubuntu-2204.152643.0
+	deleted:    logs/version_692/events.out.tfevents.1667340703.Ubuntu-2204.152643.1
+	deleted:    logs/version_692/hparams.yaml
+	deleted:    logs/version_693/events.out.tfevents.1667340735.Ubuntu-2204.154603.0
+	deleted:    logs/version_693/events.out.tfevents.1667341059.Ubuntu-2204.154603.1
+	deleted:    logs/version_693/hparams.yaml
+	deleted:    logs/version_694/events.out.tfevents.1667341109.Ubuntu-2204.156566.0
+	deleted:    logs/version_694/events.out.tfevents.1667341384.Ubuntu-2204.156566.1
+	deleted:    logs/version_694/hparams.yaml
+	deleted:    logs/version_695/events.out.tfevents.1667341426.Ubuntu-2204.158527.0
+	deleted:    logs/version_695/events.out.tfevents.1667341794.Ubuntu-2204.158527.1
+	deleted:    logs/version_695/hparams.yaml
+	deleted:    logs/version_696/events.out.tfevents.1667341831.Ubuntu-2204.160564.0
+	deleted:    logs/version_696/events.out.tfevents.1667342200.Ubuntu-2204.160564.1
+	deleted:    logs/version_696/hparams.yaml
+	deleted:    logs/version_697/events.out.tfevents.1667342237.Ubuntu-2204.162531.0
+	deleted:    logs/version_697/events.out.tfevents.1667342590.Ubuntu-2204.162531.1
+	deleted:    logs/version_697/hparams.yaml
+	deleted:    logs/version_698/events.out.tfevents.1667342628.Ubuntu-2204.164499.0
+	deleted:    logs/version_698/events.out.tfevents.1667342854.Ubuntu-2204.164499.1
+	deleted:    logs/version_698/hparams.yaml
+	deleted:    logs/version_699/events.out.tfevents.1667342893.Ubuntu-2204.165756.0
+	deleted:    logs/version_699/events.out.tfevents.1667343286.Ubuntu-2204.165756.1
+	deleted:    logs/version_699/hparams.yaml
+	deleted:    logs/version_7/events.out.tfevents.1666343586.Ubuntu-2204.231316.0
+	modified:   logs/version_7/hparams.yaml
+	deleted:    logs/version_70/events.out.tfevents.1666651801.Ubuntu-2204.717445.0
+	deleted:    logs/version_70/events.out.tfevents.1666653415.Ubuntu-2204.717445.1
+	modified:   logs/version_70/hparams.yaml
+	deleted:    logs/version_700/events.out.tfevents.1667343323.Ubuntu-2204.167717.0
+	deleted:    logs/version_700/events.out.tfevents.1667343706.Ubuntu-2204.167717.1
+	deleted:    logs/version_700/hparams.yaml
+	deleted:    logs/version_701/events.out.tfevents.1667343743.Ubuntu-2204.169677.0
+	deleted:    logs/version_701/events.out.tfevents.1667344087.Ubuntu-2204.169677.1
+	deleted:    logs/version_701/hparams.yaml
+	deleted:    logs/version_702/events.out.tfevents.1667344125.Ubuntu-2204.171462.0
+	deleted:    logs/version_702/events.out.tfevents.1667344490.Ubuntu-2204.171462.1
+	deleted:    logs/version_702/hparams.yaml
+	deleted:    logs/version_703/events.out.tfevents.1667344528.Ubuntu-2204.173429.0
+	deleted:    logs/version_703/events.out.tfevents.1667344886.Ubuntu-2204.173429.1
+	deleted:    logs/version_703/hparams.yaml
+	deleted:    logs/version_704/events.out.tfevents.1667344925.Ubuntu-2204.175393.0
+	deleted:    logs/version_704/events.out.tfevents.1667345294.Ubuntu-2204.175393.1
+	deleted:    logs/version_704/hparams.yaml
+	deleted:    logs/version_705/events.out.tfevents.1667345332.Ubuntu-2204.177362.0
+	deleted:    logs/version_705/events.out.tfevents.1667345721.Ubuntu-2204.177362.1
+	deleted:    logs/version_705/hparams.yaml
+	deleted:    logs/version_706/events.out.tfevents.1667345757.Ubuntu-2204.179326.0
+	deleted:    logs/version_706/events.out.tfevents.1667346133.Ubuntu-2204.179326.1
+	deleted:    logs/version_706/hparams.yaml
+	deleted:    logs/version_707/events.out.tfevents.1667346169.Ubuntu-2204.181322.0
+	deleted:    logs/version_707/events.out.tfevents.1667346558.Ubuntu-2204.181322.1
+	deleted:    logs/version_707/hparams.yaml
+	deleted:    logs/version_708/events.out.tfevents.1667346594.Ubuntu-2204.183283.0
+	deleted:    logs/version_708/events.out.tfevents.1667346981.Ubuntu-2204.183283.1
+	deleted:    logs/version_708/hparams.yaml
+	deleted:    logs/version_709/events.out.tfevents.1667347018.Ubuntu-2204.185243.0
+	deleted:    logs/version_709/events.out.tfevents.1667347401.Ubuntu-2204.185243.1
+	deleted:    logs/version_709/hparams.yaml
+	deleted:    logs/version_71/events.out.tfevents.1666653456.Ubuntu-2204.719444.0
+	deleted:    logs/version_71/events.out.tfevents.1666655122.Ubuntu-2204.719444.1
+	modified:   logs/version_71/hparams.yaml
+	deleted:    logs/version_710/events.out.tfevents.1667347437.Ubuntu-2204.187205.0
+	deleted:    logs/version_710/events.out.tfevents.1667347802.Ubuntu-2204.187205.1
+	deleted:    logs/version_710/hparams.yaml
+	deleted:    logs/version_711/events.out.tfevents.1667347837.Ubuntu-2204.189165.0
+	deleted:    logs/version_711/events.out.tfevents.1667348252.Ubuntu-2204.189165.1
+	deleted:    logs/version_711/hparams.yaml
+	deleted:    logs/version_712/events.out.tfevents.1667348289.Ubuntu-2204.191136.0
+	deleted:    logs/version_712/events.out.tfevents.1667348695.Ubuntu-2204.191136.1
+	deleted:    logs/version_712/hparams.yaml
+	deleted:    logs/version_713/events.out.tfevents.1667348732.Ubuntu-2204.193104.0
+	deleted:    logs/version_713/events.out.tfevents.1667349107.Ubuntu-2204.193104.1
+	deleted:    logs/version_713/hparams.yaml
+	deleted:    logs/version_714/events.out.tfevents.1667349145.Ubuntu-2204.195068.0
+	deleted:    logs/version_714/events.out.tfevents.1667349508.Ubuntu-2204.195068.1
+	deleted:    logs/version_714/hparams.yaml
+	deleted:    logs/version_715/events.out.tfevents.1667349545.Ubuntu-2204.197030.0
+	deleted:    logs/version_715/events.out.tfevents.1667349849.Ubuntu-2204.197030.1
+	deleted:    logs/version_715/hparams.yaml
+	deleted:    logs/version_716/events.out.tfevents.1667349888.Ubuntu-2204.198646.0
+	deleted:    logs/version_716/events.out.tfevents.1667350258.Ubuntu-2204.198646.1
+	deleted:    logs/version_716/hparams.yaml
+	deleted:    logs/version_717/events.out.tfevents.1667350295.Ubuntu-2204.200606.0
+	deleted:    logs/version_717/events.out.tfevents.1667350643.Ubuntu-2204.200606.1
+	deleted:    logs/version_717/hparams.yaml
+	deleted:    logs/version_718/events.out.tfevents.1667350680.Ubuntu-2204.202392.0
+	deleted:    logs/version_718/events.out.tfevents.1667351056.Ubuntu-2204.202392.1
+	deleted:    logs/version_718/hparams.yaml
+	deleted:    logs/version_719/events.out.tfevents.1667351093.Ubuntu-2204.204355.0
+	deleted:    logs/version_719/events.out.tfevents.1667351480.Ubuntu-2204.204355.1
+	deleted:    logs/version_719/hparams.yaml
+	deleted:    logs/version_72/events.out.tfevents.1666655164.Ubuntu-2204.721555.0
+	deleted:    logs/version_72/events.out.tfevents.1666656805.Ubuntu-2204.721555.1
+	modified:   logs/version_72/hparams.yaml
+	deleted:    logs/version_720/events.out.tfevents.1667351517.Ubuntu-2204.206315.0
+	deleted:    logs/version_720/events.out.tfevents.1667351863.Ubuntu-2204.206315.1
+	deleted:    logs/version_720/hparams.yaml
+	deleted:    logs/version_721/events.out.tfevents.1667351901.Ubuntu-2204.208104.0
+	deleted:    logs/version_721/events.out.tfevents.1667352297.Ubuntu-2204.208104.1
+	deleted:    logs/version_721/hparams.yaml
+	deleted:    logs/version_722/events.out.tfevents.1667352333.Ubuntu-2204.210066.0
+	deleted:    logs/version_722/events.out.tfevents.1667352700.Ubuntu-2204.210066.1
+	deleted:    logs/version_722/hparams.yaml
+	deleted:    logs/version_723/events.out.tfevents.1667352736.Ubuntu-2204.212359.0
+	deleted:    logs/version_723/events.out.tfevents.1667353150.Ubuntu-2204.212359.1
+	deleted:    logs/version_723/hparams.yaml
+	deleted:    logs/version_724/events.out.tfevents.1667353187.Ubuntu-2204.214679.0
+	deleted:    logs/version_724/events.out.tfevents.1667353586.Ubuntu-2204.214679.1
+	deleted:    logs/version_724/hparams.yaml
+	deleted:    logs/version_725/events.out.tfevents.1667353623.Ubuntu-2204.216639.0
+	deleted:    logs/version_725/events.out.tfevents.1667353990.Ubuntu-2204.216639.1
+	deleted:    logs/version_725/hparams.yaml
+	deleted:    logs/version_726/events.out.tfevents.1667354027.Ubuntu-2204.218604.0
+	deleted:    logs/version_726/events.out.tfevents.1667354397.Ubuntu-2204.218604.1
+	deleted:    logs/version_726/hparams.yaml
+	deleted:    logs/version_727/events.out.tfevents.1667354435.Ubuntu-2204.220570.0
+	deleted:    logs/version_727/events.out.tfevents.1667354766.Ubuntu-2204.220570.1
+	deleted:    logs/version_727/hparams.yaml
+	deleted:    logs/version_728/events.out.tfevents.1667354804.Ubuntu-2204.222374.0
+	deleted:    logs/version_728/events.out.tfevents.1667355167.Ubuntu-2204.222374.1
+	deleted:    logs/version_728/hparams.yaml
+	deleted:    logs/version_729/events.out.tfevents.1667355205.Ubuntu-2204.224437.0
+	deleted:    logs/version_729/events.out.tfevents.1667355599.Ubuntu-2204.224437.1
+	deleted:    logs/version_729/hparams.yaml
+	deleted:    logs/version_73/events.out.tfevents.1666656845.Ubuntu-2204.723566.0
+	deleted:    logs/version_73/events.out.tfevents.1666658551.Ubuntu-2204.723566.1
+	modified:   logs/version_73/hparams.yaml
+	deleted:    logs/version_730/events.out.tfevents.1667355637.Ubuntu-2204.226663.0
+	deleted:    logs/version_730/events.out.tfevents.1667356018.Ubuntu-2204.226663.1
+	deleted:    logs/version_730/hparams.yaml
+	deleted:    logs/version_731/events.out.tfevents.1667356055.Ubuntu-2204.228759.0
+	deleted:    logs/version_731/events.out.tfevents.1667356415.Ubuntu-2204.228759.1
+	deleted:    logs/version_731/hparams.yaml
+	deleted:    logs/version_732/events.out.tfevents.1667356451.Ubuntu-2204.231029.0
+	deleted:    logs/version_732/hparams.yaml
+	deleted:    logs/version_733/events.out.tfevents.1667394524.Ubuntu-2204.46434.0
+	deleted:    logs/version_733/hparams.yaml
+	deleted:    logs/version_734/events.out.tfevents.1667394833.Ubuntu-2204.59591.0
+	deleted:    logs/version_734/events.out.tfevents.1667397272.Ubuntu-2204.59591.1
+	deleted:    logs/version_734/hparams.yaml
+	deleted:    logs/version_735/events.out.tfevents.1667397481.Ubuntu-2204.69437.0
+	deleted:    logs/version_735/events.out.tfevents.1667402583.Ubuntu-2204.69437.1
+	deleted:    logs/version_735/hparams.yaml
+	deleted:    logs/version_736/events.out.tfevents.1667402803.Ubuntu-2204.79027.0
+	deleted:    logs/version_736/events.out.tfevents.1667408011.Ubuntu-2204.79027.1
+	deleted:    logs/version_736/hparams.yaml
+	deleted:    logs/version_737/events.out.tfevents.1667408172.Ubuntu-2204.90415.0
+	deleted:    logs/version_737/events.out.tfevents.1667413075.Ubuntu-2204.90415.1
+	deleted:    logs/version_737/hparams.yaml
+	deleted:    logs/version_738/events.out.tfevents.1667413247.Ubuntu-2204.101558.0
+	deleted:    logs/version_738/events.out.tfevents.1667418129.Ubuntu-2204.101558.1
+	deleted:    logs/version_738/hparams.yaml
+	deleted:    logs/version_739/events.out.tfevents.1667418349.Ubuntu-2204.112883.0
+	deleted:    logs/version_739/events.out.tfevents.1667423365.Ubuntu-2204.112883.1
+	deleted:    logs/version_739/hparams.yaml
+	deleted:    logs/version_74/events.out.tfevents.1666658595.Ubuntu-2204.725597.0
+	deleted:    logs/version_74/events.out.tfevents.1666660331.Ubuntu-2204.725597.1
+	modified:   logs/version_74/hparams.yaml
+	deleted:    logs/version_740/events.out.tfevents.1667423467.Ubuntu-2204.124669.0
+	deleted:    logs/version_740/events.out.tfevents.1667428071.Ubuntu-2204.124669.1
+	deleted:    logs/version_740/hparams.yaml
+	deleted:    logs/version_741/events.out.tfevents.1667428209.Ubuntu-2204.133763.0
+	deleted:    logs/version_741/events.out.tfevents.1667430946.Ubuntu-2204.133763.1
+	deleted:    logs/version_741/hparams.yaml
+	deleted:    logs/version_742/events.out.tfevents.1667431130.Ubuntu-2204.146375.0
+	deleted:    logs/version_742/events.out.tfevents.1667435932.Ubuntu-2204.146375.1
+	deleted:    logs/version_742/hparams.yaml
+	deleted:    logs/version_743/events.out.tfevents.1667436071.Ubuntu-2204.156602.0
+	deleted:    logs/version_743/events.out.tfevents.1667441326.Ubuntu-2204.156602.1
+	deleted:    logs/version_743/hparams.yaml
+	deleted:    logs/version_744/events.out.tfevents.1667441552.Ubuntu-2204.183308.0
+	deleted:    logs/version_744/hparams.yaml
+	deleted:    logs/version_745/events.out.tfevents.1667462615.Ubuntu-2204.48227.0
+	deleted:    logs/version_745/hparams.yaml
+	deleted:    logs/version_746/events.out.tfevents.1667462837.Ubuntu-2204.48684.0
+	deleted:    logs/version_746/events.out.tfevents.1667463161.Ubuntu-2204.48684.1
+	deleted:    logs/version_746/hparams.yaml
+	deleted:    logs/version_747/events.out.tfevents.1667463198.Ubuntu-2204.52420.0
+	deleted:    logs/version_747/events.out.tfevents.1667463547.Ubuntu-2204.52420.1
+	deleted:    logs/version_747/hparams.yaml
+	deleted:    logs/version_748/events.out.tfevents.1667463585.Ubuntu-2204.55809.0
+	deleted:    logs/version_748/events.out.tfevents.1667463948.Ubuntu-2204.55809.1
+	deleted:    logs/version_748/hparams.yaml
+	deleted:    logs/version_749/events.out.tfevents.1667463986.Ubuntu-2204.59682.0
+	deleted:    logs/version_749/events.out.tfevents.1667464256.Ubuntu-2204.59682.1
+	deleted:    logs/version_749/hparams.yaml
+	deleted:    logs/version_75/events.out.tfevents.1666660380.Ubuntu-2204.727608.0
+	modified:   logs/version_75/hparams.yaml
+	deleted:    logs/version_750/events.out.tfevents.1667464294.Ubuntu-2204.62461.0
+	deleted:    logs/version_750/events.out.tfevents.1667464641.Ubuntu-2204.62461.1
+	deleted:    logs/version_750/hparams.yaml
+	deleted:    logs/version_751/events.out.tfevents.1667464677.Ubuntu-2204.65850.0
+	deleted:    logs/version_751/events.out.tfevents.1667465025.Ubuntu-2204.65850.1
+	deleted:    logs/version_751/hparams.yaml
+	deleted:    logs/version_752/events.out.tfevents.1667465062.Ubuntu-2204.69236.0
+	deleted:    logs/version_752/events.out.tfevents.1667465386.Ubuntu-2204.69236.1
+	deleted:    logs/version_752/hparams.yaml
+	deleted:    logs/version_753/events.out.tfevents.1667465424.Ubuntu-2204.72620.0
+	deleted:    logs/version_753/events.out.tfevents.1667465785.Ubuntu-2204.72620.1
+	deleted:    logs/version_753/hparams.yaml
+	deleted:    logs/version_754/events.out.tfevents.1667465823.Ubuntu-2204.76011.0
+	deleted:    logs/version_754/events.out.tfevents.1667466199.Ubuntu-2204.76011.1
+	deleted:    logs/version_754/hparams.yaml
+	deleted:    logs/version_755/events.out.tfevents.1667466236.Ubuntu-2204.79397.0
+	deleted:    logs/version_755/events.out.tfevents.1667466479.Ubuntu-2204.79397.1
+	deleted:    logs/version_755/hparams.yaml
+	deleted:    logs/version_756/events.out.tfevents.1667466743.Ubuntu-2204.82311.0
+	deleted:    logs/version_756/events.out.tfevents.1667467150.Ubuntu-2204.82311.1
+	deleted:    logs/version_756/hparams.yaml
+	deleted:    logs/version_76/events.out.tfevents.1666662241.Ubuntu-2204.730033.0
+	modified:   logs/version_76/hparams.yaml
+	deleted:    logs/version_77/events.out.tfevents.1666662447.Ubuntu-2204.731277.0
+	deleted:    logs/version_77/events.out.tfevents.1666663228.Ubuntu-2204.731277.1
+	modified:   logs/version_77/hparams.yaml
+	deleted:    logs/version_78/events.out.tfevents.1666667416.Ubuntu-2204.763175.0
+	deleted:    logs/version_78/events.out.tfevents.1666668125.Ubuntu-2204.763175.1
+	modified:   logs/version_78/hparams.yaml
+	deleted:    logs/version_79/events.out.tfevents.1666668166.Ubuntu-2204.771394.0
+	deleted:    logs/version_79/events.out.tfevents.1666668862.Ubuntu-2204.771394.1
+	modified:   logs/version_79/hparams.yaml
+	deleted:    logs/version_8/events.out.tfevents.1666343820.Ubuntu-2204.231487.0
+	modified:   logs/version_8/hparams.yaml
+	deleted:    logs/version_80/events.out.tfevents.1666668902.Ubuntu-2204.776025.0
+	deleted:    logs/version_80/events.out.tfevents.1666669581.Ubuntu-2204.776025.1
+	modified:   logs/version_80/hparams.yaml
+	deleted:    logs/version_81/events.out.tfevents.1666669623.Ubuntu-2204.780588.0
+	deleted:    logs/version_81/events.out.tfevents.1666670033.Ubuntu-2204.780588.1
+	modified:   logs/version_81/hparams.yaml
+	deleted:    logs/version_82/events.out.tfevents.1666670075.Ubuntu-2204.783748.0
+	deleted:    logs/version_82/events.out.tfevents.1666670776.Ubuntu-2204.783748.1
+	modified:   logs/version_82/hparams.yaml
+	deleted:    logs/version_83/events.out.tfevents.1666670816.Ubuntu-2204.788798.0
+	deleted:    logs/version_83/events.out.tfevents.1666671510.Ubuntu-2204.788798.1
+	modified:   logs/version_83/hparams.yaml
+	deleted:    logs/version_84/events.out.tfevents.1666671551.Ubuntu-2204.793693.0
+	deleted:    logs/version_84/events.out.tfevents.1666672261.Ubuntu-2204.793693.1
+	modified:   logs/version_84/hparams.yaml
+	deleted:    logs/version_85/events.out.tfevents.1666672304.Ubuntu-2204.798654.0
+	deleted:    logs/version_85/events.out.tfevents.1666673043.Ubuntu-2204.798654.1
+	modified:   logs/version_85/hparams.yaml
+	deleted:    logs/version_86/events.out.tfevents.1666673087.Ubuntu-2204.803717.0
+	deleted:    logs/version_86/events.out.tfevents.1666673838.Ubuntu-2204.803717.1
+	modified:   logs/version_86/hparams.yaml
+	deleted:    logs/version_87/events.out.tfevents.1666673883.Ubuntu-2204.808744.0
+	deleted:    logs/version_87/events.out.tfevents.1666674333.Ubuntu-2204.808744.1
+	modified:   logs/version_87/hparams.yaml
+	deleted:    logs/version_88/events.out.tfevents.1666674377.Ubuntu-2204.811911.0
+	deleted:    logs/version_88/events.out.tfevents.1666675134.Ubuntu-2204.811911.1
+	modified:   logs/version_88/hparams.yaml
+	deleted:    logs/version_89/events.out.tfevents.1666675178.Ubuntu-2204.817114.0
+	deleted:    logs/version_89/events.out.tfevents.1666675948.Ubuntu-2204.817114.1
+	modified:   logs/version_89/hparams.yaml
+	deleted:    logs/version_9/events.out.tfevents.1666343906.Ubuntu-2204.231654.0
+	modified:   logs/version_9/hparams.yaml
+	deleted:    logs/version_90/events.out.tfevents.1666675990.Ubuntu-2204.822040.0
+	deleted:    logs/version_90/events.out.tfevents.1666676696.Ubuntu-2204.822040.1
+	modified:   logs/version_90/hparams.yaml
+	deleted:    logs/version_91/events.out.tfevents.1666676740.Ubuntu-2204.826898.0
+	deleted:    logs/version_91/events.out.tfevents.1666677509.Ubuntu-2204.826898.1
+	modified:   logs/version_91/hparams.yaml
+	deleted:    logs/version_92/events.out.tfevents.1666677551.Ubuntu-2204.831983.0
+	deleted:    logs/version_92/events.out.tfevents.1666678323.Ubuntu-2204.831983.1
+	modified:   logs/version_92/hparams.yaml
+	deleted:    logs/version_93/events.out.tfevents.1666678367.Ubuntu-2204.837054.0
+	deleted:    logs/version_93/events.out.tfevents.1666679106.Ubuntu-2204.837054.1
+	modified:   logs/version_93/hparams.yaml
+	deleted:    logs/version_94/events.out.tfevents.1666679149.Ubuntu-2204.841962.0
+	deleted:    logs/version_94/events.out.tfevents.1666679939.Ubuntu-2204.841962.1
+	modified:   logs/version_94/hparams.yaml
+	deleted:    logs/version_95/events.out.tfevents.1666679965.Ubuntu-2204.846892.0
+	deleted:    logs/version_95/events.out.tfevents.1666680777.Ubuntu-2204.846892.1
+	modified:   logs/version_95/hparams.yaml
+	deleted:    logs/version_96/events.out.tfevents.1666680820.Ubuntu-2204.852511.0
+	deleted:    logs/version_96/events.out.tfevents.1666681596.Ubuntu-2204.852511.1
+	modified:   logs/version_96/hparams.yaml
+	deleted:    logs/version_97/events.out.tfevents.1666681620.Ubuntu-2204.857907.0
+	deleted:    logs/version_97/events.out.tfevents.1666682306.Ubuntu-2204.857907.1
+	modified:   logs/version_97/hparams.yaml
+	deleted:    logs/version_98/events.out.tfevents.1666682346.Ubuntu-2204.862710.0
+	deleted:    logs/version_98/events.out.tfevents.1666683045.Ubuntu-2204.862710.1
+	modified:   logs/version_98/hparams.yaml
+	deleted:    logs/version_99/events.out.tfevents.1666683085.Ubuntu-2204.867494.0
+	deleted:    logs/version_99/events.out.tfevents.1666683775.Ubuntu-2204.867494.1
+	modified:   logs/version_99/hparams.yaml
+	modified:   model_self_attn.py
+	modified:   model_self_attn_pot.py
+	deleted:    picture/0_.csv
+	deleted:    picture/100_.csv
+	deleted:    picture/101_.csv
+	deleted:    picture/102_.csv
+	deleted:    picture/103_.csv
+	deleted:    picture/104_.csv
+	deleted:    picture/105_.csv
+	deleted:    picture/106_.csv
+	deleted:    picture/107_.csv
+	deleted:    picture/108_.csv
+	deleted:    picture/109_.csv
+	deleted:    picture/10_.csv
+	deleted:    picture/110_.csv
+	deleted:    picture/111_.csv
+	deleted:    picture/112_.csv
+	deleted:    picture/113_.csv
+	deleted:    picture/114_.csv
+	deleted:    picture/115_.csv
+	deleted:    picture/116_.csv
+	deleted:    picture/117_.csv
+	deleted:    picture/118_.csv
+	deleted:    picture/119_.csv
+	deleted:    picture/11_.csv
+	deleted:    picture/120_.csv
+	deleted:    picture/121_.csv
+	deleted:    picture/122_.csv
+	deleted:    picture/123_.csv
+	deleted:    picture/124_.csv
+	deleted:    picture/125_.csv
+	deleted:    picture/126_.csv
+	deleted:    picture/127_.csv
+	deleted:    picture/128_.csv
+	deleted:    picture/129_.csv
+	deleted:    picture/12_.csv
+	deleted:    picture/130_.csv
+	deleted:    picture/131_.csv
+	deleted:    picture/132_.csv
+	deleted:    picture/133_.csv
+	deleted:    picture/134_.csv
+	deleted:    picture/135_.csv
+	deleted:    picture/136_.csv
+	deleted:    picture/137_.csv
+	deleted:    picture/138_.csv
+	deleted:    picture/139_.csv
+	deleted:    picture/13_.csv
+	deleted:    picture/140_.csv
+	deleted:    picture/141_.csv
+	deleted:    picture/142_.csv
+	deleted:    picture/143_.csv
+	deleted:    picture/144_.csv
+	deleted:    picture/145_.csv
+	deleted:    picture/146_.csv
+	deleted:    picture/147_.csv
+	deleted:    picture/148_.csv
+	deleted:    picture/149_.csv
+	deleted:    picture/14_.csv
+	deleted:    picture/150_.csv
+	deleted:    picture/151_.csv
+	deleted:    picture/152_.csv
+	deleted:    picture/153_.csv
+	deleted:    picture/154_.csv
+	deleted:    picture/155_.csv
+	deleted:    picture/156_.csv
+	deleted:    picture/157_.csv
+	deleted:    picture/158_.csv
+	deleted:    picture/159_.csv
+	deleted:    picture/15_.csv
+	deleted:    picture/160_.csv
+	deleted:    picture/161_.csv
+	deleted:    picture/162_.csv
+	deleted:    picture/163_.csv
+	deleted:    picture/164_.csv
+	deleted:    picture/165_.csv
+	deleted:    picture/166_.csv
+	deleted:    picture/167_.csv
+	deleted:    picture/168_.csv
+	deleted:    picture/169_.csv
+	deleted:    picture/16_.csv
+	deleted:    picture/170_.csv
+	deleted:    picture/171_.csv
+	deleted:    picture/172_.csv
+	deleted:    picture/173_.csv
+	deleted:    picture/174_.csv
+	deleted:    picture/175_.csv
+	deleted:    picture/176_.csv
+	deleted:    picture/177_.csv
+	deleted:    picture/178_.csv
+	deleted:    picture/179_.csv
+	deleted:    picture/17_.csv
+	deleted:    picture/180_.csv
+	deleted:    picture/181_.csv
+	deleted:    picture/182_.csv
+	deleted:    picture/183_.csv
+	deleted:    picture/184_.csv
+	deleted:    picture/185_.csv
+	deleted:    picture/186_.csv
+	deleted:    picture/187_.csv
+	deleted:    picture/188_.csv
+	deleted:    picture/189_.csv
+	deleted:    picture/18_.csv
+	deleted:    picture/190_.csv
+	deleted:    picture/191_.csv
+	deleted:    picture/192_.csv
+	deleted:    picture/193_.csv
+	deleted:    picture/194_.csv
+	deleted:    picture/195_.csv
+	deleted:    picture/196_.csv
+	deleted:    picture/19_.csv
+	deleted:    picture/1_.csv
+	deleted:    picture/200_.csv
+	deleted:    picture/201_.csv
+	deleted:    picture/202_.csv
+	deleted:    picture/203_.csv
+	deleted:    picture/204_.csv
+	deleted:    picture/205_.csv
+	deleted:    picture/206_.csv
+	deleted:    picture/207_.csv
+	deleted:    picture/208_.csv
+	deleted:    picture/209_.csv
+	deleted:    picture/20_.csv
+	deleted:    picture/21_.csv
+	deleted:    picture/22_.csv
+	deleted:    picture/23_.csv
+	deleted:    picture/24_.csv
+	deleted:    picture/25_.csv
+	deleted:    picture/26_.csv
+	deleted:    picture/27_.csv
+	deleted:    picture/28_.csv
+	deleted:    picture/29_.csv
+	deleted:    picture/2_.csv
+	deleted:    picture/30_.csv
+	deleted:    picture/31_.csv
+	deleted:    picture/32_.csv
+	deleted:    picture/33_.csv
+	deleted:    picture/34_.csv
+	deleted:    picture/35_.csv
+	deleted:    picture/36_.csv
+	deleted:    picture/37_.csv
+	deleted:    picture/38_.csv
+	deleted:    picture/39_.csv
+	deleted:    picture/3_.csv
+	deleted:    picture/40_.csv
+	deleted:    picture/41_.csv
+	deleted:    picture/42_.csv
+	deleted:    picture/43_.csv
+	deleted:    picture/44_.csv
+	deleted:    picture/45_.csv
+	deleted:    picture/46_.csv
+	deleted:    picture/47_.csv
+	deleted:    picture/48_.csv
+	deleted:    picture/49_.csv
+	deleted:    picture/4_.csv
+	deleted:    picture/50_.csv
+	deleted:    picture/51_.csv
+	deleted:    picture/52_.csv
+	deleted:    picture/53_.csv
+	deleted:    picture/54_.csv
+	deleted:    picture/55_.csv
+	deleted:    picture/56_.csv
+	deleted:    picture/57_.csv
+	deleted:    picture/58_.csv
+	deleted:    picture/59_.csv
+	deleted:    picture/5_.csv
+	deleted:    picture/60_.csv
+	deleted:    picture/61_.csv
+	deleted:    picture/62_.csv
+	deleted:    picture/63_.csv
+	deleted:    picture/64_.csv
+	deleted:    picture/65_.csv
+	deleted:    picture/66_.csv
+	deleted:    picture/67_.csv
+	deleted:    picture/68_.csv
+	deleted:    picture/69_.csv
+	deleted:    picture/6_.csv
+	deleted:    picture/70_.csv
+	deleted:    picture/71_.csv
+	deleted:    picture/72_.csv
+	deleted:    picture/73_.csv
+	deleted:    picture/74_.csv
+	deleted:    picture/75_.csv
+	deleted:    picture/76_.csv
+	deleted:    picture/77_.csv
+	deleted:    picture/78_.csv
+	deleted:    picture/79_.csv
+	deleted:    picture/7_.csv
+	deleted:    picture/80_.csv
+	deleted:    picture/81_.csv
+	deleted:    picture/82_.csv
+	deleted:    picture/83_.csv
+	deleted:    picture/84_.csv
+	deleted:    picture/85_.csv
+	deleted:    picture/86_.csv
+	deleted:    picture/87_.csv
+	deleted:    picture/88_.csv
+	deleted:    picture/89_.csv
+	deleted:    picture/8_.csv
+	deleted:    picture/90_.csv
+	deleted:    picture/91_.csv
+	deleted:    picture/92_.csv
+	deleted:    picture/93_.csv
+	deleted:    picture/94_.csv
+	deleted:    picture/95_.csv
+	deleted:    picture/96_.csv
+	deleted:    picture/97_.csv
+	deleted:    picture/98_.csv
+	deleted:    picture/99_.csv
+	deleted:    picture/9_.csv
+	modified:   resultxrsy4.txt
+	modified:   run.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	__pycache__/dataset2.cpython-39.pyc
+	__pycache__/eval_methods.cpython-39.pyc
+	__pycache__/model_self_attn2.cpython-39.pyc
+	__pycache__/model_self_attn_pot.cpython-39.pyc
+	__pycache__/spot.cpython-39.pyc
+	ckpt/
+	init_data.npy
+	init_data2.npy
+	lightning_logs/version_44/
+	lightning_logs/version_45/
+	logs/version_0/events.out.tfevents.1669642421.f5032294a40e.808181.0
+	logs/version_0/events.out.tfevents.1669642652.f5032294a40e.808181.1
+	logs/version_1/
+	logs/version_10/
+	logs/version_100/events.out.tfevents.1669668194.f5032294a40e.1019620.0
+	logs/version_100/events.out.tfevents.1669668315.f5032294a40e.1019620.1
+	logs/version_101/events.out.tfevents.1669668338.f5032294a40e.1021615.0
+	logs/version_101/events.out.tfevents.1669668455.f5032294a40e.1021615.1
+	logs/version_102/events.out.tfevents.1669668477.f5032294a40e.1023610.0
+	logs/version_102/events.out.tfevents.1669668594.f5032294a40e.1023610.1
+	logs/version_103/events.out.tfevents.1669668617.f5032294a40e.1025605.0
+	logs/version_103/events.out.tfevents.1669668732.f5032294a40e.1025605.1
+	logs/version_104/events.out.tfevents.1669668754.f5032294a40e.1027600.0
+	logs/version_104/events.out.tfevents.1669668873.f5032294a40e.1027600.1
+	logs/version_105/events.out.tfevents.1669668895.f5032294a40e.1029595.0
+	logs/version_105/events.out.tfevents.1669669015.f5032294a40e.1029595.1
+	logs/version_106/events.out.tfevents.1669669038.f5032294a40e.1031590.0
+	logs/version_106/events.out.tfevents.1669669156.f5032294a40e.1031590.1
+	logs/version_107/events.out.tfevents.1669669179.f5032294a40e.1033585.0
+	logs/version_107/events.out.tfevents.1669669299.f5032294a40e.1033585.1
+	logs/version_108/events.out.tfevents.1669669322.f5032294a40e.1035580.0
+	logs/version_108/events.out.tfevents.1669669443.f5032294a40e.1035580.1
+	logs/version_109/events.out.tfevents.1669669466.f5032294a40e.1037575.0
+	logs/version_109/events.out.tfevents.1669669583.f5032294a40e.1037575.1
+	logs/version_11/
+	logs/version_110/events.out.tfevents.1669669606.f5032294a40e.1039570.0
+	logs/version_110/events.out.tfevents.1669669731.f5032294a40e.1039570.1
+	logs/version_111/events.out.tfevents.1669669755.f5032294a40e.1041565.0
+	logs/version_111/events.out.tfevents.1669669878.f5032294a40e.1041565.1
+	logs/version_112/events.out.tfevents.1669669901.f5032294a40e.1043560.0
+	logs/version_112/events.out.tfevents.1669670017.f5032294a40e.1043560.1
+	logs/version_113/events.out.tfevents.1669670040.f5032294a40e.1045555.0
+	logs/version_113/events.out.tfevents.1669670163.f5032294a40e.1045555.1
+	logs/version_114/events.out.tfevents.1669670184.f5032294a40e.1047550.0
+	logs/version_114/events.out.tfevents.1669670304.f5032294a40e.1047550.1
+	logs/version_115/events.out.tfevents.1669670326.f5032294a40e.1049545.0
+	logs/version_115/events.out.tfevents.1669670446.f5032294a40e.1049545.1
+	logs/version_116/events.out.tfevents.1669670468.f5032294a40e.1051540.0
+	logs/version_116/events.out.tfevents.1669670590.f5032294a40e.1051540.1
+	logs/version_117/events.out.tfevents.1669670613.f5032294a40e.1053535.0
+	logs/version_117/events.out.tfevents.1669670730.f5032294a40e.1053535.1
+	logs/version_118/events.out.tfevents.1669670752.f5032294a40e.1055530.0
+	logs/version_118/events.out.tfevents.1669670876.f5032294a40e.1055530.1
+	logs/version_119/events.out.tfevents.1669670899.f5032294a40e.1057525.0
+	logs/version_119/events.out.tfevents.1669671019.f5032294a40e.1057525.1
+	logs/version_12/
+	logs/version_120/events.out.tfevents.1669671041.f5032294a40e.1059520.0
+	logs/version_120/events.out.tfevents.1669671160.f5032294a40e.1059520.1
+	logs/version_121/events.out.tfevents.1669671181.f5032294a40e.1061515.0
+	logs/version_121/events.out.tfevents.1669671309.f5032294a40e.1061515.1
+	logs/version_122/events.out.tfevents.1669671331.f5032294a40e.1063510.0
+	logs/version_122/events.out.tfevents.1669671456.f5032294a40e.1063510.1
+	logs/version_123/events.out.tfevents.1669671479.f5032294a40e.1065505.0
+	logs/version_123/events.out.tfevents.1669671597.f5032294a40e.1065505.1
+	logs/version_124/events.out.tfevents.1669671619.f5032294a40e.1067500.0
+	logs/version_124/events.out.tfevents.1669671739.f5032294a40e.1067500.1
+	logs/version_125/events.out.tfevents.1669671762.f5032294a40e.1069495.0
+	logs/version_125/events.out.tfevents.1669671888.f5032294a40e.1069495.1
+	logs/version_126/events.out.tfevents.1669671911.f5032294a40e.1071490.0
+	logs/version_126/events.out.tfevents.1669672035.f5032294a40e.1071490.1
+	logs/version_127/events.out.tfevents.1669672056.f5032294a40e.1073485.0
+	logs/version_127/events.out.tfevents.1669672184.f5032294a40e.1073485.1
+	logs/version_128/events.out.tfevents.1669672206.f5032294a40e.1075480.0
+	logs/version_128/events.out.tfevents.1669672328.f5032294a40e.1075480.1
+	logs/version_129/events.out.tfevents.1669672349.f5032294a40e.1077475.0
+	logs/version_129/events.out.tfevents.1669672477.f5032294a40e.1077475.1
+	logs/version_13/
+	logs/version_130/events.out.tfevents.1669672500.f5032294a40e.1079470.0
+	logs/version_130/events.out.tfevents.1669672621.f5032294a40e.1079470.1
+	logs/version_131/events.out.tfevents.1669672643.f5032294a40e.1081465.0
+	logs/version_131/events.out.tfevents.1669672760.f5032294a40e.1081465.1
+	logs/version_132/events.out.tfevents.1669672783.f5032294a40e.1083460.0
+	logs/version_132/events.out.tfevents.1669672906.f5032294a40e.1083460.1
+	logs/version_133/events.out.tfevents.1669672930.f5032294a40e.1085455.0
+	logs/version_133/events.out.tfevents.1669673070.f5032294a40e.1085455.1
+	logs/version_134/events.out.tfevents.1669673091.f5032294a40e.1087449.0
+	logs/version_134/events.out.tfevents.1669673212.f5032294a40e.1087449.1
+	logs/version_135/events.out.tfevents.1669673232.f5032294a40e.1089444.0
+	logs/version_135/events.out.tfevents.1669673337.f5032294a40e.1089444.1
+	logs/version_136/events.out.tfevents.1669673358.f5032294a40e.1091439.0
+	logs/version_136/events.out.tfevents.1669673470.f5032294a40e.1091439.1
+	logs/version_137/events.out.tfevents.1669673493.f5032294a40e.1093434.0
+	logs/version_137/events.out.tfevents.1669673613.f5032294a40e.1093434.1
+	logs/version_138/events.out.tfevents.1669673635.f5032294a40e.1095429.0
+	logs/version_138/events.out.tfevents.1669673755.f5032294a40e.1095429.1
+	logs/version_139/events.out.tfevents.1669673777.f5032294a40e.1097424.0
+	logs/version_139/events.out.tfevents.1669673894.f5032294a40e.1097424.1
+	logs/version_14/
+	logs/version_140/events.out.tfevents.1669673916.f5032294a40e.1099419.0
+	logs/version_140/events.out.tfevents.1669674043.f5032294a40e.1099419.1
+	logs/version_141/events.out.tfevents.1669674064.f5032294a40e.1101414.0
+	logs/version_141/events.out.tfevents.1669674178.f5032294a40e.1101414.1
+	logs/version_142/events.out.tfevents.1669674201.f5032294a40e.1103409.0
+	logs/version_142/events.out.tfevents.1669674318.f5032294a40e.1103409.1
+	logs/version_143/events.out.tfevents.1669674341.f5032294a40e.1105404.0
+	logs/version_143/events.out.tfevents.1669674456.f5032294a40e.1105404.1
+	logs/version_144/events.out.tfevents.1669674479.f5032294a40e.1107399.0
+	logs/version_144/events.out.tfevents.1669674602.f5032294a40e.1107399.1
+	logs/version_145/events.out.tfevents.1669674626.f5032294a40e.1109394.0
+	logs/version_145/events.out.tfevents.1669674754.f5032294a40e.1109394.1
+	logs/version_146/events.out.tfevents.1669674776.f5032294a40e.1111389.0
+	logs/version_146/events.out.tfevents.1669674892.f5032294a40e.1111389.1
+	logs/version_147/events.out.tfevents.1669674913.f5032294a40e.1113384.0
+	logs/version_147/events.out.tfevents.1669675016.f5032294a40e.1113384.1
+	logs/version_148/events.out.tfevents.1669675036.f5032294a40e.1115379.0
+	logs/version_148/events.out.tfevents.1669675148.f5032294a40e.1115379.1
+	logs/version_149/events.out.tfevents.1669675173.f5032294a40e.1117374.0
+	logs/version_149/events.out.tfevents.1669675298.f5032294a40e.1117374.1
+	logs/version_15/
+	logs/version_150/events.out.tfevents.1669675321.f5032294a40e.1119369.0
+	logs/version_150/events.out.tfevents.1669675438.f5032294a40e.1119369.1
+	logs/version_151/events.out.tfevents.1669675461.f5032294a40e.1121364.0
+	logs/version_151/events.out.tfevents.1669675589.f5032294a40e.1121364.1
+	logs/version_152/events.out.tfevents.1669675611.f5032294a40e.1123359.0
+	logs/version_152/events.out.tfevents.1669675741.f5032294a40e.1123359.1
+	logs/version_153/events.out.tfevents.1669675764.f5032294a40e.1125354.0
+	logs/version_153/events.out.tfevents.1669675891.f5032294a40e.1125354.1
+	logs/version_154/events.out.tfevents.1669675914.f5032294a40e.1127349.0
+	logs/version_154/events.out.tfevents.1669676039.f5032294a40e.1127349.1
+	logs/version_155/events.out.tfevents.1669676061.f5032294a40e.1129344.0
+	logs/version_155/events.out.tfevents.1669676191.f5032294a40e.1129344.1
+	logs/version_156/events.out.tfevents.1669676213.f5032294a40e.1131339.0
+	logs/version_156/events.out.tfevents.1669676334.f5032294a40e.1131339.1
+	logs/version_157/events.out.tfevents.1669676357.f5032294a40e.1133334.0
+	logs/version_157/events.out.tfevents.1669676465.f5032294a40e.1133334.1
+	logs/version_158/events.out.tfevents.1669676493.f5032294a40e.1135153.0
+	logs/version_158/events.out.tfevents.1669676613.f5032294a40e.1135153.1
+	logs/version_159/events.out.tfevents.1669676636.f5032294a40e.1137148.0
+	logs/version_159/events.out.tfevents.1669676759.f5032294a40e.1137148.1
+	logs/version_16/
+	logs/version_160/events.out.tfevents.1669676781.f5032294a40e.1139143.0
+	logs/version_160/events.out.tfevents.1669676906.f5032294a40e.1139143.1
+	logs/version_161/events.out.tfevents.1669676928.f5032294a40e.1141138.0
+	logs/version_161/events.out.tfevents.1669677052.f5032294a40e.1141138.1
+	logs/version_162/events.out.tfevents.1669677074.f5032294a40e.1143133.0
+	logs/version_162/events.out.tfevents.1669677197.f5032294a40e.1143133.1
+	logs/version_163/events.out.tfevents.1669677218.f5032294a40e.1145128.0
+	logs/version_163/events.out.tfevents.1669677338.f5032294a40e.1145128.1
+	logs/version_164/events.out.tfevents.1669677361.f5032294a40e.1147123.0
+	logs/version_164/events.out.tfevents.1669677485.f5032294a40e.1147123.1
+	logs/version_165/events.out.tfevents.1669677509.f5032294a40e.1149118.0
+	logs/version_165/events.out.tfevents.1669677624.f5032294a40e.1149118.1
+	logs/version_166/events.out.tfevents.1669677646.f5032294a40e.1151113.0
+	logs/version_166/events.out.tfevents.1669677773.f5032294a40e.1151113.1
+	logs/version_167/events.out.tfevents.1669677795.f5032294a40e.1153108.0
+	logs/version_167/events.out.tfevents.1669677912.f5032294a40e.1153108.1
+	logs/version_168/events.out.tfevents.1669677934.f5032294a40e.1155103.0
+	logs/version_168/events.out.tfevents.1669678052.f5032294a40e.1155103.1
+	logs/version_169/events.out.tfevents.1669678075.f5032294a40e.1157098.0
+	logs/version_169/events.out.tfevents.1669678204.f5032294a40e.1157098.1
+	logs/version_17/
+	logs/version_170/events.out.tfevents.1669678227.f5032294a40e.1159093.0
+	logs/version_170/events.out.tfevents.1669678353.f5032294a40e.1159093.1
+	logs/version_171/events.out.tfevents.1669678376.f5032294a40e.1161088.0
+	logs/version_171/events.out.tfevents.1669678500.f5032294a40e.1161088.1
+	logs/version_172/events.out.tfevents.1669678522.f5032294a40e.1163083.0
+	logs/version_172/events.out.tfevents.1669678646.f5032294a40e.1163083.1
+	logs/version_173/events.out.tfevents.1669678669.f5032294a40e.1165078.0
+	logs/version_173/events.out.tfevents.1669678788.f5032294a40e.1165078.1
+	logs/version_174/events.out.tfevents.1669678811.f5032294a40e.1167073.0
+	logs/version_174/events.out.tfevents.1669678930.f5032294a40e.1167073.1
+	logs/version_175/events.out.tfevents.1669678952.f5032294a40e.1169068.0
+	logs/version_175/events.out.tfevents.1669679070.f5032294a40e.1169068.1
+	logs/version_176/events.out.tfevents.1669679092.f5032294a40e.1171063.0
+	logs/version_176/events.out.tfevents.1669679218.f5032294a40e.1171063.1
+	logs/version_177/events.out.tfevents.1669679240.f5032294a40e.1173058.0
+	logs/version_177/events.out.tfevents.1669679364.f5032294a40e.1173058.1
+	logs/version_178/events.out.tfevents.1669679388.f5032294a40e.1175053.0
+	logs/version_178/events.out.tfevents.1669679510.f5032294a40e.1175053.1
+	logs/version_179/events.out.tfevents.1669679532.f5032294a40e.1177048.0
+	logs/version_179/events.out.tfevents.1669679650.f5032294a40e.1177048.1
+	logs/version_18/
+	logs/version_180/events.out.tfevents.1669679672.f5032294a40e.1179043.0
+	logs/version_180/events.out.tfevents.1669679795.f5032294a40e.1179043.1
+	logs/version_181/events.out.tfevents.1669679819.f5032294a40e.1181038.0
+	logs/version_181/events.out.tfevents.1669679948.f5032294a40e.1181038.1
+	logs/version_182/events.out.tfevents.1669679970.f5032294a40e.1183033.0
+	logs/version_182/events.out.tfevents.1669680095.f5032294a40e.1183033.1
+	logs/version_183/events.out.tfevents.1669680118.f5032294a40e.1185028.0
+	logs/version_183/events.out.tfevents.1669680239.f5032294a40e.1185028.1
+	logs/version_184/events.out.tfevents.1669680262.f5032294a40e.1187023.0
+	logs/version_184/events.out.tfevents.1669680384.f5032294a40e.1187023.1
+	logs/version_185/events.out.tfevents.1669680407.f5032294a40e.1189018.0
+	logs/version_185/events.out.tfevents.1669680527.f5032294a40e.1189018.1
+	logs/version_186/events.out.tfevents.1669680551.f5032294a40e.1191013.0
+	logs/version_186/events.out.tfevents.1669680679.f5032294a40e.1191013.1
+	logs/version_187/events.out.tfevents.1669680702.f5032294a40e.1193008.0
+	logs/version_187/events.out.tfevents.1669680830.f5032294a40e.1193008.1
+	logs/version_188/events.out.tfevents.1669680853.f5032294a40e.1195003.0
+	logs/version_188/events.out.tfevents.1669680976.f5032294a40e.1195003.1
+	logs/version_189/events.out.tfevents.1669680998.f5032294a40e.1196998.0
+	logs/version_189/events.out.tfevents.1669681098.f5032294a40e.1196998.1
+	logs/version_19/
+	logs/version_190/events.out.tfevents.1669681120.f5032294a40e.1198641.0
+	logs/version_190/events.out.tfevents.1669681251.f5032294a40e.1198641.1
+	logs/version_191/events.out.tfevents.1669681272.f5032294a40e.1200636.0
+	logs/version_191/events.out.tfevents.1669681397.f5032294a40e.1200636.1
+	logs/version_192/events.out.tfevents.1669681419.f5032294a40e.1202631.0
+	logs/version_192/events.out.tfevents.1669681536.f5032294a40e.1202631.1
+	logs/version_193/events.out.tfevents.1669681559.f5032294a40e.1204626.0
+	logs/version_193/events.out.tfevents.1669681681.f5032294a40e.1204626.1
+	logs/version_194/events.out.tfevents.1669681704.f5032294a40e.1206621.0
+	logs/version_194/events.out.tfevents.1669681823.f5032294a40e.1206621.1
+	logs/version_195/events.out.tfevents.1669681846.f5032294a40e.1208616.0
+	logs/version_195/events.out.tfevents.1669681983.f5032294a40e.1208616.1
+	logs/version_196/events.out.tfevents.1669682004.f5032294a40e.1210611.0
+	logs/version_196/events.out.tfevents.1669682144.f5032294a40e.1210611.1
+	logs/version_197/events.out.tfevents.1669682165.f5032294a40e.1212606.0
+	logs/version_197/events.out.tfevents.1669682294.f5032294a40e.1212606.1
+	logs/version_198/events.out.tfevents.1669682317.f5032294a40e.1214601.0
+	logs/version_198/events.out.tfevents.1669682438.f5032294a40e.1214601.1
+	logs/version_199/events.out.tfevents.1669682461.f5032294a40e.1216596.0
+	logs/version_199/events.out.tfevents.1669682593.f5032294a40e.1216596.1
+	logs/version_2/
+	logs/version_20/
+	logs/version_200/events.out.tfevents.1669682607.f5032294a40e.1218591.0
+	logs/version_200/events.out.tfevents.1669682690.f5032294a40e.1218591.1
+	logs/version_201/events.out.tfevents.1669682703.f5032294a40e.1220586.0
+	logs/version_201/events.out.tfevents.1669682789.f5032294a40e.1220586.1
+	logs/version_202/events.out.tfevents.1669682802.f5032294a40e.1222581.0
+	logs/version_202/events.out.tfevents.1669682889.f5032294a40e.1222581.1
+	logs/version_203/events.out.tfevents.1669682903.f5032294a40e.1224576.0
+	logs/version_203/events.out.tfevents.1669682987.f5032294a40e.1224576.1
+	logs/version_204/events.out.tfevents.1669683001.f5032294a40e.1226571.0
+	logs/version_204/events.out.tfevents.1669683087.f5032294a40e.1226571.1
+	logs/version_205/events.out.tfevents.1669683102.f5032294a40e.1228566.0
+	logs/version_205/events.out.tfevents.1669683185.f5032294a40e.1228566.1
+	logs/version_206/events.out.tfevents.1669683198.f5032294a40e.1230561.0
+	logs/version_206/events.out.tfevents.1669683280.f5032294a40e.1230561.1
+	logs/version_207/events.out.tfevents.1669683293.f5032294a40e.1232556.0
+	logs/version_207/events.out.tfevents.1669683380.f5032294a40e.1232556.1
+	logs/version_208/events.out.tfevents.1669683394.f5032294a40e.1234551.0
+	logs/version_208/events.out.tfevents.1669683474.f5032294a40e.1234551.1
+	logs/version_209/events.out.tfevents.1669683488.f5032294a40e.1236546.0
+	logs/version_209/events.out.tfevents.1669683577.f5032294a40e.1236546.1
+	logs/version_21/
+	logs/version_210/events.out.tfevents.1669683591.f5032294a40e.1238541.0
+	logs/version_210/events.out.tfevents.1669683645.f5032294a40e.1238541.1
+	logs/version_211/events.out.tfevents.1669683659.f5032294a40e.1239832.0
+	logs/version_211/events.out.tfevents.1669683745.f5032294a40e.1239832.1
+	logs/version_212/events.out.tfevents.1669683759.f5032294a40e.1241827.0
+	logs/version_212/events.out.tfevents.1669683844.f5032294a40e.1241827.1
+	logs/version_213/events.out.tfevents.1669683858.f5032294a40e.1243822.0
+	logs/version_213/events.out.tfevents.1669683945.f5032294a40e.1243822.1
+	logs/version_214/events.out.tfevents.1669683958.f5032294a40e.1245817.0
+	logs/version_214/events.out.tfevents.1669684042.f5032294a40e.1245817.1
+	logs/version_215/events.out.tfevents.1669684056.f5032294a40e.1247812.0
+	logs/version_215/events.out.tfevents.1669684139.f5032294a40e.1247812.1
+	logs/version_216/events.out.tfevents.1669684152.f5032294a40e.1249807.0
+	logs/version_216/events.out.tfevents.1669684236.f5032294a40e.1249807.1
+	logs/version_217/events.out.tfevents.1669684250.f5032294a40e.1251802.0
+	logs/version_217/events.out.tfevents.1669684332.f5032294a40e.1251802.1
+	logs/version_218/events.out.tfevents.1669684346.f5032294a40e.1253797.0
+	logs/version_218/events.out.tfevents.1669684432.f5032294a40e.1253797.1
+	logs/version_219/events.out.tfevents.1669684445.f5032294a40e.1255792.0
+	logs/version_219/events.out.tfevents.1669684530.f5032294a40e.1255792.1
+	logs/version_22/
+	logs/version_220/events.out.tfevents.1669684544.f5032294a40e.1257787.0
+	logs/version_220/events.out.tfevents.1669684626.f5032294a40e.1257787.1
+	logs/version_221/events.out.tfevents.1669684639.f5032294a40e.1259782.0
+	logs/version_221/events.out.tfevents.1669684724.f5032294a40e.1259782.1
+	logs/version_222/events.out.tfevents.1669684738.f5032294a40e.1261777.0
+	logs/version_222/events.out.tfevents.1669684823.f5032294a40e.1261777.1
+	logs/version_223/events.out.tfevents.1669684837.f5032294a40e.1263772.0
+	logs/version_223/events.out.tfevents.1669684921.f5032294a40e.1263772.1
+	logs/version_224/events.out.tfevents.1669684935.f5032294a40e.1265767.0
+	logs/version_224/events.out.tfevents.1669685014.f5032294a40e.1265767.1
+	logs/version_225/events.out.tfevents.1669685028.f5032294a40e.1267762.0
+	logs/version_225/events.out.tfevents.1669685109.f5032294a40e.1267762.1
+	logs/version_226/events.out.tfevents.1669685123.f5032294a40e.1269757.0
+	logs/version_226/events.out.tfevents.1669685208.f5032294a40e.1269757.1
+	logs/version_227/events.out.tfevents.1669685221.f5032294a40e.1271752.0
+	logs/version_227/events.out.tfevents.1669685305.f5032294a40e.1271752.1
+	logs/version_228/events.out.tfevents.1669685320.f5032294a40e.1273747.0
+	logs/version_228/events.out.tfevents.1669685404.f5032294a40e.1273747.1
+	logs/version_229/events.out.tfevents.1669685417.f5032294a40e.1275742.0
+	logs/version_229/events.out.tfevents.1669685500.f5032294a40e.1275742.1
+	logs/version_23/
+	logs/version_230/events.out.tfevents.1669685514.f5032294a40e.1277737.0
+	logs/version_230/events.out.tfevents.1669685574.f5032294a40e.1277737.1
+	logs/version_231/events.out.tfevents.1669685588.f5032294a40e.1279204.0
+	logs/version_231/events.out.tfevents.1669685671.f5032294a40e.1279204.1
+	logs/version_232/events.out.tfevents.1669685685.f5032294a40e.1281199.0
+	logs/version_232/events.out.tfevents.1669685766.f5032294a40e.1281199.1
+	logs/version_233/events.out.tfevents.1669685780.f5032294a40e.1283194.0
+	logs/version_233/events.out.tfevents.1669685873.f5032294a40e.1283194.1
+	logs/version_234/events.out.tfevents.1669685886.f5032294a40e.1285188.0
+	logs/version_234/events.out.tfevents.1669685965.f5032294a40e.1285188.1
+	logs/version_235/events.out.tfevents.1669685978.f5032294a40e.1287183.0
+	logs/version_235/events.out.tfevents.1669686036.f5032294a40e.1287183.1
+	logs/version_236/events.out.tfevents.1669686049.f5032294a40e.1288826.0
+	logs/version_236/events.out.tfevents.1669686127.f5032294a40e.1288826.1
+	logs/version_237/events.out.tfevents.1669686143.f5032294a40e.1290821.0
+	logs/version_237/events.out.tfevents.1669686221.f5032294a40e.1290821.1
+	logs/version_238/events.out.tfevents.1669686235.f5032294a40e.1292816.0
+	logs/version_238/events.out.tfevents.1669686314.f5032294a40e.1292816.1
+	logs/version_239/events.out.tfevents.1669686327.f5032294a40e.1294811.0
+	logs/version_239/events.out.tfevents.1669686414.f5032294a40e.1294811.1
+	logs/version_24/
+	logs/version_240/events.out.tfevents.1669686427.f5032294a40e.1296806.0
+	logs/version_240/events.out.tfevents.1669686509.f5032294a40e.1296806.1
+	logs/version_241/events.out.tfevents.1669686523.f5032294a40e.1298801.0
+	logs/version_241/events.out.tfevents.1669686603.f5032294a40e.1298801.1
+	logs/version_242/events.out.tfevents.1669686618.f5032294a40e.1300796.0
+	logs/version_242/events.out.tfevents.1669686691.f5032294a40e.1300796.1
+	logs/version_243/events.out.tfevents.1669686705.f5032294a40e.1302615.0
+	logs/version_243/events.out.tfevents.1669686791.f5032294a40e.1302615.1
+	logs/version_244/events.out.tfevents.1669686805.f5032294a40e.1304610.0
+	logs/version_244/events.out.tfevents.1669686888.f5032294a40e.1304610.1
+	logs/version_245/events.out.tfevents.1669686903.f5032294a40e.1306605.0
+	logs/version_245/events.out.tfevents.1669686993.f5032294a40e.1306605.1
+	logs/version_246/events.out.tfevents.1669687009.f5032294a40e.1308600.0
+	logs/version_246/events.out.tfevents.1669687086.f5032294a40e.1308600.1
+	logs/version_247/events.out.tfevents.1669687099.f5032294a40e.1310595.0
+	logs/version_247/events.out.tfevents.1669687173.f5032294a40e.1310595.1
+	logs/version_248/events.out.tfevents.1669687185.f5032294a40e.1312590.0
+	logs/version_248/events.out.tfevents.1669687259.f5032294a40e.1312590.1
+	logs/version_249/events.out.tfevents.1669687275.f5032294a40e.1314585.0
+	logs/version_249/events.out.tfevents.1669687359.f5032294a40e.1314585.1
+	logs/version_25/
+	logs/version_250/events.out.tfevents.1669687373.f5032294a40e.1316580.0
+	logs/version_250/events.out.tfevents.1669687458.f5032294a40e.1316580.1
+	logs/version_251/events.out.tfevents.1669687473.f5032294a40e.1318575.0
+	logs/version_251/events.out.tfevents.1669687560.f5032294a40e.1318575.1
+	logs/version_252/events.out.tfevents.1669687574.f5032294a40e.1320570.0
+	logs/version_252/events.out.tfevents.1669687657.f5032294a40e.1320570.1
+	logs/version_253/events.out.tfevents.1669687671.f5032294a40e.1322565.0
+	logs/version_253/events.out.tfevents.1669687755.f5032294a40e.1322565.1
+	logs/version_254/events.out.tfevents.1669687770.f5032294a40e.1324560.0
+	logs/version_254/events.out.tfevents.1669687854.f5032294a40e.1324560.1
+	logs/version_255/events.out.tfevents.1669687868.f5032294a40e.1326555.0
+	logs/version_255/events.out.tfevents.1669687954.f5032294a40e.1326555.1
+	logs/version_256/events.out.tfevents.1669687968.f5032294a40e.1328550.0
+	logs/version_256/events.out.tfevents.1669688049.f5032294a40e.1328550.1
+	logs/version_257/events.out.tfevents.1669688063.f5032294a40e.1330545.0
+	logs/version_257/events.out.tfevents.1669688149.f5032294a40e.1330545.1
+	logs/version_258/events.out.tfevents.1669688163.f5032294a40e.1332540.0
+	logs/version_258/events.out.tfevents.1669688246.f5032294a40e.1332540.1
+	logs/version_259/events.out.tfevents.1669688261.f5032294a40e.1334535.0
+	logs/version_259/events.out.tfevents.1669688349.f5032294a40e.1334535.1
+	logs/version_26/
+	logs/version_260/events.out.tfevents.1669688363.f5032294a40e.1336530.0
+	logs/version_260/events.out.tfevents.1669688452.f5032294a40e.1336530.1
+	logs/version_261/events.out.tfevents.1669688466.f5032294a40e.1338525.0
+	logs/version_261/events.out.tfevents.1669688545.f5032294a40e.1338525.1
+	logs/version_262/events.out.tfevents.1669688559.f5032294a40e.1340520.0
+	logs/version_262/events.out.tfevents.1669688644.f5032294a40e.1340520.1
+	logs/version_263/events.out.tfevents.1669688657.f5032294a40e.1342515.0
+	logs/version_263/events.out.tfevents.1669688742.f5032294a40e.1342515.1
+	logs/version_264/events.out.tfevents.1669688757.f5032294a40e.1344510.0
+	logs/version_264/events.out.tfevents.1669688841.f5032294a40e.1344510.1
+	logs/version_265/events.out.tfevents.1669688855.f5032294a40e.1346505.0
+	logs/version_265/events.out.tfevents.1669688938.f5032294a40e.1346505.1
+	logs/version_266/events.out.tfevents.1669688952.f5032294a40e.1348500.0
+	logs/version_266/events.out.tfevents.1669689032.f5032294a40e.1348500.1
+	logs/version_267/events.out.tfevents.1669689046.f5032294a40e.1350495.0
+	logs/version_267/events.out.tfevents.1669689130.f5032294a40e.1350495.1
+	logs/version_268/events.out.tfevents.1669689144.f5032294a40e.1352490.0
+	logs/version_268/events.out.tfevents.1669689228.f5032294a40e.1352490.1
+	logs/version_269/events.out.tfevents.1669689241.f5032294a40e.1354485.0
+	logs/version_269/events.out.tfevents.1669689325.f5032294a40e.1354485.1
+	logs/version_27/
+	logs/version_270/events.out.tfevents.1669689339.f5032294a40e.1356480.0
+	logs/version_270/events.out.tfevents.1669689422.f5032294a40e.1356480.1
+	logs/version_271/events.out.tfevents.1669689436.f5032294a40e.1358475.0
+	logs/version_271/events.out.tfevents.1669689515.f5032294a40e.1358475.1
+	logs/version_272/events.out.tfevents.1669689529.f5032294a40e.1360470.0
+	logs/version_272/events.out.tfevents.1669689615.f5032294a40e.1360470.1
+	logs/version_273/events.out.tfevents.1669689629.f5032294a40e.1362465.0
+	logs/version_273/events.out.tfevents.1669689709.f5032294a40e.1362465.1
+	logs/version_274/events.out.tfevents.1669689722.f5032294a40e.1364460.0
+	logs/version_274/events.out.tfevents.1669689803.f5032294a40e.1364460.1
+	logs/version_275/events.out.tfevents.1669689816.f5032294a40e.1366455.0
+	logs/version_275/events.out.tfevents.1669689893.f5032294a40e.1366455.1
+	logs/version_276/events.out.tfevents.1669689907.f5032294a40e.1368450.0
+	logs/version_276/events.out.tfevents.1669689988.f5032294a40e.1368450.1
+	logs/version_277/events.out.tfevents.1669690001.f5032294a40e.1370445.0
+	logs/version_277/events.out.tfevents.1669690080.f5032294a40e.1370445.1
+	logs/version_278/events.out.tfevents.1669690094.f5032294a40e.1372440.0
+	logs/version_278/events.out.tfevents.1669690174.f5032294a40e.1372440.1
+	logs/version_279/events.out.tfevents.1669690188.f5032294a40e.1374435.0
+	logs/version_279/events.out.tfevents.1669690273.f5032294a40e.1374435.1
+	logs/version_28/
+	logs/version_280/events.out.tfevents.1669690288.f5032294a40e.1376430.0
+	logs/version_280/events.out.tfevents.1669690370.f5032294a40e.1376430.1
+	logs/version_281/events.out.tfevents.1669690384.f5032294a40e.1378425.0
+	logs/version_281/events.out.tfevents.1669690468.f5032294a40e.1378425.1
+	logs/version_282/events.out.tfevents.1669690482.f5032294a40e.1380420.0
+	logs/version_282/events.out.tfevents.1669690564.f5032294a40e.1380420.1
+	logs/version_283/events.out.tfevents.1669690578.f5032294a40e.1382415.0
+	logs/version_283/events.out.tfevents.1669690660.f5032294a40e.1382415.1
+	logs/version_284/events.out.tfevents.1669690673.f5032294a40e.1384410.0
+	logs/version_284/events.out.tfevents.1669690751.f5032294a40e.1384410.1
+	logs/version_285/events.out.tfevents.1669690765.f5032294a40e.1386405.0
+	logs/version_285/events.out.tfevents.1669690848.f5032294a40e.1386405.1
+	logs/version_286/events.out.tfevents.1669690861.f5032294a40e.1388400.0
+	logs/version_286/events.out.tfevents.1669690941.f5032294a40e.1388400.1
+	logs/version_287/events.out.tfevents.1669690954.f5032294a40e.1390395.0
+	logs/version_287/events.out.tfevents.1669691040.f5032294a40e.1390395.1
+	logs/version_288/events.out.tfevents.1669691053.f5032294a40e.1392390.0
+	logs/version_288/events.out.tfevents.1669691132.f5032294a40e.1392390.1
+	logs/version_289/events.out.tfevents.1669691146.f5032294a40e.1394385.0
+	logs/version_289/events.out.tfevents.1669691227.f5032294a40e.1394385.1
+	logs/version_29/
+	logs/version_290/events.out.tfevents.1669691240.f5032294a40e.1396380.0
+	logs/version_290/events.out.tfevents.1669691319.f5032294a40e.1396380.1
+	logs/version_291/events.out.tfevents.1669691332.f5032294a40e.1398375.0
+	logs/version_291/events.out.tfevents.1669691416.f5032294a40e.1398375.1
+	logs/version_292/events.out.tfevents.1669691429.f5032294a40e.1400370.0
+	logs/version_292/events.out.tfevents.1669691510.f5032294a40e.1400370.1
+	logs/version_293/events.out.tfevents.1669691522.f5032294a40e.1402365.0
+	logs/version_293/events.out.tfevents.1669691603.f5032294a40e.1402365.1
+	logs/version_294/events.out.tfevents.1669691618.f5032294a40e.1404360.0
+	logs/version_294/events.out.tfevents.1669691698.f5032294a40e.1404360.1
+	logs/version_295/events.out.tfevents.1669691712.f5032294a40e.1406355.0
+	logs/version_295/events.out.tfevents.1669691800.f5032294a40e.1406355.1
+	logs/version_296/events.out.tfevents.1669691813.f5032294a40e.1408350.0
+	logs/version_296/events.out.tfevents.1669691894.f5032294a40e.1408350.1
+	logs/version_297/events.out.tfevents.1669691907.f5032294a40e.1410345.0
+	logs/version_297/events.out.tfevents.1669691988.f5032294a40e.1410345.1
+	logs/version_298/events.out.tfevents.1669692002.f5032294a40e.1412340.0
+	logs/version_298/events.out.tfevents.1669692086.f5032294a40e.1412340.1
+	logs/version_299/events.out.tfevents.1669692100.f5032294a40e.1414335.0
+	logs/version_299/events.out.tfevents.1669692187.f5032294a40e.1414335.1
+	logs/version_3/
+	logs/version_30/
+	logs/version_300/events.out.tfevents.1669703279.f5032294a40e.1422858.0
+	logs/version_300/events.out.tfevents.1669703513.f5032294a40e.1422858.1
+	logs/version_301/events.out.tfevents.1669703540.f5032294a40e.1427373.0
+	logs/version_301/events.out.tfevents.1669703803.f5032294a40e.1427373.1
+	logs/version_302/events.out.tfevents.1669703833.f5032294a40e.1432317.0
+	logs/version_31/
+	logs/version_32/
+	logs/version_33/
+	logs/version_34/
+	logs/version_35/
+	logs/version_36/
+	logs/version_37/
+	logs/version_38/
+	logs/version_39/
+	logs/version_4/
+	logs/version_40/
+	logs/version_41/
+	logs/version_42/
+	logs/version_43/
+	logs/version_44/
+	logs/version_45/
+	logs/version_46/
+	logs/version_47/
+	logs/version_48/
+	logs/version_49/
+	logs/version_5/
+	logs/version_50/
+	logs/version_51/
+	logs/version_52/
+	logs/version_53/
+	logs/version_54/
+	logs/version_55/
+	logs/version_56/
+	logs/version_57/
+	logs/version_58/
+	logs/version_59/
+	logs/version_6/
+	logs/version_60/
+	logs/version_61/
+	logs/version_62/
+	logs/version_63/
+	logs/version_64/
+	logs/version_65/
+	logs/version_66/
+	logs/version_67/
+	logs/version_68/
+	logs/version_69/
+	logs/version_7/events.out.tfevents.1669644233.f5032294a40e.824923.0
+	logs/version_7/events.out.tfevents.1669644463.f5032294a40e.824923.1
+	logs/version_70/events.out.tfevents.1669660339.f5032294a40e.959770.0
+	logs/version_70/events.out.tfevents.1669660572.f5032294a40e.959770.1
+	logs/version_71/events.out.tfevents.1669660601.f5032294a40e.961765.0
+	logs/version_71/events.out.tfevents.1669660828.f5032294a40e.961765.1
+	logs/version_72/events.out.tfevents.1669660857.f5032294a40e.963760.0
+	logs/version_72/events.out.tfevents.1669661093.f5032294a40e.963760.1
+	logs/version_73/events.out.tfevents.1669661123.f5032294a40e.965755.0
+	logs/version_73/events.out.tfevents.1669661353.f5032294a40e.965755.1
+	logs/version_74/events.out.tfevents.1669661384.f5032294a40e.967750.0
+	logs/version_74/events.out.tfevents.1669661605.f5032294a40e.967750.1
+	logs/version_75/events.out.tfevents.1669661635.f5032294a40e.969745.0
+	logs/version_75/events.out.tfevents.1669661874.f5032294a40e.969745.1
+	logs/version_76/events.out.tfevents.1669661903.f5032294a40e.971740.0
+	logs/version_76/events.out.tfevents.1669662134.f5032294a40e.971740.1
+	logs/version_77/events.out.tfevents.1669662164.f5032294a40e.973735.0
+	logs/version_77/events.out.tfevents.1669662381.f5032294a40e.973735.1
+	logs/version_78/events.out.tfevents.1669662411.f5032294a40e.975730.0
+	logs/version_78/events.out.tfevents.1669662627.f5032294a40e.975730.1
+	logs/version_79/events.out.tfevents.1669662657.f5032294a40e.977725.0
+	logs/version_79/events.out.tfevents.1669662904.f5032294a40e.977725.1
+	logs/version_8/events.out.tfevents.1669644492.f5032294a40e.827233.0
+	logs/version_8/events.out.tfevents.1669644717.f5032294a40e.827233.1
+	logs/version_80/events.out.tfevents.1669662934.f5032294a40e.979720.0
+	logs/version_80/events.out.tfevents.1669663157.f5032294a40e.979720.1
+	logs/version_81/events.out.tfevents.1669663186.f5032294a40e.981715.0
+	logs/version_81/events.out.tfevents.1669663421.f5032294a40e.981715.1
+	logs/version_82/events.out.tfevents.1669663451.f5032294a40e.983710.0
+	logs/version_82/events.out.tfevents.1669663684.f5032294a40e.983710.1
+	logs/version_83/events.out.tfevents.1669663713.f5032294a40e.985705.0
+	logs/version_83/events.out.tfevents.1669663951.f5032294a40e.985705.1
+	logs/version_84/events.out.tfevents.1669663981.f5032294a40e.987700.0
+	logs/version_84/events.out.tfevents.1669664203.f5032294a40e.987700.1
+	logs/version_85/events.out.tfevents.1669664232.f5032294a40e.989695.0
+	logs/version_85/events.out.tfevents.1669664457.f5032294a40e.989695.1
+	logs/version_86/events.out.tfevents.1669664486.f5032294a40e.991690.0
+	logs/version_86/events.out.tfevents.1669664709.f5032294a40e.991690.1
+	logs/version_87/events.out.tfevents.1669664737.f5032294a40e.993685.0
+	logs/version_87/events.out.tfevents.1669664967.f5032294a40e.993685.1
+	logs/version_88/events.out.tfevents.1669664996.f5032294a40e.995680.0
+	logs/version_88/events.out.tfevents.1669665228.f5032294a40e.995680.1
+	logs/version_89/events.out.tfevents.1669665258.f5032294a40e.997675.0
+	logs/version_89/events.out.tfevents.1669665493.f5032294a40e.997675.1
+	logs/version_9/events.out.tfevents.1669644747.f5032294a40e.829531.0
+	logs/version_9/events.out.tfevents.1669644967.f5032294a40e.829531.1
+	logs/version_90/events.out.tfevents.1669665521.f5032294a40e.999670.0
+	logs/version_90/events.out.tfevents.1669665759.f5032294a40e.999670.1
+	logs/version_91/events.out.tfevents.1669665786.f5032294a40e.1001665.0
+	logs/version_91/events.out.tfevents.1669666019.f5032294a40e.1001665.1
+	logs/version_92/events.out.tfevents.1669666047.f5032294a40e.1003660.0
+	logs/version_92/events.out.tfevents.1669666284.f5032294a40e.1003660.1
+	logs/version_93/events.out.tfevents.1669666312.f5032294a40e.1005655.0
+	logs/version_93/events.out.tfevents.1669666563.f5032294a40e.1005655.1
+	logs/version_94/events.out.tfevents.1669666592.f5032294a40e.1007650.0
+	logs/version_94/events.out.tfevents.1669666836.f5032294a40e.1007650.1
+	logs/version_95/events.out.tfevents.1669666864.f5032294a40e.1009645.0
+	logs/version_95/events.out.tfevents.1669667102.f5032294a40e.1009645.1
+	logs/version_96/events.out.tfevents.1669667130.f5032294a40e.1011640.0
+	logs/version_96/events.out.tfevents.1669667367.f5032294a40e.1011640.1
+	logs/version_97/events.out.tfevents.1669667394.f5032294a40e.1013635.0
+	logs/version_97/events.out.tfevents.1669667635.f5032294a40e.1013635.1
+	logs/version_98/events.out.tfevents.1669667664.f5032294a40e.1015630.0
+	logs/version_98/events.out.tfevents.1669667900.f5032294a40e.1015630.1
+	logs/version_99/events.out.tfevents.1669667931.f5032294a40e.1017625.0
+	logs/version_99/events.out.tfevents.1669668172.f5032294a40e.1017625.1
+	resultpot.txt
+	resultpot2.txt
+	resultpot3.txt
+	resultxrsy.txt
+	resultxrsy2.txt
+	resultxrsy3.txt
+	resultxrsy5-pos10ran30neg10.txt
+	resultxrsy5-pos5ran20neg5.txt
+	status.txt
+	test.csv
+

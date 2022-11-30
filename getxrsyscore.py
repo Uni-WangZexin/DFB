@@ -1,5 +1,5 @@
 
-f = open('./resultpot.txt','r')
+f = open('./resultpot2.txt','r')
 sum_f1=0.0
 sum_trainloss=0.0
 sum_testloss=0.0

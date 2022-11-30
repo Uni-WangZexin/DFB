@@ -737,8 +737,6 @@ class DSANet(LightningModule):
         y_mean = torch.mean(y)
         y = y - y_mean.item()
         y = torch.pow(y, 2)
-        #print(loss_l1)
-        #print(y)
         rrse = torch.sqrt(torch.sum(loss)/torch.sum(y))
         #print("rrse",rrse)
         mse = torch.mean(loss)
@@ -772,7 +770,7 @@ class DSANet(LightningModule):
             if f1 > max_f1:
                 max_f1 = f1
                 max_f1_th = thres
-        file_name = './resultxrsy4.txt'
+        file_name = './resultxrsy5-pos5ran20neg5.txt'
         with open(file_name,'a') as f:
             f.write("data_name: {}".format(self.hp.data_name))
             f.write(" max f1 score is %f and threshold is %f\n" %(max_f1, max_f1_th))
@@ -907,7 +905,7 @@ class DSANet(LightningModule):
         parser.add_argument('--hp_path', type=str, default='./logs/version_0/hparams.yaml')
         parser.add_argument('--n_positive', type=int, default=5)
         parser.add_argument('--n_negative', type=int, default=5)
-        parser.add_argument('--n_random', type=int, default=5)
+        parser.add_argument('--n_random', type=int, default=20)
         parser.add_argument('--mode', type=str, default='target')
         parser.add_argument('--max_epoch', type=int, default=10)
         parser.add_argument('--exp_mode', type=int, default=2)

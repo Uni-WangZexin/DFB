@@ -195,10 +195,14 @@ class UniDataset(torch.utils.data.Dataset):
                 end = rand_ano[j]-self.horizon+1
                 X[i, 0:self.window ,j+2*self.n_positive+self.n_random+1] = torch.from_numpy(data[start:end])
                 X[i, self.window ,j+2*self.n_positive+self.n_random+1] = torch.from_numpy(np.asarray(data[rand_ano[j]]))
-        if(self.set_type=='train'):
+        """ if(self.set_type=='train'):
             X = torch.index_select(X, dim=0, index = torch.from_numpy(include_index-self.window-self.horizon+1))
             Y = torch.index_select(Y, dim=0, index = torch.from_numpy(include_index-self.window-self.horizon+1))
-            self.sample_num = X.shape[0]
+            self.sample_num = X.shape[0] """
+        #if(self.set_type=='train'):
+        #elif(self.set_type=='train'):
+        #elif(self.set_type=='train'):
+            
         return (X,Y)
 
 
