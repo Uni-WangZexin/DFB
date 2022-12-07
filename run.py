@@ -24,13 +24,13 @@ for i in range(20,210):
     if i in filelist:
         os.system("python single_cpu_trainer.py --data_name {} --data_dir './AnoTransfer-data/real-world' --n_positive 0 --exp_mode 1".format(str(i)))
         os.system("rm  ./ckpt/{}.ckpt".format(str(i))) """
-with open('./resultxrsy4.txt','a') as f:
+""" with open('./resultxrsy4.txt','a') as f:
     f.write('mode:2\n')
 for i in range(0,210):
     #os.system("python single_cpu_trainer.py --data_name {} > {}.out".format(str(i),str(i)))
     if i in filelist:
         os.system("python single_cpu_trainer.py --data_name {} --data_dir './AnoTransfer-data/real-world' --n_negative 0 --exp_mode 2".format(str(i)))
-        os.system("rm  ./ckpt/{}.ckpt".format(str(i)))
+        os.system("rm  ./ckpt/{}.ckpt".format(str(i))) """
 """ with open('./resultxrsy4.txt','a') as f:
     f.write('mode:3\n')
 for i in range(0,210):
@@ -71,7 +71,7 @@ with open('./resultxrsy4.txt','a') as f:
 for i in range(0,210):
     #os.system("python single_cpu_trainer.py --data_name {} > {}.out".format(str(i),str(i)))
     if i in filelist:
-        os.system("python single_cpu_trainer.py --data_name {} --data_dir './AnoTransfer-data/real-world'  --n_random 0 --n_negative 0 --exp_mode 8".format(str(i)))
+        os.system("python single_cpu_trainer.py --data_name {} --data_dir './AnoTransfer-data/real-world'  --n_random 0 --n_negative 0 --exp_mode 8 --ar_mode 1".format(str(i)))
         os.system("rm  ./ckpt/{}.ckpt".format(str(i)))
 """ with open('./resultxrsy4.txt','a') as f:
     f.write('mode:9\n')
@@ -85,5 +85,40 @@ with open('./resultxrsy4.txt','a') as f:
 for i in range(0,210):
     #os.system("python single_cpu_trainer.py --data_name {} > {}.out".format(str(i),str(i)))
     if i in filelist:
-        os.system("python single_cpu_trainer.py --data_name {} --data_dir './AnoTransfer-data/real-world'  --n_positive 0 --n_negative 0 --n_random 0 --exp_mode 10".format(str(i)))
+        os.system("python single_cpu_trainer.py --data_name {} --data_dir './AnoTransfer-data/real-world'  --n_positive 0 --n_negative 0 --n_random 0 --exp_mode 10 --ar_mode 1".format(str(i)))
+        os.system("rm  ./ckpt/{}.ckpt".format(str(i)))
+#11
+""" for i in range(0,210):
+    #os.system("python single_cpu_trainer.py --data_name {} > {}.out".format(str(i),str(i)))
+    if i in filelist:
+        os.system("python single_cpu_trainer.py --data_name {} --data_dir './AnoTransfer-data/real-world'  --n_negative 0 --n_random 0 --exp_mode 11".format(str(i)))
+        os.system("rm  ./ckpt/{}.ckpt".format(str(i)))
+#12
+for i in range(0,210):
+    #os.system("python single_cpu_trainer.py --data_name {} > {}.out".format(str(i),str(i)))
+    if i in filelist:
+        os.system("python single_cpu_trainer.py --data_name {} --data_dir './AnoTransfer-data/real-world'  --n_negative 0 --exp_mode 12".format(str(i)))
+        os.system("rm  ./ckpt/{}.ckpt".format(str(i)))
+#13
+for i in range(0,210):
+    #os.system("python single_cpu_trainer.py --data_name {} > {}.out".format(str(i),str(i)))
+    if i in filelist:
+        os.system("python single_cpu_trainer.py --data_name {} --data_dir './AnoTransfer-data/real-world'  --n_negative 0 --exp_mode 13".format(str(i)))
+        os.system("rm  ./ckpt/{}.ckpt".format(str(i))) """
+
+with open('./resultxrsy4.txt','a') as f:
+    f.write('mode:8\n')
+for i in range(0,210):
+    #os.system("python single_cpu_trainer.py --data_name {} > {}.out".format(str(i),str(i)))
+    if i in filelist:
+        os.system("python single_cpu_trainer.py --data_name {} --data_dir './AnoTransfer-data/real-world'  --n_random 0 --n_negative 0 --exp_mode 8 --ar_mode 0".format(str(i)))
+        os.system("rm  ./ckpt/{}.ckpt".format(str(i)))
+
+
+with open('./resultxrsy4.txt','a') as f:
+    f.write('mode:10\n')
+for i in range(0,210):
+    #os.system("python single_cpu_trainer.py --data_name {} > {}.out".format(str(i),str(i)))
+    if i in filelist:
+        os.system("python single_cpu_trainer.py --data_name {} --data_dir './AnoTransfer-data/real-world'  --n_positive 0 --n_negative 0 --n_random 0 --exp_mode 10 --ar_mode 0".format(str(i)))
         os.system("rm  ./ckpt/{}.ckpt".format(str(i)))
