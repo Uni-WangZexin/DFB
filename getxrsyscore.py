@@ -1,5 +1,5 @@
 
-f = open('./result_bestf1_excludeano_withoutar2.txt','r')
+f = open('./result_bestf1_add_fenlei.txt','r')
 sum_f1=0.0
 sum_trainloss=0.0
 sum_testloss=0.0

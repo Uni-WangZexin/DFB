@@ -16,7 +16,7 @@ import traceback
 from pytorch_lightning import Trainer
 from pytorch_lightning.callbacks import EarlyStopping, ModelCheckpoint
 
-from model_self_attn_pot_excludeano import DSANet
+from model_add_fenlei import DSANet
 
 from pytorch_lightning.loggers import TensorBoardLogger
 import argparse

@@ -1,0 +1,3 @@
+data_name: 05f10d3a-239c-3bef-9bdc-a2feeb0037aa max f1 score is 0.946809 and threshold is 4.403359 train_loss is 0.154292 test_loss is 0.180334
+data_name: 05f10d3a-239c-3bef-9bdc-a2feeb0037aa max f1 score is 0.947725 and threshold is 4.405869 train_loss is 0.154701 test_loss is 0.180580
+data_name: 05f10d3a-239c-3bef-9bdc-a2feeb0037aa max f1 score is 0.943614 and threshold is 4.423952 train_loss is 0.154050 test_loss is 0.182014
