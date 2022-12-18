@@ -16,13 +16,14 @@ from torch.utils.data.distributed import DistributedSampler
 import pytorch_lightning as ptl
 #from pytorch_lightning.root_module.root_module import LightningModule
 from pytorch_lightning import LightningModule
-from dataset3 import MTSFDataset,UniDataset
+from dataset_findatten import MTSFDataset,UniDataset
 from dsanet.Layers import EncoderLayer_selfattn,EncoderLayer_targetattn
 import argparse
 from pytorch_lightning.utilities import _OMEGACONF_AVAILABLE
 import numpy as np
 import pandas as pd
 from eval_methods import pot_eval
+np.set_printoptions(threshold=np.inf)
 class Single_Global_SelfAttn_Module(nn.Module):
 
     def __init__(
@@ -530,6 +531,7 @@ class DSANet(LightningModule):
             attn2_horizon = torch.bmm(attn2,x_horizon_negatvie)
         if(self.n_random!=0):
             attn3_out, attn3, *_ = self.attn3(torch.cat((x_random,x_target),1),D=self.n_random+1)
+            print((attn3.cpu()).numpy())
             attn3_horizon = torch.bmm(attn3,x_horizon_random)
         #batch*1*d_model batch*n_head*D=>batch*n_head*1
 
@@ -823,7 +825,7 @@ class DSANet(LightningModule):
             if f1 > max_f1:
                 max_f1 = f1
                 max_f1_th = thres
-        file_name = './result_bestf1_excludeano_withoutar2.txt'
+        file_name = './result_bestf1_findatten.txt'
         with open(file_name,'a') as f:
             f.write("data_name: {}".format(self.hp.data_name))
             #f.write(" max f1 score is %f and threshold is %f\n" %(max_f1, max_f1_th))
